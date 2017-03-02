@@ -1,7 +1,7 @@
 'use strict';
 
 const easyui = require('easyUI'),
-      Element = easyui.Element;
+      { Element } = easyui;
 
 class React {
   static createElement(firstArgument, properties, ...childElements) {
