@@ -1,12 +1,12 @@
 'use strict';
 
-require('../../../index');  ///
+require('../../index');  // easyui-jsx
 
 const easyui = require('easyUI'),
-      { Element, TextArea } = easyui;
+      { TextArea } = easyui;
 
-class Form extends Element {
-  static fromProperties(properties) {
+class Form {
+  render() {
     return (
 
       <form>

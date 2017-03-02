@@ -5,7 +5,9 @@ const easyui = require('easyUI'),
 
 class React {
   static createElement(firstArgument, properties, ...childElements) {
-    properties = Object.assign({}, properties); ///
+    properties = makePropertiesNonNull(properties); ///
+
+    childElements = flattenChildElements(childElements);  ///
 
     let element = null;
 
@@ -15,7 +17,7 @@ class React {
       if (firstArgumentTagName) {
         const tagName = firstArgument;
 
-        element = elementFromTagName(tagName);
+        element = elementFromTagNameAndProperties(tagName, properties);
       } else {
         const firstArgumentElement = isElement(firstArgument);
 
@@ -25,7 +27,7 @@ class React {
           element = Class.fromProperties(properties);
         } else {
           const Class = firstArgument,  ///
-                instance = new Class();
+                instance = new Class(properties);
 
           element = instance.render();
         }
@@ -50,6 +52,90 @@ Object.defineProperty(window, 'React', {
 
 module.exports = React;
 
+function makePropertiesNonNull(properties) {
+  properties = Object.assign({}, properties); ///
+
+  return properties;
+}
+
+function flattenChildElements(childElements) {
+  childElements = childElements.reduce(function(childElements, childElement) {  ///
+    childElements = childElements.concat(childElement);
+
+    return childElements;
+  }, []);
+
+  return childElements;
+}
+
+function elementFromTagNameAndProperties(tagName, properties) {
+  const html = `<${tagName}></${tagName}>`,
+        element = Element.fromHTML(html);
+
+  applyPropertiesToElement(properties, element);
+
+  return element;
+}
+
+function applyPropertiesToElement(properties, element) {
+  const propertyName = Object.keys(properties);
+
+  propertyName.forEach(function(propertyName) {
+    const propertyValue = properties[propertyName];
+
+    if (false) {
+
+    } else if (isPropertyNameHandlerName(propertyName)) {
+      const event = eventFromPropertyName(propertyName),
+            handler = propertyValue;
+
+      element.on(event, handler);
+    } else {
+      const attributeName = propertyName,
+            attributeValue = propertyValue;
+
+      addAttributeToElement(attributeName, attributeValue, element);
+    }
+  });
+}
+
+function addAttributeToElement(name, value, element) {
+  if (name === 'className') {
+    name = 'class';
+  }
+  if (name === 'htmlFor') {
+    name = 'for';
+  }
+
+  if (false) {
+
+  } else if (typeof value === 'object') {
+    const keys = Object.keys(value);
+
+    keys.forEach(function (key) {
+      const domElement = element.$element[0]; ///
+
+      domElement[name][key] = value[key];
+    }.bind(this));
+  } else if (typeof value === 'boolean') {
+    if (value) {
+      value = name; ///
+
+      element.addAttribute(name, value);
+    }
+  } else {
+    element.addAttribute(name, value);
+  }
+}
+
+function eventFromPropertyName(propertyName) {
+  return propertyName.substr(2).toLowerCase();
+}
+
+function isPropertyNameHandlerName(propertyName) {
+  return propertyName.match(/^on/);
+}
+
 function isElement(argument) {
   let element = false;
 
@@ -62,13 +148,6 @@ function isElement(argument) {
       element = isElement(argument);
     }
   }
-
-  return element;
-}
-
-function elementFromTagName(tagName) {
-  const html = `<${tagName}></${tagName}>`,
-        element = Element.fromHTML(html);
 
   return element;
 }
