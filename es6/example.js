@@ -3,18 +3,36 @@
 require('../index');  /// easyui-jsx
 
 const easyui = require('easyUI'),
-      { Body } = easyui;
+      { Body, Button } = easyui;
 
-const Form = require('./example/jsxElement/form');
+class Example {
+  click() {
+    console.log('clicked!')
+  }
+
+  render() {
+    return (
+
+      <p>
+        <Button clickHandler={() => {
+                  this.click();
+                }}>
+          Click me!
+        </Button>
+      </p>
+
+    );
+  }
+}
 
 const example = () => {
-  const body = new Body();
+  const body = new Body(),
+        example =
 
-  body.append(
+            <Example />;
 
-    <Form />
 
-  );
+  body.append(example);
 };
 
 module.exports = example;

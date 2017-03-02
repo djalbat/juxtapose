@@ -23,6 +23,11 @@ class React {
           const Class = firstArgument;  ///
 
           element = Class.fromProperties(properties);
+        } else {
+          const Class = firstArgument,  ///
+                instance = new Class();
+
+          element = instance.render();
         }
       }
     }
@@ -51,10 +56,10 @@ function isElement(argument) {
   if (argument === Element) {
     element = true;
   } else {
-    const prototype = Object.getPrototypeOf(argument);
+    argument = Object.getPrototypeOf(argument);
 
-    if (prototype) {
-      element = isElement(prototype);
+    if (argument) {
+      element = isElement(argument);
     }
   }
 

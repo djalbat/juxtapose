@@ -6,10 +6,6 @@ const easyui = require('easyUI'),
       { Element, TextArea } = easyui;
 
 class Form extends Element {
-  consoleLog(value) {
-    console.log(value)
-  }
-
   static fromProperties(properties) {
     return (
 
