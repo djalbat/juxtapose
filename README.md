@@ -1,8 +1,8 @@
-# EesyUI-JSX
+# EasyUI-JSX
 
 JSX support for [EasyUI](https://github.com/djalbat/EasyUI).
 
-    ## Contact
+## Contact
 
 - james.smith@djalbat.com
 - http://djalbat.com
