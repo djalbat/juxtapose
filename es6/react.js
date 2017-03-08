@@ -12,16 +12,12 @@ class React {
     let element = null;
 
     if (firstArgument !== undefined) {
-      const firstArgumentTagName = (typeof firstArgument === 'string');
-
-      if (firstArgumentTagName) {
-        const tagName = firstArgument;
+      if (typeof firstArgument === 'string') {
+        const tagName = firstArgument;    ///
 
         element = elementFromTagNameAndProperties(tagName, properties);
       } else {
-        const firstArgumentElement = isElement(firstArgument);
-
-        if (firstArgumentElement) {
+        if (isElement(firstArgument)) {
           const Class = firstArgument;  ///
 
           element = Class.fromProperties(properties);
@@ -36,7 +32,7 @@ class React {
 
     if (element !== null) {
       childElements.forEach(function(childElement) {
-        element.append(childElement);
+        childElement.appendTo(element);
       })
     }
 
