@@ -142,7 +142,7 @@ function isElement(argument) {
   if (argument === Element) {
     element = true;
   } else {
-    argument = Object.getPrototypeOf(argument);
+    argument = Object.getPrototypeOf(argument); ///
 
     if (argument) {
       element = isElement(argument);
