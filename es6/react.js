@@ -32,7 +32,7 @@ class React {
 
     if (element !== null) {
       childElements.forEach(function(childElement) {
-        element.append(childElement);
+        childElement.appendTo(element);
       })
     }
 
@@ -138,7 +138,7 @@ function isTypeOf(argument, constructor) {
   if (argument === constructor) {
     typeOf = true;
   } else {
-    argument = Object.getPrototypeOf(argument);
+    argument = Object.getPrototypeOf(argument); ///
 
     if (argument) {
       typeOf = isTypeOf(argument, constructor);
