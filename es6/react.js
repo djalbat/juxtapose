@@ -12,16 +12,12 @@ class React {
     let element = null;
 
     if (firstArgument !== undefined) {
-      const firstArgumentTagName = (typeof firstArgument === 'string');
-
-      if (firstArgumentTagName) {
+      if (typeof firstArgument === 'string') {
         const tagName = firstArgument;
 
         element = elementFromTagNameAndProperties(tagName, properties);
       } else {
-        const firstArgumentElement = isElement(firstArgument);
-
-        if (firstArgumentElement) {
+        if (isTypeOf(firstArgument, Element)) {
           const Class = firstArgument;  ///
 
           element = Class.fromProperties(properties);
@@ -136,18 +132,18 @@ function isPropertyNameHandlerName(propertyName) {
   return propertyName.match(/^on/);
 }
 
-function isElement(argument) {
-  let element = false;
+function isTypeOf(argument, constructor) {
+  let typeOf = false;
 
-  if (argument === Element) {
-    element = true;
+  if (argument === constructor) {
+    typeOf = true;
   } else {
     argument = Object.getPrototypeOf(argument);
 
     if (argument) {
-      element = isElement(argument);
+      typeOf = isTypeOf(argument, constructor);
     }
   }
 
-  return element;
+  return typeOf;
 }
