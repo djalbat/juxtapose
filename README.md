@@ -88,20 +88,31 @@ There are several basic ways to do so, mirroring to a large extent JSX usage in 
    
 ### Virtual DOM elements
 
-By which is meant elements that reference, and therefore effectively represent, real DOM elements. They are created with lowercase tag names:
+By which is meant elements that reference, and therefore effectively represent, real underlying DOM elements. They are created with lowercase tag names:
  
 ```js
 const body = new Body();
 
 body.append(
 
- <div className="example">An easy example</div>
+  <div className="example">An easy example</div>
 
 );
 ```
 
-Note the use of `className` instead of `class`. Similarly `htmlFor` instead of `for`. In fact two virtual DOM elements are created here, since the outer `div` element will contain an inner text element. These are always created as children and cannot be created directly. 
+### Functional elements
+
+Elements can be returned from functions, the functions receiving the attributes as properties.  
  
+```js
+const body = new Body();
+
+body.append(
+
+  <div className="example">An easy example</div>
+
+);
+```
  
   
     

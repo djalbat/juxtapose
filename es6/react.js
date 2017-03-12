@@ -8,7 +8,11 @@ class React {
     let element = null;
 
     if (firstArgument !== undefined) {
-      properties = makePropertiesNonNull(properties); ///
+      childElements = flattenChildElements(childElements);
+
+      properties = Object.assign({
+        childElements: childElements
+      }, properties);
 
       if (false) {
 
@@ -32,14 +36,6 @@ class React {
       }
     }
 
-    if (element !== null) {
-      childElements = flattenChildElements(childElements);
-
-      childElements.forEach(function(childElement) {
-        element.append(childElement);
-      })
-    }
-
     return element;
   }
 }
@@ -51,12 +47,6 @@ Object.defineProperty(window, 'React', {
 });
 
 module.exports = React;
-
-function makePropertiesNonNull(properties) {
-  properties = Object.assign({}, properties); ///
-
-  return properties;
-}
 
 function flattenChildElements(childElements) {
   childElements = childElements.reduce(function(childElements, childElement) {  ///
