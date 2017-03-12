@@ -16,6 +16,38 @@ Actually they are, here:
 
 - [Occam Proof Assistant](http://djalbat.com/occam)
 
+## Installation
+
+You can install EasyUI-JSX with [npm](https://www.npmjs.com/):
+
+    npm install easyui-jsx
+
+You can also clone the repository with [Git](https://git-scm.com/)...
+
+    git clone https://github.com/djalbat/EasyUI-JSX.git
+
+...and then install the necessary modules with npm from within the project's root directory:
+
+    npm install
+
+## Usage
+
+Only building with [Node.js](http://nodejs.org) is supported, the usage is as follows:
+
+```js
+require('easyui');
+```
+
+Once this is done, JSX can be used directly.
+```
+
+## Compiling from source
+
+Automation is done with [npm scripts](https://docs.npmjs.com/misc/scripts), have a look at the `package.json` file. The pertinent commands are:
+
+    npm run build-debug
+    npm run watch-debug
+    
 ## Contact
 
 - james.smith@djalbat.com
