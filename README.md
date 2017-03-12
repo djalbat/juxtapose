@@ -47,7 +47,41 @@ Automation is done with [npm scripts](https://docs.npmjs.com/misc/scripts), have
     npm run build-debug
     npm run watch-debug
     
-    
+## Appending elements to the DOM
+
+The recommended and indeed the only practical way is to create an EasyUI element that references an existing DOM element, and then to append elements that have been dynamically created by way of JSX to that:
+ 
+```js
+const easyui = require('easyui'),
+      { Body } = easyui;
+
+const body = new Body(),
+      exampleDiv =
+
+        <div className="example">
+          An easy example
+        </div>;
+
+body.append(exampleDiv);
+```
+
+The `body` DOM element was chosen here for the sake of the example. If you are not happy using it, create an element that references a root `div` element, say, either by passing the requisite CSS selector to the `Div` class constructor, or, if you have the DOM element to hand, using the static `fromHTML()` factory method.
+  
+```js
+const easyui = require('easyui'),
+      { Div } = easyui;
+
+const rootDivDOMElement = document.getElementbyId('root'),
+      rootDivElement = Div.fromDOMElement(rootDivDOMElement),
+      exampleDiv =
+
+        <div className="example">
+          An easy example
+        </div>;
+
+rootDivElement.append(exampleDiv);
+```
+  
     
 ## Contact
 
