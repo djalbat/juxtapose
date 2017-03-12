@@ -91,6 +91,11 @@ There are several basic ways to do so, mirroring to a large extent JSX usage in 
 In other words elements that reference, and therefore effectively represent, real underlying DOM elements. They are created with lowercase tag names:
  
 ```js
+const easyui = require('easyui'),
+      { Body } = easyui;
+
+const body = new Body();
+
 body.append(
 
   <div className="example">An easy example.</div>
@@ -103,6 +108,9 @@ body.append(
 JSX can be returned from functions, with the functions themselves receiving the attributes of the JSX that references them as a `properties` argument. Child elements can be accessed by way of the `childElements` property of that argument:
  
 ```js
+const easyui = require('easyui'),
+      { Body } = easyui;
+
 const Div = (properties) => {
   const { className } = properties,
         { childElements } = properties;
@@ -113,6 +121,8 @@ const Div = (properties) => {
 
   );
 };
+
+const body = new Body();
 
 body.append(
 
@@ -129,17 +139,41 @@ Creating EasyUI elements from JSX involves nothing more than employing the relev
 
 ```js
 const easyui = require('easyui'),
-      { Body, Div } = easyui;
+      { Body, Button } = easyui;
       
-const body = new Body();
+const body = new Body(),
+      button = 
 
 body.append(
 
-  <Div className="example">An easy example.</Div>
+  <Button onClick={() => {
+                   
+                    alert('Clicked!');
 
-);    
+                  }}
+  >
+  Click me...
+  </Button>
+
+);
 ```
+
+Attributes are treated in the expected way. Alternatively, since the JSX results in an instance of an EasyUI element, its methods can be called against it directly:   
     
+```js
+const easyui = require('easyui'),
+      { Body, Button } = easyui;
+      
+const body = new Body(),
+      button = <Button>Click me...</Button>;
+
+button.onClick(function() {
+  alert('Clicked!');
+});
+
+body.append(button);
+```
+
 ## Contact
 
 - james.smith@djalbat.com
