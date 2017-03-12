@@ -65,7 +65,7 @@ const body = new Body(),
 body.append(exampleDiv);
 ```
 
-The `body` DOM element was chosen here for the sake of the example. If you are not happy using it, create an element that references a root `div` element, say, either by passing the requisite CSS selector to the `Div` class constructor, or, if you have the DOM element to hand, using the static `fromHTML()` factory method.
+The `body` DOM element was chosen here for the sake of the example. If you are not happy using it, create an element that references a root `div` element, say, either by passing the requisite CSS selector to the `Div` class constructor, or, if you have the DOM element to hand, using the static `fromHTML()` factory method:
   
 ```js
 const easyui = require('easyui'),
@@ -81,6 +81,28 @@ const rootDivDOMElement = document.getElementbyId('root'),
 
 rootDivElement.append(exampleDiv);
 ```
+
+## Creating elements
+
+There are several basic ways to do so, mirroring to a large extent JSX usage in both React and Reaction. With EasyUI, however, there is a little more freedom as well as the opportunity to use inheritance rather than mixins, should you wish to.
+   
+### Virtual DOM elements
+
+By which is meant elements that reference, and therefore effectively represent, real DOM elements. They are created with lowercase tag names:
+ 
+```js
+const body = new Body();
+
+body.append(
+
+ <div className="example">An easy example</div>
+
+);
+```
+
+Note the use of `className` instead of `class`. Similarly `htmlFor` instead of `for`. In fact two virtual DOM elements are created here, since the outer `div` element will contain an inner text element. These are always created as children and cannot be created directly. 
+ 
+ 
   
     
 ## Contact
