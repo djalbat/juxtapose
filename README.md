@@ -39,7 +39,6 @@ require('easyui');
 ```
 
 Once this is done, JSX can be used directly.
-```
 
 ## Compiling from source
 
