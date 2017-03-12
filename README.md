@@ -35,7 +35,7 @@ You can also clone the repository with [Git](https://git-scm.com/)...
 Only building with [Node.js](http://nodejs.org) is supported, the usage is as follows:
 
 ```js
-require('easyui');
+require('easyui-jsx');
 ```
 
 Once this is done, JSX can be used directly.
@@ -46,6 +46,8 @@ Automation is done with [npm scripts](https://docs.npmjs.com/misc/scripts), have
 
     npm run build-debug
     npm run watch-debug
+    
+    
     
 ## Contact
 
