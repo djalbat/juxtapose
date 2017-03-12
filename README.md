@@ -121,7 +121,24 @@ body.append(
 );
 ```
 
-Note the slight difference in usage. In EasyUI-JSX parlance the `props` of React and Reaction becomes `properties` and `children` becomes `childElements`.  
+Note the slight difference in language. In EasyUI-JSX parlance the `props` of React and Reaction becomes `properties` and `children` becomes `childElements`.
+  
+### EasyUI elements
+
+Creating EasyUI elements from JSX involves nothing more than employing the relevant class:
+
+```js
+const easyui = require('easyui'),
+      { Body, Div } = easyui;
+      
+const body = new Body();
+
+body.append(
+
+  <Div className="example">An easy example.</Div>
+
+);    
+```
     
 ## Contact
 
