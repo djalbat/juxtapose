@@ -76,7 +76,7 @@ const rootDivDOMElement = document.getElementbyId('root'),
       exampleDiv =
 
         <div className="example">
-          An easy example
+          An easy example.
         </div>;
 
 rootDivElement.append(exampleDiv);
@@ -88,33 +88,40 @@ There are several basic ways to do so, mirroring to a large extent JSX usage in 
    
 ### Virtual DOM elements
 
-By which is meant elements that reference, and therefore effectively represent, real underlying DOM elements. They are created with lowercase tag names:
+In other words elements that reference, and therefore effectively represent, real underlying DOM elements. They are created with lowercase tag names:
  
 ```js
-const body = new Body();
-
 body.append(
 
-  <div className="example">An easy example</div>
+  <div className="example">An easy example.</div>
 
 );
 ```
 
 ### Functional elements
 
-Elements can be returned from functions, the functions receiving the attributes as properties.  
+JSX can be returned from functions, with the functions themselves receiving the attributes of the JSX that references them as a `properties` argument. Child elements can be accessed by way of the `childElements` property of that argument:
  
 ```js
-const body = new Body();
+const Div = (properties) => {
+  const { className } = properties,
+        { childElements } = properties;
+
+  return (
+
+    <div className={className}>{childElements}</div>
+
+  );
+};
 
 body.append(
 
-  <div className="example">An easy example</div>
+    <Div className="example">An easy example.</Div>
 
 );
 ```
- 
-  
+
+Note the slight difference in usage. In EasyUI-JSX parlance the `props` of React and Reaction becomes `properties` and `children` becomes `childElements`.  
     
 ## Contact
 

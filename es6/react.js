@@ -71,15 +71,23 @@ function applyElementProperties(element, properties) {
   const names = Object.keys(properties);
 
   names.forEach(function(name) {
-    const value = properties[name];
+    if (name === 'childElements') {
+      const childElements = properties['childElements'];
 
-    if (isHandlerName(name)) {
-      const eventType = eventTypeFromName(name),
+      childElements.forEach(function(childElement) {
+        element.append(childElement);
+      });
+    } else {
+      const value = properties[name];
+
+      if (isHandlerName(name)) {
+        const eventType = eventTypeFromName(name),
             handler = value;  ///
 
-      element.on(eventType, handler);
-    } else {
-      addElementAttributes(element, name, value);
+        element.on(eventType, handler);
+      } else {
+        addElementAttributes(element, name, value);
+      }
     }
   });
 }
