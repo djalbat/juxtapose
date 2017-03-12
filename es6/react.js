@@ -1,38 +1,42 @@
 'use strict';
 
-const easyui = require('easyUI'),
+const easyui = require('easyui'),
       { Element } = easyui;
 
 class React {
   static createElement(firstArgument, properties, ...childElements) {
-    properties = makePropertiesNonNull(properties); ///
-
-    childElements = flattenChildElements(childElements);  ///
-
     let element = null;
 
     if (firstArgument !== undefined) {
-      if (typeof firstArgument === 'string') {
+      properties = makePropertiesNonNull(properties); ///
+
+      if (false) {
+
+      } else if (typeof firstArgument === 'string') {
         const tagName = firstArgument;
 
         element = elementFromTagNameAndProperties(tagName, properties);
-      } else {
-        if (isTypeOf(firstArgument, Element)) {
-          const Class = firstArgument;  ///
+      } else if (isTypeOf(firstArgument, Element)) {
+        const Class = firstArgument;  ///
 
-          element = Class.fromProperties(properties);
-        } else {
-          const Class = firstArgument,  ///
-                instance = new Class(properties);
+        element = Class.fromProperties(properties);
+      } else if (firstArgument.prototype.render) {
+        const Class = firstArgument,  ///
+              instance = new Class(properties);
 
-          element = instance.render();
-        }
+        element = instance.render();
+      } else if (typeof firstArgument === 'function') {
+        const elementFunction = firstArgument;
+
+        element = elementFunction(properties);
       }
     }
 
     if (element !== null) {
+      childElements = flattenChildElements(childElements);
+
       childElements.forEach(function(childElement) {
-        childElement.appendTo(element);
+        element.append(childElement);
       })
     }
 
@@ -68,50 +72,42 @@ function elementFromTagNameAndProperties(tagName, properties) {
   const html = `<${tagName}></${tagName}>`,
         element = Element.fromHTML(html);
 
-  applyPropertiesToElement(properties, element);
+  applyElementProperties(element, properties);
 
   return element;
 }
 
-function applyPropertiesToElement(properties, element) {
-  const propertyName = Object.keys(properties);
+function applyElementProperties(element, properties) {
+  const names = Object.keys(properties);
 
-  propertyName.forEach(function(propertyName) {
-    const propertyValue = properties[propertyName];
+  names.forEach(function(name) {
+    const value = properties[name];
 
-    if (false) {
+    if (isHandlerName(name)) {
+      const eventType = eventTypeFromName(name),
+            handler = value;  ///
 
-    } else if (isPropertyNameHandlerName(propertyName)) {
-      const event = eventFromPropertyName(propertyName),
-            handler = propertyValue;
-
-      element.on(event, handler);
+      element.on(eventType, handler);
     } else {
-      const attributeName = propertyName,
-            attributeValue = propertyValue;
-
-      addAttributeToElement(attributeName, attributeValue, element);
+      addElementAttributes(element, name, value);
     }
   });
 }
 
-function addAttributeToElement(name, value, element) {
+function addElementAttributes(element, name, value) {
   if (name === 'className') {
     name = 'class';
   }
+
   if (name === 'htmlFor') {
     name = 'for';
   }
 
-  if (false) {
-
-  } else if (typeof value === 'object') {
+  if (typeof value === 'object') {
     const keys = Object.keys(value);
 
     keys.forEach(function (key) {
-      const domElement = element.$element[0]; ///
-
-      domElement[name][key] = value[key];
+      element.domElement[name][key] = value[key];
     }.bind(this));
   } else if (typeof value === 'boolean') {
     if (value) {
@@ -124,24 +120,24 @@ function addAttributeToElement(name, value, element) {
   }
 }
 
-function eventFromPropertyName(propertyName) {
-  return propertyName.substr(2).toLowerCase();
+function isHandlerName(name) {
+  return name.match(/^on/);
 }
 
-function isPropertyNameHandlerName(propertyName) {
-  return propertyName.match(/^on/);
+function eventTypeFromName(name) {
+  return name.substr(2).toLowerCase();
 }
 
-function isTypeOf(argument, constructor) {
+function isTypeOf(argument, Class) {
   let typeOf = false;
 
-  if (argument === constructor) {
+  if (argument === Class) { ///
     typeOf = true;
   } else {
     argument = Object.getPrototypeOf(argument); ///
 
     if (argument) {
-      typeOf = isTypeOf(argument, constructor);
+      typeOf = isTypeOf(argument, Class);
     }
   }
 
