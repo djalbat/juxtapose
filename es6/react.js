@@ -17,9 +17,9 @@ class React {
       if (false) {
 
       } else if (typeof firstArgument === 'string') {
-        const tagName = firstArgument;
+        const tagName = firstArgument;  ///
 
-        element = Element.fromTagNameAndProperties(tagName, properties);
+        element = Element.fromPropertiesAndTagName(Element, properties, tagName)
       } else if (isTypeOf(firstArgument, Element)) {
         const Class = firstArgument;  ///
 
@@ -30,7 +30,7 @@ class React {
 
         element = instance.render();
       } else if (typeof firstArgument === 'function') {
-        const elementFunction = firstArgument;
+        const elementFunction = firstArgument;  ///
 
         element = elementFunction(properties);
       }
