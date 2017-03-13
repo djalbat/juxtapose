@@ -177,10 +177,10 @@ button.onClick(function() {
 body.append(button);
 ```
 
-### Custom elements
+### Custom elements using a `render()` method
 
-There is no need to extend any classes or call factory methods. Simply define a class with a `render()` method and, optionally, a constructor to set the `properties` property on the instance. Any instance method will be available from the `render()` method:
-
+This is the most straightforward way, and akin to one React and Reaction approach. Simply define a class with a `render()` method and an optional constructor to assign its `properties` argument to the instance. The instance methods are then available from within the `render()` method by way of the `this` keyword.  
+ 
 ```js
 const easyui = require('easyui'),
       { Body } = easyui;
@@ -199,24 +199,23 @@ class Example {
 
     return (
 
-      <button onClick={() => {
+      <Button onClick={() => {
                 this.click(message);
               }}>
         Click me!
-      </button>
+      </Button>
 
     );
   }
 }
 
-const body = new Body();
+const body = new Body(),
+      example = <Example message="Clicked!">Click me...</Example>;
 
-body.append(
-
-  <Example message="Clicked!">Click me...</Example>
-
-);
+body.append(example);
 ```
+
+It is important to realise with this pattern that what is returned by the `render()` method will *not* be an instance of the class in question. It will be an instance of whatever class is represented by the JSX returned by the `render()` method. The utility of this pattern is in the fact that it allows JSX to be encapsulated together with some additional functionality. 
 
 ## Contact
 
