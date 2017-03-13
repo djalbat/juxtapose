@@ -2,7 +2,7 @@
 
 JSX support for EasyUI elements.
 
-EasyUI-JSX allows you to leverage [JSX](https://facebook.github.io/react/docs/jsx-in-depth.html) in order to create EasyUI elements rather than React or [Reaction](https://github.com/djalbat/Reaction) ones. All of the projects listed below support JSX, and its use with them is highly recommended. Not only will using JSX result in less typing and better organisation, it will also permit elements to created dynamically without resorting to factory methods or cloning.   
+EasyUI-JSX allows you to leverage [JSX](https://facebook.github.io/react/docs/jsx-in-depth.html) in order to create EasyUI elements rather than React or [Reaction](https://github.com/djalbat/Reaction) ones. All of the EasyUI projects support JSX, and its use with them is highly recommended. Not only will using JSX result in less typing and better organisation, it will also permit elements to created dynamically without resorting to factory methods or cloning.   
 
 ## Related projects
 
@@ -56,36 +56,38 @@ The recommended and indeed the only practical way is to create an EasyUI element
 const easyui = require('easyui'),
       { Body } = easyui;
 
-const body = new Body(),
-      exampleDiv =
+const body = new Body();
 
-        <div className="example">
-          An easy example.
-        </div>;
+body.append(
 
-body.append(exampleDiv);
+  <div className="example">
+    An easy example.
+  </div>
+  
+);
 ```
 
-The `body` DOM element was chosen here for the sake of the example. If you are not happy using it, create an element that references a root `div` element, say, either by passing the requisite CSS selector to the `Div` class constructor, or, if you have the DOM element to hand, using the static `fromHTML()` factory method:
+If you are not happy using `body` DOM element, create an element that references a root `div` element, say, either by passing the requisite CSS selector to the `Div` class constructor, or, if you have the DOM element to hand, using the static `fromHTML()` factory method:
   
 ```js
 const easyui = require('easyui'),
       { Div } = easyui;
 
 const rootDivDOMElement = document.getElementbyId('root'),
-      rootDivElement = Div.fromDOMElement(rootDivDOMElement),
-      exampleDiv =
+      rootDivElement = Div.fromDOMElement(rootDivDOMElement);
 
-        <div className="example">
-          An easy example.
-        </div>;
+rootDivElement.append(
 
-rootDivElement.append(exampleDiv);
+  <div className="example">
+    An easy example.
+  </div>
+  
+);
 ```
 
 ## Creating elements
 
-There are several basic ways to do so, mirroring to a large extent JSX usage in both React and Reaction. With EasyUI, however, there is a little more freedom as well as the opportunity to use inheritance rather than mixins, should you wish to.
+There are several ways to do so, mirroring to a large extent JSX usage in React and Reaction. With EasyUI, however, there is a little more freedom as well as the opportunity to use inheritance rather than mixins, should you wish to.
    
 ### Virtual DOM elements
 
@@ -132,7 +134,7 @@ body.append(
 );
 ```
 
-Note the slight difference in language. In EasyUI-JSX parlance the `props` of React and Reaction becomes `properties` and `children` becomes `childElements`.
+Note the slight difference in language compared to React and Reaction. In EasyUI-JSX parlance the `props` of React and Reaction becomes `properties` and `children` becomes `childElements`.
   
 ### EasyUI elements
 
@@ -159,7 +161,7 @@ body.append(
 );
 ```
 
-Attributes are treated in the expected way. Alternatively, since the JSX results in an instance of an EasyUI element, its methods can be called against it directly:   
+Alternatively, since the JSX results in an instance of an EasyUI element, its methods can be called against it directly:   
     
 ```js
 const easyui = require('easyui'),
