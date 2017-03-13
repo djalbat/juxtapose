@@ -2,7 +2,7 @@
 
 JSX support for EasyUI elements.
 
-EasyUI-JSX allows you to leverage [JSX](https://facebook.github.io/react/docs/jsx-in-depth.html) in order to create EasyUI elements rather than React or [Reaction](https://github.com/djalbat/Reaction) ones. All of the EasyUI projects support JSX, and its use with them is highly recommended. Not only will using JSX result in less typing and better organisation, it will also permit elements to created dynamically without resorting to factory methods or cloning.   
+EasyUI-JSX allows you to leverage [JSX](https://facebook.github.io/react/docs/jsx-in-depth.html) in order to create EasyUI elements rather than React or [Reaction](https://github.com/djalbat/Reaction) ones. Every element supports JSX, and its use with them is highly recommended. Not only will using JSX result in less typing and better organisation, it will also permit elements to created dynamically without resorting to factory methods or cloning.   
 
 ## Related projects
 
@@ -50,7 +50,7 @@ Automation is done with [npm scripts](https://docs.npmjs.com/misc/scripts), have
     
 ## Appending elements to the DOM
 
-The recommended and indeed the only practical way is to create an EasyUI element that references an existing DOM element, and then to append elements that have been dynamically created by way of JSX to that:
+The recommended and indeed the only practical way is to create an EasyUI element that references an existing DOM element, which cannot be done with JSX, and then to append elements that have been dynamically created by way of JSX to that. A `Body` element is chosen as the simplest example because there is no need to pass a selector to the constructor, by default the one and only `body` DOM element will be used, assuming it is present:
  
 ```js
 const easyui = require('easyui'),
@@ -67,7 +67,7 @@ body.append(
 );
 ```
 
-If you are not happy using `body` DOM element, create an element that references a root `div` element, say, either by passing the requisite CSS selector to the `Div` class constructor, or, if you have the DOM element to hand, using the static `fromHTML()` factory method:
+If you are not happy using `body` DOM element, create an element that references a root `div` element, say, either by passing the requisite CSS selector to the `Div` class constructor, or, if you have the DOM element to hand, using the static `fromHTML()` factory method of the `Div` class:
   
 ```js
 const easyui = require('easyui'),
@@ -87,7 +87,7 @@ rootDivElement.append(
 
 ## Creating elements
 
-There are several ways to do so, mirroring to a large extent JSX usage in React and Reaction. With EasyUI, however, there is a little more freedom as well as the opportunity to use inheritance rather than mixins, should you wish to.
+There are several ways to do so, mirroring to some extent JSX usage in React and Reaction. With EasyUI, however, there is a little more freedom as well as the opportunity to use inheritance as well as mixins, should you wish to use either.
    
 ### Virtual DOM elements
 
@@ -203,32 +203,8 @@ example.onClick(...); // ...this would work...
 example.click(); // ...but this will not.
 ```
 
-It is important to realise with this pattern that what is returned by the `render()` method will *not* be an instance of the class you have just defined. It will be an instance of whatever class is defined by the JSX returned by the `render()` method. The utility of this pattern really only lies in the fact that it allows JSX to be encapsulated, together with some additional functionality. 
+It is important to realise with this pattern that what is returned by the `render()` method will *not* be an instance of the class you have just defined. It will be an instance of whatever class is referenced by the JSX returned by the `render()` method, or an instance of the `Element` class if the tag name is lower case. The utility of this pattern really only lies in the fact that it allows JSX to be encapsulated, together with some additional functionality that can be easily referenced. 
 
-If you want to mix the methods of your class into the returned element you can easily do so. In this case the `render()` method would become the following:
- 
-```js
-render() {
-  const { message } = this.properties,
-        button = 
-
-          <Button onClick={() => {
-    
-                            this.click(message);
-                            
-                          }}
-          >
-            Click me...
-          </Button>
-          
-        ;
-        
-  button.click = this.click;
-
-  return button;
-}
-``` 
- 
 ### Custom elements that extend an existing EasyUI class
 
 This is the preferred pattern, and is exactly what is used to add JSX support to the EasyUI projects themselves. You can extend any EasyUI class, including the `Element` class. Use the static `fromProperties()` factory method and from there invoke the `fromProperties()` method of the class you are extending:
@@ -263,7 +239,7 @@ const example = () => {
 };
 ```
 
-Setting the `tagName` property on the class is optional. If not set, the `tagName` property of the parent class will be used. Note that the `onClick()` method can be called, because the `Example` class inherits from the `Button` class, but also that the `click()` method can now be called, because the `example` constant holds an instance of the `Example` class. 
+Setting the `tagName` property on the class is optional. If not set, the `tagName` property of the parent class will be used. Note that the `onClick()` method can be called, because the `Example` class inherits from the `Button` class, but also that the `click()` method can now be called, because what is returned is an instance of the `Example` class. 
 
 ## Contact
 
