@@ -179,11 +179,11 @@ body.append(button);
 
 ### Custom elements using a `render()` method
 
-This is the most straightforward way, and akin to one React and Reaction approach. Simply define a class with a `render()` method and an optional constructor to assign its `properties` argument to the instance. The instance methods are then available from within the `render()` method by way of the `this` keyword.  
+This is the most straightforward way, and akin to one of the React and Reaction patterns. Simply define a class with a `render()` method and an optional constructor to assign its `properties` argument to the instance. The instance methods are then available from within the `render()` method by way of the `this` keyword:  
  
 ```js
 const easyui = require('easyui'),
-      { Body } = easyui;
+      { Body, Button } = easyui;
       
 class Example {
   constructor(properties) {
@@ -213,9 +213,15 @@ const body = new Body(),
       example = <Example message="Clicked!">Click me...</Example>;
 
 body.append(example);
+
+// Because example is an instance of the Button and not the Example class...
+
+example.hide(); // this will work
+
+example.click(); // this will not
 ```
 
-It is important to realise with this pattern that what is returned by the `render()` method will *not* be an instance of the class in question. It will be an instance of whatever class is represented by the JSX returned by the `render()` method. The utility of this pattern is in the fact that it allows JSX to be encapsulated together with some additional functionality. 
+It is important to realise with this pattern that what is returned by the `render()` method will *not* be an instance of the class you have just defined. It will be an instance of whatever class results from the JSX returned by the `render()` method. The utility of this pattern is in the fact that it allows JSX to be encapsulated together with some additional functionality. 
 
 ## Contact
 
