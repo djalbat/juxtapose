@@ -91,7 +91,7 @@ There are several ways to do so, mirroring to a large extent JSX usage in React 
    
 ### Virtual DOM elements
 
-In other words elements that reference, and therefore effectively represent, real underlying DOM elements. They are created with lowercase tag names:
+These are elements that reference, and therefore effectively represent, real underlying DOM elements. They are created with lowercase tag names:
  
 ```js
 const easyui = require('easyui'),
@@ -138,30 +138,7 @@ Note the slight difference in language compared to React and Reaction. In EasyUI
   
 ### EasyUI elements
 
-Creating EasyUI elements from JSX involves nothing more than employing the relevant class:
-
-```js
-const easyui = require('easyui'),
-      { Body, Button } = easyui;
-      
-const body = new Body(),
-      button = 
-
-body.append(
-
-  <Button onClick={() => {
-                   
-                    alert('Clicked!');
-
-                  }}
-  >
-  Click me...
-  </Button>
-
-);
-```
-
-Alternatively, since the JSX results in an instance of an EasyUI element, its methods can be called against it directly:   
+Creating EasyUI elements from JSX involves nothing more than employing the relevant class. And since the JSX results in an instance of an EasyUI class, in this case the `Button` class, its methods can be called against it directly:   
     
 ```js
 const easyui = require('easyui'),
@@ -179,7 +156,7 @@ body.append(button);
 
 ### Custom elements using a `render()` method
 
-This is the most straightforward way, and akin to one of the React and Reaction patterns. Simply define a class with a `render()` method and an optional constructor to assign its `properties` argument to the instance. The instance methods are then available from within the `render()` method by way of the `this` keyword:  
+This is the most straightforward way to create your own elements, and is more or less akin to the use of a `render()` method in React and Reaction. Simply define a class with a `render()` method and an optional constructor to assign its `properties` argument to the instance. The instance methods are then available from within the `render()` method by way of the `this` keyword:  
  
 ```js
 const easyui = require('easyui'),
@@ -214,14 +191,50 @@ const body = new Body(),
 
 body.append(example);
 
-// Because example is an instance of the Button and not the Example class...
+// Because example is an instance of the Button class and not the Example class...
 
-example.hide(); // this will work
+example.onClick(...); // ...this would work...
 
-example.click(); // this will not
+example.click(); // ...but this will not.
 ```
 
-It is important to realise with this pattern that what is returned by the `render()` method will *not* be an instance of the class you have just defined. It will be an instance of whatever class results from the JSX returned by the `render()` method. The utility of this pattern is in the fact that it allows JSX to be encapsulated together with some additional functionality. 
+It is important to realise with this pattern that what is returned by the `render()` method will *not* be an instance of the class you have just defined. It will be an instance of whatever class results from the JSX returned by the `render()` method. The utility of this pattern really only lies in the fact that it allows JSX to be encapsulated, together with some additional functionality.
+ 
+### Custom elements that extend an existing EasyUI class
+
+This is the preferred method, and is exactly the method used to add JSX support to the EasyUI projects themselves. You can extend any EasyUI class, whatever suits your needs, including the `Element` class. Use the static `fromProperties()` factory method and from there invoke the `fromProperties()` method of the class you are extending:
+  
+```js
+const easyui = require('easyui'),
+      { Body, Button } = easyui;
+
+class Example extends Button {
+  click() {
+    const { message } = this.properties;
+
+    alert(message)
+  }
+
+  static fromProperties(properties) {
+    return Button.fromProperties(Example, properties);
+  }
+}
+
+Example.tagName = 'button'; /// This is by way of example and is not needed.
+
+const example = () => {
+  const body = new Body(),
+        example = <Example message="Clicked!">Click me...</Example>;
+
+  example.onClick(function() {
+    example.click();
+  });
+
+  body.append(example);
+};
+```
+
+Setting the `tagName` property on the class is optional. If not set, the `tagName` property of the parent class will be used. Note that the `onClick()` method can be called, because the `Example` class inherits from the `Button` class, but also that the `click()` method can be called, because the `example` constant holds a proper instance of the `Example` class. 
 
 ## Contact
 
