@@ -129,7 +129,7 @@ const body = new Body();
 
 body.append(
 
-    <Div className="example">An easy example.</Div>
+  <Div className="example">An easy example.</Div>
 
 );
 ```
@@ -175,6 +175,47 @@ button.onClick(function() {
 });
 
 body.append(button);
+```
+
+### Custom elements
+
+There is no need to extend any classes or call factory methods. Simply define a class with a `render()` method and, optionally, a constructor to set the `properties` property on the instance. Any instance method will be available from the `render()` method:
+
+```js
+const easyui = require('easyui'),
+      { Body } = easyui;
+      
+class Example {
+  constructor(properties) {
+    this.properties = properties;
+  }
+
+  click(message) {
+    alert(message)
+  }
+
+  render() {
+    const { message } = this.properties;
+
+    return (
+
+      <button onClick={() => {
+                this.click(message);
+              }}>
+        Click me!
+      </button>
+
+    );
+  }
+}
+
+const body = new Body();
+
+body.append(
+
+  <Example message="Clicked!">Click me...</Example>
+
+);
 ```
 
 ## Contact
