@@ -156,7 +156,9 @@ body.append(button);
 
 ### Custom elements using a `render()` method
 
-This is the most straightforward way to create your own elements, and is more or less akin to the use of a `render()` method in React and Reaction. Simply define a class with a `render()` method and an optional constructor to assign its `properties` argument to the instance. The instance methods are then available from within the `render()` method by way of the `this` keyword:  
+This is the most straightforward way to create your own elements, and is more or less akin to the use of a `render()` method in React and Reaction. 
+
+Simply define a class with a `render()` method and an optional constructor to assign its `properties` argument to the instance. The instance methods are then available from within the `render()` method by way of the `this` keyword:  
  
 ```js
 const easyui = require('easyui'),
@@ -177,8 +179,11 @@ class Example {
     return (
 
       <Button onClick={() => {
-                this.click(message);
-              }}>
+
+                        this.click(message);
+                        
+                      }}
+      >
         Click me...
       </Button>
 
@@ -198,9 +203,9 @@ example.onClick(...); // ...this would work...
 example.click(); // ...but this will not.
 ```
 
-It is important to realise with this pattern that what is returned by the `render()` method will *not* be an instance of the class you have just defined. It will be an instance of whatever class defined by the JSX returned by the `render()` method. The utility of this pattern really only lies in the fact that it allows JSX to be encapsulated, together with some additional functionality. 
+It is important to realise with this pattern that what is returned by the `render()` method will *not* be an instance of the class you have just defined. It will be an instance of whatever class is defined by the JSX returned by the `render()` method. The utility of this pattern really only lies in the fact that it allows JSX to be encapsulated, together with some additional functionality. 
 
-If you want to mix the methods of your class into the returned element, by the way, you can easily do so. In this case the `render()` method would become the following:
+If you want to mix the methods of your class into the returned element you can easily do so. In this case the `render()` method would become the following:
  
 ```js
 render() {
@@ -208,12 +213,17 @@ render() {
         button = 
 
           <Button onClick={() => {
+    
                             this.click(message);
-                          }}>
-          Click me!
-          </Button>;
+                            
+                          }}
+          >
+            Click me...
+          </Button>
+          
+        ;
         
-  button.onClick = this.onClick;
+  button.click = this.click;
 
   return button;
 }
@@ -221,7 +231,7 @@ render() {
  
 ### Custom elements that extend an existing EasyUI class
 
-This is the preferred method, and is exactly the method used to add JSX support to the EasyUI projects themselves. You can extend any EasyUI class, whatever suits your needs, including the `Element` class. Use the static `fromProperties()` factory method and from there invoke the `fromProperties()` method of the class you are extending:
+This is the preferred pattern, and is exactly what is used to add JSX support to the EasyUI projects themselves. You can extend any EasyUI class, including the `Element` class. Use the static `fromProperties()` factory method and from there invoke the `fromProperties()` method of the class you are extending:
   
 ```js
 const easyui = require('easyui'),
