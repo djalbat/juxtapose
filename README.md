@@ -179,7 +179,7 @@ class Example {
       <Button onClick={() => {
                 this.click(message);
               }}>
-        Click me!
+        Click me...
       </Button>
 
     );
@@ -198,7 +198,26 @@ example.onClick(...); // ...this would work...
 example.click(); // ...but this will not.
 ```
 
-It is important to realise with this pattern that what is returned by the `render()` method will *not* be an instance of the class you have just defined. It will be an instance of whatever class results from the JSX returned by the `render()` method. The utility of this pattern really only lies in the fact that it allows JSX to be encapsulated, together with some additional functionality.
+It is important to realise with this pattern that what is returned by the `render()` method will *not* be an instance of the class you have just defined. It will be an instance of whatever class defined by the JSX returned by the `render()` method. The utility of this pattern really only lies in the fact that it allows JSX to be encapsulated, together with some additional functionality. 
+
+If you want to mix the methods of your class into the returned element, by the way, you can easily do so. In this case the `render()` method would become the following:
+ 
+```js
+render() {
+  const { message } = this.properties,
+        button = 
+
+          <Button onClick={() => {
+                            this.click(message);
+                          }}>
+          Click me!
+          </Button>;
+        
+  button.onClick = this.onClick;
+
+  return button;
+}
+``` 
  
 ### Custom elements that extend an existing EasyUI class
 
@@ -234,7 +253,7 @@ const example = () => {
 };
 ```
 
-Setting the `tagName` property on the class is optional. If not set, the `tagName` property of the parent class will be used. Note that the `onClick()` method can be called, because the `Example` class inherits from the `Button` class, but also that the `click()` method can be called, because the `example` constant holds a proper instance of the `Example` class. 
+Setting the `tagName` property on the class is optional. If not set, the `tagName` property of the parent class will be used. Note that the `onClick()` method can be called, because the `Example` class inherits from the `Button` class, but also that the `click()` method can now be called, because the `example` constant holds an instance of the `Example` class. 
 
 ## Contact
 
