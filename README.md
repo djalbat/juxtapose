@@ -2,7 +2,11 @@
 
 JSX support for EasyUI elements.
 
-EasyUI-JSX allows you to leverage [JSX](https://facebook.github.io/react/docs/jsx-in-depth.html) in order to create EasyUI elements rather than React or [Reaction](https://github.com/djalbat/Reaction) ones. Every element supports JSX, and its use with them is highly recommended. Not only will using JSX result in less typing and better organisation, it will also permit elements to created dynamically without resorting to factory methods or cloning.   
+EasyUI-JSX allows you to leverage [JSX](https://facebook.github.io/react/docs/jsx-in-depth.html) in order to create EasyUI elements as an alternative to [React](https://facebook.github.io/react/) or [Reaction](https://github.com/djalbat/Reaction) components. Every EasyUI element now supports JSX, and its use with them is highly recommended.
+
+To get a better overview of EasyUI-JSX, please see the examples documentation:
+ 
+ * https://djalbat.github.io/EasyUI-JSX/
 
 ## Related projects
 
@@ -17,11 +21,9 @@ Actually they are, here:
 
 - [Occam Proof Assistant](http://djalbat.com/occam)
 
-## Running the examples web page
+## Running the examples documentation locally
  
 This can be done by cloning the repository and then simply opening the `index.html` page found in the repository `docs/` directory. See the sections immediately below for instructions on cloning with Git if you are not familiar with this process. It is also useful to be able to compile the examples, again see the relevant instructions below. 
-
-If you want to get the some example code working, a quick and dirty way is to amend the `examples.js` file in the `es6` directory. Simply copy and paste the example code into the body of the `examples()` method, remove the unnecessary functions and require statements around it, and then rebuild.  
     
 ## Installation
 
