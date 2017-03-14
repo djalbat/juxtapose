@@ -34,6 +34,14 @@ const JSXIsGreat = () => {
         For several reasons this can be nightmarish.
         But the other way round happens to work really well.
       </p>
+      <nav>
+        <span className="floatRight">
+          <a href="#gettingStarted">Next: Getting started</a>
+        </span>
+        <span className="floatLeft">
+          <a href="#introduction">Previous: Introduction</a>
+        </span>
+      </nav>
     </section>
       
   );  

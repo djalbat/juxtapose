@@ -1,0 +1,31 @@
+@media (min-width: 0) and (max-width: 40rem) {
+  div.content {
+    width: 24rem;
+  }
+
+  code.block {
+    display: block;
+  }
+}
+
+@media (min-width: 40rem) and (max-width: 68rem) {
+  div.content {
+    width: 36rem;
+  }
+
+  code.block {
+    display: block;
+  }
+}
+
+@media (min-width: 68rem) {
+  div.content {
+    width: 61rem;
+  }
+
+  code.block {
+    display: inline-block;
+    float: right;
+    margin-left: 1rem;
+  }
+}

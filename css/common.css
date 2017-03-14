@@ -13,20 +13,21 @@ code {
   font-family: 'Menlo', 'Lucida Console', 'Bitstream Vera Sans Mono', monospace;
   font-size: 0.875rem;
   border: 1px solid;
-  display: inline-block;
+}
+
+code.block {
   padding: 1rem;
-  margin-left: 1rem;
   margin-bottom: 1rem;
 }
 
 code.inline {
   display: inline;
   padding: 0.25rem;
-  margin: 0;
 }
 
 p,
-li {
+li,
+span {
   font-size: 1.25rem;
 }
 

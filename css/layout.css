@@ -1,5 +1,4 @@
 div.content {
-  width: 61rem;
   display: flex;
   min-height: 100vh;
   margin-left: auto;
@@ -18,6 +17,14 @@ footer {
 
 div.content section {
   flex: 1;
+}
+
+nav {
+  height: 2.5rem;
+}
+
+.floatLeft {
+  float: left;
 }
 
 .floatRight {
