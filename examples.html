@@ -26,23 +26,40 @@ body.append(
 );</code>
       <p>
         These pages showcase the use of <a href="https://facebook.github.io/react/docs/jsx-in-depth.html">JSX</a> with <a href="https://github.com/djalbat/EasyUI">EasyUI</a>.
-      </p>
-      <p>
-        It is easy to combine these two technologies (or solutions, approaches, whatever you want to call them) in practice, as the example on the right shows.
+        It is easy to combine these two technologies in practice, as the example shows.
       </p>
       <p>
         It also turned out not to be very difficult to implement this combination. JSX transpiles into a call to <code class="inline">React.createClass(...)</code>
         and so all that needed to be done was to <a href="https://github.com/djalbat/EasyUI-JSX/blob/master/es6/react.js">implement that</a>,
-        and then to <a href="https://github.com/djalbat/EasyUI/blob/master/es6/mixin/jsx.js">augment</a> EasyUI's base <code class="inline">Element</code> class so that it handled JSX attributes.
-        Plus a couple of other minor changes that will surface later and so are not worth mentioning here.
-        There's no need to take an interest in any of this but it should be reassuring to know that it wasn't exactly rocket science.
+        and then to <a href="https://github.com/djalbat/EasyUI/blob/master/es6/mixin/jsx.js">augment</a> EasyUI's base <code class="inline">Element</code> class in order to enable elements to apply the properties they were passed.
       </p>
+      <p class="clearBoth">
+        JSX is great because it allows you to do three crucial things:
+      </p>
+      <ol>
+        <li>
+          You can <strong>associate the code that defines the view directly with the code that defines the model</strong>.
+          This is much better than having a view class and a model class and having one inherit from the other, say.
+          JSX allows you to inline the view code, so to speak, and link it to the surrounding model code in a straightforward manner.
+        </li>
+        <li>
+          You can <strong>build up your application's view in a declarative way</strong>.
+          The most likely and often the only relation between view elements is inclusion.
+          This results in a tree, and JSX encodes trees.
+          This won't always work, consider arcade games.
+          But it works for applications with event driven user interfaces and this includes nearly all web applications.
+        </li>
+        <li>
+          You can <strong>instantiate view elements easily without the need for constructors or factory methods</strong>.
+          So there is less code and what there is likely to be more readable and maintainable.
+          JSX also encourages composition and reuse.
+        </li>
+      </ol>
       <p>
-        As well as a showcase, these pages are meant to act as a gentle walkthrough to using JSX with EasyUI.
-        It is always difficult to know where to start and there are no instructions here to help particularly.
-        It is assumed that you can get the example on the right working with Node.js, Browserify, etc.
-        If you are stuck, there are instructions in the <a href="https://github.com/djalbat/EasyUI-JSX">readme</a> file in the root of this project.
-        You could do worse than to clone the project and run these example pages yourself, in fact.
+        Also JSX just embeds well into JavaScript.
+        Compare this with things such as JSP, which embed imperative languages in declarative ones.
+        For several reasons this can be nightmarish.
+        But the other way round happens to work really well.
       </p>
 </section>
 

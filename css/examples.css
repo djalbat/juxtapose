@@ -34,6 +34,10 @@ li {
   font-size: 1.25rem;
 }
 
+li {
+  margin-bottom: 1rem;
+}
+
 a {
   text-decoration: none;
 }
@@ -48,12 +52,19 @@ div.content {
   float: right;
 }
 
+.clearBoth {
+  clear: both;
+}
+
 body { background-color: #bcbfbb; }
 
+   strong { color: #052631; }
 h1 { border-color: #052631; }
-p { color: #052631; }
 
+ p { color: #322020; }
 h1 { color: #322020; }
 
-a { color: #b04a2c; }
-code { border-color: #b04a2c; }
+
+          a { color: #a04a2c; }
+code { border-color: #a04a2c; }
+
