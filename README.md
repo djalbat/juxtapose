@@ -6,7 +6,7 @@ EasyUI-JSX allows you to leverage [JSX](https://facebook.github.io/react/docs/js
 
 To get a better overview of EasyUI-JSX, please see online:
  
- * [examples documentation](https://djalbat.github.io/EasyUI-JSX/)
+ * [Documentation](https://djalbat.github.io/EasyUI-JSX/)
 
 ## Related projects
 
@@ -21,7 +21,7 @@ Actually they are, here:
 
 - [Occam Proof Assistant](http://djalbat.com/occam)
 
-## Running the examples documentation locally
+## Running the documentation locally
  
 This can be done by cloning the repository and then simply opening the `index.html` page in the `docs/` directory. See the sections immediately below for instructions on cloning with Git if you are not familiar with the process. It is also useful to be able to compile the documentation, again see the relevant instructions below. 
     
@@ -47,7 +47,7 @@ Only building with [Node.js](http://nodejs.org) is supported, the usage is as fo
 require('easyui-jsx');
 ```
 
-Once this is done, JSX can be used directly. All the examples can be found in the [examples documentation](https://djalbat.github.io/EasyUI-JSX/).
+Once this is done, JSX can be used directly. All the examples can be found in the [documentation](https://djalbat.github.io/EasyUI-JSX/).
 
 ## Compiling from source
 
