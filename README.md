@@ -19,7 +19,7 @@ Actually they are, here:
 
 ## Running the examples web page
  
-This can be done by cloning the repository and then simply opening the `examples.html` page found in the repository `docs/` directory. See the sections immediately below for instructions on cloning with Git if you are not familiar with this process. It is also useful to be able to compile the examples, again see the relevant instructions below. 
+This can be done by cloning the repository and then simply opening the `index.html` page found in the repository `docs/` directory. See the sections immediately below for instructions on cloning with Git if you are not familiar with this process. It is also useful to be able to compile the examples, again see the relevant instructions below. 
 
 If you want to get the some example code working, a quick and dirty way is to amend the `examples.js` file in the `es6` directory. Simply copy and paste the example code into the body of the `examples()` method, remove the unnecessary functions and require statements around it, and then rebuild.  
     
