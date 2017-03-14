@@ -23,7 +23,7 @@ body.append(
 );`}</code>
       <p>
         It is not always easy to know where to start and there are no instructions here for getting the first example working.
-        However, there are instructions in the readme file in the root of the EasyUI-JSX repository on <a href="https://github.com/djalbat/EasyUI-JSX">GitHub</a> on how to get these pages running locally.
+        However, there are instructions in the readme file in the root of the EasyUI-JSX repository on <a href="https://github.com/djalbat/EasyUI-JSX">GitHub</a> on how to get this documentation running locally.
         From there is should only be a short step to getting the examples themselves working.
         Good luck!
       </p>
@@ -32,7 +32,7 @@ body.append(
       </p>
       <ol>
         <li>
-EasyUI elements created using JSX need to be put in the DOM somehow.
+EasyUI elements created using JSX need to be put in the DOM <em>somehow</em>.
         </li>
       </ol>
       <p>

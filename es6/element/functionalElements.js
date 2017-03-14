@@ -40,7 +40,7 @@ body.append(
         The <code className="inline">childElements</code> property of that argument gives access to child elements.
       </p>
       <p>
-        In EasyUI-JSX parlance:
+        In EasyUI-JSX parlance, in relation to React or Reaction:
       </p>
       <ul>
         <li>
