@@ -22,8 +22,8 @@ body.append(
 
 );`}</code>
       <p>
-        These pages showcase the use of <a href="https://facebook.github.io/react/docs/jsx-in-depth.html">JSX</a> with <a href="https://github.com/djalbat/EasyUI">EasyUI</a>.
-        It is easy to combine these two technologies in practice, as the example shows.
+        These pages give some examples of the use of <a href="https://facebook.github.io/react/docs/jsx-in-depth.html">JSX</a> with <a href="https://github.com/djalbat/EasyUI">EasyUI</a>.
+        It is easy to combine these two technologies in practice, as the first example shows.
       </p>
       <p>
         It also turned out not to be very difficult to implement this combination. JSX transpiles into a call to <code className="inline">React.createClass(...)</code>.

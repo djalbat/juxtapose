@@ -43,14 +43,14 @@ const example = () => {
   body.append(example);
 };`}</code>
       <p>
-        This is the preferred pattern for creating your own elements and is the way that JSX support has been added to the EasyUI elements themselves.
+        This is the preferred way of creating your own elements and is the way that JSX support has been added to the EasyUI elements themselves.
       </p>
       <p>
         You can extend any EasyUI class, including the <code className="inline">Element</code> class.
         Use the static <code className="inline">fromProperties()</code> factory method and from there invoke the <code className="inline">fromProperties()</code> method of the class you are extending.
       </p>
       <p>
-        Note that the <code className="inline">onClick()</code> method can be called, because the <code className="inline">Example</code> class inherits 
+        Note that not only can the <code className="inline">onClick()</code> method can be called, because the <code className="inline">Example</code> class inherits 
         from the <code className="inline">Button</code> class, but also that the <code className="inline">click()</code> method can now be called, because what is 
         returned is an instance of the <code className="inline">Example</code> class.      
       </p>
