@@ -4,7 +4,7 @@ JSX support for EasyUI elements.
 
 EasyUI-JSX allows you to leverage [JSX](https://facebook.github.io/react/docs/jsx-in-depth.html) in order to create EasyUI elements as an alternative to [React](https://facebook.github.io/react/) or [Reaction](https://github.com/djalbat/Reaction) components. Every EasyUI element now supports JSX, and its use with them is highly recommended.
 
-To get a better overview of EasyUI-JSX, please see online:
+For an overview of EasyUI-JSX, see the following:
  
  * [Online documentation](https://djalbat.github.io/EasyUI-JSX/)
 
