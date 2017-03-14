@@ -25,14 +25,14 @@ body.append(button);`}</code>
         And since the JSX results in an instance of an EasyUI class, in this case the <code className="inline">Button</code> class, its methods can be called against it directly.
       </p>
       <nav>
-        <span className="floatRight">
+        <span className="next">
           <a href="#theRenderMethod">Next: The <code className="inline">render()</code> method</a>
+        </span>
+        <span className="previous">
+          <a href="#functionalElements">Previous: Functional elements</a>
         </span>
         <span>
           <a href="#contents">Contents</a>
-        </span>
-        <span className="floatLeft">
-          <a href="#functionalElements">Previous: Functional elements</a>
         </span>
       </nav>
     </section>

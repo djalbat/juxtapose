@@ -51,14 +51,14 @@ body.append(
         </li>
       </ul>
       <nav>
-        <span className="floatRight">
+        <span className="next">
           <a href="#easyUIElements">Next: EasyUI elements</a>
+        </span>
+        <span className="previous">
+          <a href="#gettingStarted">Previous: Getting started</a>
         </span>
         <span>
           <a href="#contents">Contents</a>
-        </span>
-        <span className="floatLeft">
-          <a href="#gettingStarted">Previous: Getting started</a>
         </span>
       </nav>
     </section>

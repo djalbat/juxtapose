@@ -7,8 +7,8 @@ require('fragmented');
 const easyui = require('easyui'),
       { Element } = easyui;
 
-const Introduction = require('./element/introduction'),
-      Contents = require('./element/contents'),
+const Contents = require('./element/contents'),
+      Introduction = require('./element/introduction'),
       JSXIsGreat = require('./element/jsxIsGreat'),
       GettingStarted = require('./element/gettingStarted'),
       FunctionalElements = require('./element/functionalElements'),
@@ -19,6 +19,7 @@ const Introduction = require('./element/introduction'),
 const introduction = <Introduction />,
       fragmentToSectionMap = {
         introduction: introduction,
+        contents: <Contents />,
         jsxIsGreat: <JSXIsGreat />,
         gettingStarted: <GettingStarted />,
         functionalElements: <FunctionalElements />,

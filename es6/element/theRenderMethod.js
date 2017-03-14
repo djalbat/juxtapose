@@ -62,14 +62,14 @@ body.append(example);`}</code>
         The utility of this pattern really only lies in the fact that it allows JSX to be encapsulated together with some additional functionality that can be easily referenced.
       </p>
       <nav>
-        <span className="floatRight">
+        <span className="next">
           <a href="#extendingAnEasyUIClass">Next: Extending an EasyUI class</a>
+        </span>
+        <span className="previous">
+          <a href="#easyUIElements">Previous: EasyUI elements</a>
         </span>
         <span>
           <a href="#contents">Contents</a>
-        </span>
-        <span className="floatLeft">
-          <a href="#easyUIElements">Previous: EasyUI elements</a>
         </span>
       </nav>
     </section>

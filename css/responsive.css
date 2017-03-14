@@ -6,6 +6,11 @@
   code.block {
     display: block;
   }
+
+  span.next,
+  span.previous {
+    display: block;
+  }
 }
 
 @media (min-width: 40rem) and (max-width: 68rem) {
@@ -15,6 +20,14 @@
 
   code.block {
     display: block;
+  }
+
+  span.next {
+    float: right;
+  }
+
+  span.previous {
+    float: left;
   }
 }
 
@@ -27,5 +40,13 @@
     display: inline-block;
     float: right;
     margin-left: 1rem;
+  }
+
+  span.next {
+    float: right;
+  }
+
+  span.previous {
+    float: left;
   }
 }

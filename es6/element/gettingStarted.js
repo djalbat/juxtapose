@@ -39,14 +39,14 @@ The example on the right is equivalent to the use of the <code className="inline
         You at least need to do this kind of thing once, in order to get started so to speak.
       </p>
       <nav>
-        <span className="floatRight">
+        <span className="next">
           <a href="#functionalElements">Next: Functional elements</a>
+        </span>
+        <span className="previous">
+          <a href="#jsxIsGreat">Previous: JSX is great</a>
         </span>
         <span>
           <a href="#contents">Contents</a>
-        </span>
-        <span className="floatLeft">
-          <a href="#jsxIsGreat">Previous: JSX is great</a>
         </span>
       </nav>
     </section>

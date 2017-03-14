@@ -55,7 +55,7 @@ const example = () => {
         returned is an instance of the <code className="inline">Example</code> class.      
       </p>
       <nav>
-        <span className="floatLeft">
+        <span className="previous">
           <a href="#theRenderMethod">Previous: The <code className="inline">render()</code> method</a>
         </span>
         <span>

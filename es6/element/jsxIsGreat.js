@@ -36,14 +36,14 @@ const JSXIsGreat = () => {
         But the other way round happens to work really well.
       </p>
       <nav>
-        <span className="floatRight">
+        <span className="next">
           <a href="#gettingStarted">Next: Getting started</a>
+        </span>
+        <span className="previous">
+          <a href="#introduction">Previous: Introduction</a>
         </span>
         <span>
           <a href="#contents">Contents</a>
-        </span>
-        <span className="floatLeft">
-          <a href="#introduction">Previous: Introduction</a>
         </span>
       </nav>
     </section>
