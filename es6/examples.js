@@ -7,8 +7,9 @@ require('fragmented');
 const easyui = require('easyui'),
       { Element } = easyui;
 
-const JSXIsGreat = require('./element/jsxIsGreat'),
-      Introduction = require('./element/introduction'),
+const Introduction = require('./element/introduction'),
+      Contents = require('./element/contents'),
+      JSXIsGreat = require('./element/jsxIsGreat'),
       GettingStarted = require('./element/gettingStarted'),
       FunctionalElements = require('./element/functionalElements'),
       EasyUIElements = require('./element/easyUIElements'),

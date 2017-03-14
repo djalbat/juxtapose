@@ -58,6 +58,9 @@ const example = () => {
         <span className="floatLeft">
           <a href="#theRenderMethod">Previous: The <code className="inline">render()</code> method</a>
         </span>
+        <span>
+          <a href="#contents">Contents</a>
+        </span>
       </nav>
     </section>
 

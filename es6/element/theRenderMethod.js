@@ -65,6 +65,9 @@ body.append(example);`}</code>
         <span className="floatRight">
           <a href="#extendingAnEasyUIClass">Next: Extending an EasyUI class</a>
         </span>
+        <span>
+          <a href="#contents">Contents</a>
+        </span>
         <span className="floatLeft">
           <a href="#easyUIElements">Previous: EasyUI elements</a>
         </span>

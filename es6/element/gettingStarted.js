@@ -42,6 +42,9 @@ The example on the right is equivalent to the use of the <code className="inline
         <span className="floatRight">
           <a href="#functionalElements">Next: Functional elements</a>
         </span>
+        <span>
+          <a href="#contents">Contents</a>
+        </span>
         <span className="floatLeft">
           <a href="#jsxIsGreat">Previous: JSX is great</a>
         </span>

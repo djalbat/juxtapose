@@ -39,6 +39,9 @@ const JSXIsGreat = () => {
         <span className="floatRight">
           <a href="#gettingStarted">Next: Getting started</a>
         </span>
+        <span>
+          <a href="#contents">Contents</a>
+        </span>
         <span className="floatLeft">
           <a href="#introduction">Previous: Introduction</a>
         </span>

@@ -28,6 +28,9 @@ body.append(button);`}</code>
         <span className="floatRight">
           <a href="#theRenderMethod">Next: The <code className="inline">render()</code> method</a>
         </span>
+        <span>
+          <a href="#contents">Contents</a>
+        </span>
         <span className="floatLeft">
           <a href="#functionalElements">Previous: Functional elements</a>
         </span>

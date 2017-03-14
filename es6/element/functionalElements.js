@@ -54,6 +54,9 @@ body.append(
         <span className="floatRight">
           <a href="#easyUIElements">Next: EasyUI elements</a>
         </span>
+        <span>
+          <a href="#contents">Contents</a>
+        </span>
         <span className="floatLeft">
           <a href="#gettingStarted">Previous: Getting started</a>
         </span>
