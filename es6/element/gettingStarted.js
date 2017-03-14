@@ -23,7 +23,7 @@ body.append(
 );`}</code>
       <p>
         It is not always easy to know where to start and there are no instructions here for getting the first example working.
-        However, there are instructions in the readme file in the root of the EasyUI-JSX repository on <a href="https://github.com/djalbat/EasyUI-JSX">GitHub</a> on how to get this documentation running locally.
+        However, there are instructions in the readme file on running this documentation locally.
         From there is should only be a short step to getting the examples themselves working.
         Good luck!
       </p>
