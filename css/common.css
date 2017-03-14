@@ -1,0 +1,48 @@
+html {
+  font-family: serif;
+  font-size: 16px;
+}
+
+h1 {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid;
+}
+
+code {
+  white-space: pre;
+  font-family: 'Menlo', 'Lucida Console', 'Bitstream Vera Sans Mono', monospace;
+  font-size: 0.875rem;
+  border: 1px solid;
+  display: inline-block;
+  padding: 1rem;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+}
+
+code.inline {
+  display: inline;
+  padding: 0.25rem;
+  margin: 0;
+}
+
+p,
+li {
+  font-size: 1.25rem;
+}
+
+li {
+  margin-bottom: 1rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+footer p {
+  font-size: 1rem;
+  text-align: right;
+  border-top: 1px solid;
+  margin-top: 1rem;
+  padding-top: 1rem;
+}
+
