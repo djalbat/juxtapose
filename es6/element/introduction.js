@@ -6,6 +6,7 @@ const Introduction = () => {
   return (
 
     <section>
+      <h2>Introduction</h2>
       <code className="block">{`require('easyui-jsx');
 
 const easyui = require('easyui'),
@@ -29,7 +30,7 @@ body.append(
         So all that needed to be done was to <a href="https://github.com/djalbat/EasyUI-JSX/blob/master/es6/react.js">implement that</a>,
         and then to <a href="https://github.com/djalbat/EasyUI/blob/master/es6/mixin/jsx.js">augment</a> EasyUI's base <code className="inline">Element</code> class in order to enable elements to apply the properties they were passed.
       </p>
-      <nav className="clearBoth">
+      <nav>
         <span className="floatRight">
           <a href="#jsxIsGreat">Next: JSX is great</a>
         </span>

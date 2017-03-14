@@ -5,9 +5,7 @@ code { background-color: #f0f0ff; }
           a { color: #a04a2c; }
 code { border-color: #a04a2c; }
 
-    h1 { border-color: #052631; }
+h1,
 footer { border-color: #052631; }
 
-     p { color: #322020; }
-    h1 { color: #322020; }
-strong { color: #322020; }
+body { color: #322020; }

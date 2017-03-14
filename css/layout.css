@@ -6,6 +6,10 @@ div.content {
   flex-direction: column;
 }
 
+div.content section {
+  flex: 1;
+}
+
 header {
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -15,11 +19,8 @@ footer {
   margin-bottom: 1rem;
 }
 
-div.content section {
-  flex: 1;
-}
-
 nav {
+  clear: both;
   height: 2.5rem;
 }
 
@@ -29,12 +30,4 @@ nav {
 
 .floatRight {
   float: right;
-}
-
-.clearBoth {
-  clear: both;
-}
-
-p:first-of-type {
-  margin-top: 0;
 }

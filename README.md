@@ -17,6 +17,12 @@ Actually they are, here:
 
 - [Occam Proof Assistant](http://djalbat.com/occam)
 
+## Running the examples web page
+ 
+This can be done by cloning the repository and then simply opening the `examples.html` page found in the repository's root. See the sections immediately below instructions on how to clone the repository with Git if you are not familiar with this process. It is also useful to be able to compile the examples, again see the relevant instructions below. 
+
+If you want to get the examples in the examples page working, a quick and dirty way is to amend the `examples.js` file in the `es6` folder, then simply copy and paste the example code into the body of the `examples()` and rebuild.  
+    
 ## Installation
 
 You can install EasyUI-JSX with [npm](https://www.npmjs.com/):
@@ -120,7 +126,9 @@ const Div = (properties) => {
 
   return (
 
-    <div className={className}>{childElements}</div>
+    <div className={className}>
+    {childElements}
+    </div>
 
   );
 };
@@ -154,7 +162,7 @@ button.onClick(function() {
 body.append(button);
 ```
 
-### Custom elements using a `render()` method
+### Custom elements using the `render()` method
 
 This is the most straightforward way to create your own elements, and is more or less akin to the use of a `render()` method in React and Reaction. The pattern consists of a class with a `render()` method and an optional constructor to assign its `properties` argument to the instance. The instance methods are then available from within the `render()` method by way of the `this` keyword:  
  
