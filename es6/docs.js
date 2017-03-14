@@ -1,6 +1,6 @@
 'use strict';
 
-require('../index.js'); /// easyui-jsx
+require('./easyui-jsx');
 
 require('fragmented');
 
@@ -11,6 +11,7 @@ const Contents = require('./element/contents'),
       Introduction = require('./element/introduction'),
       JSXIsGreat = require('./element/jsxIsGreat'),
       GettingStarted = require('./element/gettingStarted'),
+      AppendingToTheDOM = require('./element/appendingToTheDOM'),
       FunctionalElements = require('./element/functionalElements'),
       EasyUIElements = require('./element/easyUIElements'),
       TheRenderMethod = require('./element/theRenderMethod'),
@@ -22,21 +23,12 @@ const introduction = <Introduction />,
         contents: <Contents />,
         jsxIsGreat: <JSXIsGreat />,
         gettingStarted: <GettingStarted />,
+        appendingToTheDOM: <AppendingToTheDOM />,
         functionalElements: <FunctionalElements />,
         easyUIElements: <EasyUIElements />,
         theRenderMethod: <TheRenderMethod />,
         extendingAnEasyUIClass: <ExtendingAnEasyUIClass />
       };
-
-const examples = () => {
-  insertSections();
-
-  fragment.onChange(showSection);
-
-  showSection();
-};
-
-module.exports = examples;
 
 const insertSections = () => {
   const headerDOMElement = document.querySelector('header'),
@@ -66,3 +58,9 @@ const forEachSection = (callback) => {
     callback(section);
   });
 };
+
+insertSections();
+
+fragment.onChange(showSection);
+
+showSection();

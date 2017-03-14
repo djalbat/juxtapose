@@ -1,3 +1,3 @@
 'use strict';
 
-require('./lib/react');
+require('./lib/easyui-jsx');

@@ -3,9 +3,40 @@ html {
   font-size: 16px;
 }
 
-h1 {
-  padding-bottom: 1rem;
-  border-bottom: 1px solid;
+nav {
+  text-align: center;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}
+
+p,
+li,
+span {
+  font-size: 1.25rem;
+}
+
+li {
+  margin-bottom: 1rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+footer {
+  border-top-width: 1px;
+  border-top-style: solid;
+  margin-top: 1rem;
+  padding-top: 1rem;
+}
+
+footer p {
+  font-size: 1rem;
+  text-align: right;
 }
 
 code {
@@ -25,26 +56,3 @@ code.inline {
   padding: 0.25rem;
   font-size: 0.7em;
 }
-
-p,
-li,
-span {
-  font-size: 1.25rem;
-}
-
-li {
-  margin-bottom: 1rem;
-}
-
-a {
-  text-decoration: none;
-}
-
-footer p {
-  font-size: 1rem;
-  text-align: right;
-  border-top: 1px solid;
-  margin-top: 1rem;
-  padding-top: 1rem;
-}
-

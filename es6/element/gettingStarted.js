@@ -6,6 +6,17 @@ const GettingStarted = () => {
   return (
 
     <section>
+      <nav>
+        <span className="next">
+          <a href="#appendingToTheDOM">Next: Appending to the DOM</a>
+        </span>
+        <span className="previous">
+          <a href="#jsxIsGreat">Previous: JSX is great</a>
+        </span>
+        <span>
+          <a href="#contents">Contents</a>
+        </span>
+      </nav>
       <h2>Getting started</h2>
       <code className="block">{`require('easyui-jsx');
 
@@ -22,34 +33,22 @@ body.append(
 
 );`}</code>
       <p>
-        It is not always easy to know where to start and there are no instructions here for getting the first example working.
-        However, there are instructions in the readme file on running this documentation locally.
-        From there is should only be a short step to getting the examples themselves working.
-        Good luck!
-      </p>
-      <p>
-        There is one point that needs making at this stage:
+Instructions for building this example can be found in the readme file.
+Once it is running, this example can be replaced with any other from this documentation.
+There are two things that need bearing in mind when doing so:
       </p>
       <ol>
         <li>
-EasyUI elements created using JSX need to be put in the DOM <em>somehow</em>.
+The <code className="inline">'use strict'</code> directive is missing from the examples here and should be left in place.
+        </li>
+        <li>
+The <code className="inline">require('easyui-jsx')</code> directives here require the actual npm module.
+However, this is not available from within the project itself and so you must replace it with a local <code className="inline">require('./easyui-jsx')</code> directive.
         </li>
       </ol>
       <p>
-The example on the right is equivalent to the use of the <code className="inline">ReactDOM.render(...)</code> method in React or Reaction.
-        You at least need to do this kind of thing once, in order to get started so to speak.
+You are of course free to build the examples entirely outside of this project, the instructions given here and in the readme file are just probably the quickest way to get started for neophytes.
       </p>
-      <nav>
-        <span className="next">
-          <a href="#functionalElements">Next: Functional elements</a>
-        </span>
-        <span className="previous">
-          <a href="#jsxIsGreat">Previous: JSX is great</a>
-        </span>
-        <span>
-          <a href="#contents">Contents</a>
-        </span>
-      </nav>
     </section>
       
   );  

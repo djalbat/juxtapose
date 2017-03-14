@@ -18,6 +18,9 @@ const Introduction = () => {
           <a href="#gettingStarted">Getting started</a>
         </li>
         <li>
+          <a href="#appendingToTheDOM">Appending to the DOM</a>
+        </li>
+        <li>
           <a href="#functionalElements">Functional elements</a>
         </li>
         <li>

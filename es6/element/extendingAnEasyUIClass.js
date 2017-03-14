@@ -6,6 +6,17 @@ const TheRenderMethod = () => {
   return (
 
     <section>
+      <nav>
+        <span className="next">
+          Next
+        </span>
+        <span className="previous">
+          <a href="#theRenderMethod">Previous: The <code className="inline">render()</code> method</a>
+        </span>
+        <span>
+          <a href="#contents">Contents</a>
+        </span>
+      </nav>
       <h2>Extending an EasyUI class</h2>
       <code className="block">{`require('easyui-jsx');
 
@@ -54,14 +65,6 @@ const example = () => {
         from the <code className="inline">Button</code> class, but also that the <code className="inline">click()</code> method can now be called, because what is 
         returned is an instance of the <code className="inline">Example</code> class.      
       </p>
-      <nav>
-        <span className="previous">
-          <a href="#theRenderMethod">Previous: The <code className="inline">render()</code> method</a>
-        </span>
-        <span>
-          <a href="#contents">Contents</a>
-        </span>
-      </nav>
     </section>
 
   );

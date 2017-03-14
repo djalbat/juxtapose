@@ -6,6 +6,17 @@ const JSXIsGreat = () => {
   return (
 
     <section>
+      <nav>
+        <span className="next">
+          <a href="#gettingStarted">Next: Getting started</a>
+        </span>
+        <span className="previous">
+          <a href="#introduction">Previous: Introduction</a>
+        </span>
+        <span>
+          <a href="#contents">Contents</a>
+        </span>
+      </nav>
       <h2>JSX is great</h2>
       <p>
         It is because it allows you to do three crucial things:
@@ -35,17 +46,6 @@ const JSXIsGreat = () => {
         For several reasons this can be nightmarish.
         But the other way round happens to work really well.
       </p>
-      <nav>
-        <span className="next">
-          <a href="#gettingStarted">Next: Getting started</a>
-        </span>
-        <span className="previous">
-          <a href="#introduction">Previous: Introduction</a>
-        </span>
-        <span>
-          <a href="#contents">Contents</a>
-        </span>
-      </nav>
     </section>
       
   );  

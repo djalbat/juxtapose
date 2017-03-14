@@ -21,10 +21,6 @@ Actually they are, here:
 
 - [Occam Proof Assistant](http://djalbat.com/occam)
 
-## Running the documentation locally
- 
-This can be done by cloning the repository and then simply opening the `index.html` page in the `docs/` directory. See the sections immediately below for instructions on cloning with Git if you are not familiar with the process. It is also useful to be able to compile the documentation, again see the relevant instructions below. 
-    
 ## Installation
 
 You can install EasyUI-JSX with [npm](https://www.npmjs.com/):
@@ -47,7 +43,7 @@ Only building with [Node.js](http://nodejs.org) is supported, the usage is as fo
 require('easyui-jsx');
 ```
 
-Once this is done, JSX can be used directly. All the examples can be found in the [documentation](https://djalbat.github.io/EasyUI-JSX/).
+Once this is done, JSX can be used directly.
 
 ## Compiling from source
 
@@ -55,6 +51,10 @@ Automation is done with [npm scripts](https://docs.npmjs.com/misc/scripts), have
 
     npm run build-debug
     npm run watch-debug
+    
+As well as builds the EasyUI-JSX library, this builds a simple example, specifically the first example given in the [documentation](https://djalbat.github.io/EasyUI-JSX/). Be careful when copying example code from the documentation and attempting to build it. You must replace the `require('easyui-jxs')` directive with a local `require('./easyui-jxs')` directive, since the EasyUI-JSX npm module is not available within the project itself. Also, you should leave the `use strict` directive in place, since this is not found in the example code snippets.
+ 
+ The `example.js` file to use can be found in the `es6` directory and this is the one that should be changed. To view the compiled example, open the `index.html` file which references it. This can be found in the `example/` directory.
     
 ## Contact
 

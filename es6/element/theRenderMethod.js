@@ -6,6 +6,17 @@ const TheRenderMethod = () => {
   return (
 
     <section>
+      <nav>
+        <span className="next">
+          <a href="#extendingAnEasyUIClass">Next: Extending an EasyUI class</a>
+        </span>
+        <span className="previous">
+          <a href="#easyUIElements">Previous: EasyUI elements</a>
+        </span>
+        <span>
+          <a href="#contents">Contents</a>
+        </span>
+      </nav>
       <h2>The <code className="inline">render()</code> method</h2>
       <code className="block">{`require('easyui-jsx');
 
@@ -61,17 +72,6 @@ body.append(example);`}</code>
         It will be an instance of whatever class is referenced by the JSX returned by the render() method, or an instance of the <code className="inline">Element</code> class if the tag name is lower case.
         The utility of this pattern really only lies in the fact that it allows JSX to be encapsulated together with some additional functionality that can be easily referenced.
       </p>
-      <nav>
-        <span className="next">
-          <a href="#extendingAnEasyUIClass">Next: Extending an EasyUI class</a>
-        </span>
-        <span className="previous">
-          <a href="#easyUIElements">Previous: EasyUI elements</a>
-        </span>
-        <span>
-          <a href="#contents">Contents</a>
-        </span>
-      </nav>
     </section>
       
   );  

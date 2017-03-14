@@ -6,6 +6,17 @@ const EasyUIElements = () => {
   return (
 
     <section>
+      <nav>
+        <span className="next">
+          <a href="#theRenderMethod">Next: The <code className="inline">render()</code> method</a>
+        </span>
+        <span className="previous">
+          <a href="#functionalElements">Previous: Functional elements</a>
+        </span>
+        <span>
+          <a href="#contents">Contents</a>
+        </span>
+      </nav>
       <h2>EasyUI elements</h2>
       <code className="block">{`require('easyui-jsx');
 
@@ -24,17 +35,6 @@ body.append(button);`}</code>
         Creating EasyUI elements from JSX involves nothing more than employing the relevant class.
         And since the JSX results in an instance of an EasyUI class, in this case the <code className="inline">Button</code> class, its methods can be called against it directly.
       </p>
-      <nav>
-        <span className="next">
-          <a href="#theRenderMethod">Next: The <code className="inline">render()</code> method</a>
-        </span>
-        <span className="previous">
-          <a href="#functionalElements">Previous: Functional elements</a>
-        </span>
-        <span>
-          <a href="#contents">Contents</a>
-        </span>
-      </nav>
     </section>
       
   );  

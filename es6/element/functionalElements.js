@@ -6,6 +6,17 @@ const FunctionalElements = () => {
   return (
 
     <section>
+      <nav>
+        <span className="next">
+          <a href="#easyUIElements">Next: EasyUI elements</a>
+        </span>
+        <span className="previous">
+          <a href="#appendingToTheDOM">Previous: Appending to the DOM</a>
+        </span>
+        <span>
+          <a href="#contents">Contents</a>
+        </span>
+      </nav>
       <h2>Functional elements</h2>
       <code className="block">{`require('easyui-jsx');
 
@@ -50,17 +61,6 @@ body.append(
           <code className="inline">children</code> becomes <code className="inline">childElements</code>
         </li>
       </ul>
-      <nav>
-        <span className="next">
-          <a href="#easyUIElements">Next: EasyUI elements</a>
-        </span>
-        <span className="previous">
-          <a href="#gettingStarted">Previous: Getting started</a>
-        </span>
-        <span>
-          <a href="#contents">Contents</a>
-        </span>
-      </nav>
     </section>
       
   );  
