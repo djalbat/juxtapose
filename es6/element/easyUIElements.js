@@ -26,7 +26,7 @@ body.append(button);`}</code>
       </p>
       <nav>
         <span className="floatRight">
-          <a href="#theRenderMethod">Next: The render() method</a>
+          <a href="#theRenderMethod">Next: The <code className="inline">render()</code> method</a>
         </span>
         <span className="floatLeft">
           <a href="#functionalElements">Previous: Functional elements</a>

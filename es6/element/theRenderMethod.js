@@ -10,23 +10,60 @@ const TheRenderMethod = () => {
       <code className="block">{`require('easyui-jsx');
 
 const easyui = require('easyui'),
-      { Body, Button } = easyui;
+      { Body } = easyui;
+
+class Example {
+  constructor(properties) {
+    this.properties = properties;
+  }
+
+  click(message) {
+    alert(message)
+  }
+
+  render() {
+    const { message } = this.properties;
+
+    return (
+
+      <button onClick={() => {
+
+                        this.click(message);
+
+                      }}
+      >
+        Click me...
+      </button>
+
+    );
+  }
+}
 
 const body = new Body(),
-      button = <Button>Click me...</Button>;
+      example =
 
-button.onClick(function() {
-  alert('Clicked!');
-});
+        <Example message="Clicked!">
+        Click me...
+        </Example>
 
-body.append(button);`}</code>
+      ;
+
+body.append(example);`}</code>
       <p>
-        Creating EasyUI elements from JSX involves nothing more than employing the relevant class.
-        And since the JSX results in an instance of an EasyUI class, in this case the <code className="inline">Button</code> class, its methods can be called against it directly.
+        This is the most straightforward way to create your own elements, and is more or less akin to the use of the <code className="inline">render()</code> method in React and Reaction.
+      </p>
+      <p>
+        The pattern consists of a class with a <code className="inline">render()</code> method and an optional constructor to assign its <code className="inline">properties</code> argument to the instance.
+        The instance methods are then available from within the <code className="inline">render()</code> method by way of the <code className="inline">this</code> keyword.
+      </p>
+      <p>
+        It is important to realise with this pattern that what is returned by the <code className="inline">render()</code> method will <em>not</em> be an instance of the class you have just defined.
+        It will be an instance of whatever class is referenced by the JSX returned by the render() method, or an instance of the <code className="inline">Element</code> class if the tag name is lower case.
+        The utility of this pattern really only lies in the fact that it allows JSX to be encapsulated together with some additional functionality that can be easily referenced.
       </p>
       <nav>
         <span className="floatRight">
-          <a href="#">Next: </a>
+          <a href="#extendingAnEasyUIClass">Next: Extending an EasyUI class</a>
         </span>
         <span className="floatLeft">
           <a href="#easyUIElements">Previous: EasyUI elements</a>

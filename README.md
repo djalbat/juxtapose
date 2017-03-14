@@ -137,7 +137,9 @@ const body = new Body();
 
 body.append(
 
-  <Div className="example">An easy example.</Div>
+  <Div className="example">
+  An easy example.
+  </Div>
 
 );
 ```
@@ -162,13 +164,13 @@ button.onClick(function() {
 body.append(button);
 ```
 
-### Custom elements using the `render()` method
+### Using the `render()` method
 
-This is the most straightforward way to create your own elements, and is more or less akin to the use of a `render()` method in React and Reaction. The pattern consists of a class with a `render()` method and an optional constructor to assign its `properties` argument to the instance. The instance methods are then available from within the `render()` method by way of the `this` keyword:  
+This is the most straightforward way to create your own elements, and is more or less akin to the use of the `render()` method in React and Reaction. The pattern consists of a class with a `render()` method and an optional constructor to assign its `properties` argument to the instance. The instance methods are then available from within the `render()` method by way of the `this` keyword:  
  
 ```js
 const easyui = require('easyui'),
-      { Body, Button } = easyui;
+      { Body } = easyui;
       
 class Example {
   constructor(properties) {
@@ -184,21 +186,27 @@ class Example {
 
     return (
 
-      <Button onClick={() => {
+      <button onClick={() => {
 
                         this.click(message);
                         
                       }}
       >
         Click me...
-      </Button>
+      </button>
 
     );
   }
 }
 
 const body = new Body(),
-      example = <Example message="Clicked!">Click me...</Example>;
+      example = 
+      
+        <Example message="Clicked!">
+        Click me...
+        </Example>
+        
+      ;
 
 body.append(example);
 
@@ -209,11 +217,11 @@ example.onClick(...); // ...this would work...
 example.click(); // ...but this will not.
 ```
 
-It is important to realise with this pattern that what is returned by the `render()` method will *not* be an instance of the class you have just defined. It will be an instance of whatever class is referenced by the JSX returned by the `render()` method, or an instance of the `Element` class if the tag name is lower case. The utility of this pattern really only lies in the fact that it allows JSX to be encapsulated, together with some additional functionality that can be easily referenced. 
+It is important to realise with this pattern that what is returned by the `render()` method will *not* be an instance of the class you have just defined. It will be an instance of whatever class is referenced by the JSX returned by the `render()` method, or an instance of the `Element` class if the tag name is lower case. The utility of this pattern really only lies in the fact that it allows JSX to be encapsulated together with some additional functionality that can be easily referenced. 
 
-### Custom elements that extend an existing EasyUI class
+### Extending an EasyUI class
 
-This is the preferred pattern, and is exactly what is used to add JSX support to the EasyUI projects themselves. You can extend any EasyUI class, including the `Element` class. Use the static `fromProperties()` factory method and from there invoke the `fromProperties()` method of the class you are extending:
+This is the preferred pattern and is the way that JSX support has been added to the EasyUI elements themselves. You can extend any EasyUI class, including the `Element` class. Use the static `fromProperties()` factory method and from there invoke the `fromProperties()` method of the class you are extending:
   
 ```js
 const easyui = require('easyui'),
@@ -235,7 +243,13 @@ Example.tagName = 'button'; /// This is by way of example and is not needed.
 
 const example = () => {
   const body = new Body(),
-        example = <Example message="Clicked!">Click me...</Example>;
+        example = 
+        
+          <Example message="Clicked!">
+          Click me...
+          </Example>
+          
+        ;
 
   example.onClick(function() {
     example.click();

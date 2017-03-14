@@ -11,18 +11,19 @@ h1 {
 code {
   white-space: pre;
   font-family: 'Menlo', 'Lucida Console', 'Bitstream Vera Sans Mono', monospace;
-  font-size: 0.875rem;
   border: 1px solid;
 }
 
 code.block {
   padding: 1rem;
   margin-bottom: 1rem;
+  font-size: 0.875rem;
 }
 
 code.inline {
   display: inline;
   padding: 0.25rem;
+  font-size: 0.7em;
 }
 
 p,

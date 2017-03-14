@@ -12,7 +12,8 @@ const JSXIsGreat = require('./element/jsxIsGreat'),
       GettingStarted = require('./element/gettingStarted'),
       FunctionalElements = require('./element/functionalElements'),
       EasyUIElements = require('./element/easyUIElements'),
-      TheRenderMethod = require('./element/theRenderMethod');
+      TheRenderMethod = require('./element/theRenderMethod'),
+      ExtendingAnEasyUIClass = require('./element/extendingAnEasyUIClass');
 
 const introduction = <Introduction />,
       fragmentToSectionMap = {
@@ -21,7 +22,8 @@ const introduction = <Introduction />,
         gettingStarted: <GettingStarted />,
         functionalElements: <FunctionalElements />,
         easyUIElements: <EasyUIElements />,
-        theRenderMethod: <TheRenderMethod />
+        theRenderMethod: <TheRenderMethod />,
+        extendingAnEasyUIClass: <ExtendingAnEasyUIClass />
       };
 
 const examples = () => {
