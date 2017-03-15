@@ -1,6 +1,6 @@
 'use strict';
 
-require('../../index.js'); /// easyui-jsx
+require('../easyui-jsx');
 
 const Introduction = () => {
   return (
@@ -31,6 +31,12 @@ const Introduction = () => {
         </li>
         <li>
           <a href="#extendingAnEasyUIClass">Extending an EasyUI class</a>
+        </li>
+        <li>
+          <a href="#aGoodExampleThisDocumentation">A good example, this documentation</a>
+        </li>
+        <li>
+          <a href="#theElementClass">The <code className="inline">Element</code> class</a>
         </li>
       </ul>
     </section>

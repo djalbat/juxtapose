@@ -1,6 +1,6 @@
 'use strict';
 
-require('../../index.js'); /// easyui-jsx
+require('../easyui-jsx');
 
 const TheRenderMethod = () => {
   return (
@@ -13,7 +13,7 @@ const TheRenderMethod = () => {
         <span className="previous">
           <a href="#easyUIElements">Previous: EasyUI elements</a>
         </span>
-        <span>
+        <span className="contents">
           <a href="#contents">Contents</a>
         </span>
       </nav>
@@ -68,9 +68,9 @@ body.append(example);`}</code>
         The instance methods are then available from within the <code className="inline">render()</code> method by way of the <code className="inline">this</code> keyword.
       </p>
       <p>
-        It is important to realise with this pattern that what is returned by the <code className="inline">render()</code> method will <em>not</em> be an instance of the class you have just defined.
-        It will be an instance of whatever class is referenced by the JSX returned by the render() method, or an instance of the <code className="inline">Element</code> class if the tag name is lower case.
-        The utility of this pattern really only lies in the fact that it allows JSX to be encapsulated together with some additional functionality that can be easily referenced.
+        It is important to realise that what is returned will <em>not</em> be an instance of the class just defined.
+        It will be an instance of whatever class is referenced by the JSX that is returned by the <code className="inline">render()</code> method, or an instance of the <code className="inline">Element</code> class if the tag name is lower case.
+        The utility of this pattern only lies in the fact that it allows JSX to be encapsulated together with some additional functionality that can be easily referenced.
       </p>
     </section>
       

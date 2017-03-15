@@ -1,6 +1,6 @@
 'use strict';
 
-require('../../index.js'); /// easyui-jsx
+require('../easyui-jsx');
 
 const FunctionalElements = () => {
   return (
@@ -13,7 +13,7 @@ const FunctionalElements = () => {
         <span className="previous">
           <a href="#appendingToTheDOM">Previous: Appending to the DOM</a>
         </span>
-        <span>
+        <span className="contents">
           <a href="#contents">Contents</a>
         </span>
       </nav>

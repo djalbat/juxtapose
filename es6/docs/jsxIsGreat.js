@@ -1,6 +1,6 @@
 'use strict';
 
-require('../../index.js'); /// easyui-jsx
+require('../easyui-jsx');
 
 const JSXIsGreat = () => {
   return (
@@ -13,7 +13,7 @@ const JSXIsGreat = () => {
         <span className="previous">
           <a href="#introduction">Previous: Introduction</a>
         </span>
-        <span>
+        <span className="contents">
           <a href="#contents">Contents</a>
         </span>
       </nav>
@@ -42,7 +42,7 @@ const JSXIsGreat = () => {
       </ol>
       <p>
         Also JSX just embeds well into JavaScript.
-        Compare this with so called technologies such as JSP, which try to embed imperative languages in declarative ones.
+        Compare this with older technologies such as JSP, which try to embed imperative languages in declarative ones.
         For several reasons this can be nightmarish.
         But the other way round happens to work really well.
       </p>

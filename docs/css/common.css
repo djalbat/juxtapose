@@ -4,13 +4,16 @@ html {
 }
 
 nav {
-  text-align: center;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   border-top-width: 1px;
   border-top-style: solid;
   border-bottom-width: 1px;
   border-bottom-style: solid;
+}
+
+nav span {
+  text-align: center;
 }
 
 p,
@@ -23,6 +26,12 @@ li {
   margin-bottom: 1rem;
 }
 
+p:last-child,
+ul:last-child,
+ol:last-child {
+  margin-bottom: 1rem;
+}
+
 a {
   text-decoration: none;
 }
@@ -30,7 +39,6 @@ a {
 footer {
   border-top-width: 1px;
   border-top-style: solid;
-  margin-top: 1rem;
   padding-top: 1rem;
 }
 

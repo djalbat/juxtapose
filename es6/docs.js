@@ -1,21 +1,23 @@
 'use strict';
 
-require('./easyui-jsx');
-
 require('fragmented');
+
+require('./easyui-jsx');
 
 const easyui = require('easyui'),
       { Element } = easyui;
 
-const Contents = require('./element/contents'),
-      Introduction = require('./element/introduction'),
-      JSXIsGreat = require('./element/jsxIsGreat'),
-      GettingStarted = require('./element/gettingStarted'),
-      AppendingToTheDOM = require('./element/appendingToTheDOM'),
-      FunctionalElements = require('./element/functionalElements'),
-      EasyUIElements = require('./element/easyUIElements'),
-      TheRenderMethod = require('./element/theRenderMethod'),
-      ExtendingAnEasyUIClass = require('./element/extendingAnEasyUIClass');
+const Contents = require('./docs/contents'),
+      Introduction = require('./docs/introduction'),
+      JSXIsGreat = require('./docs/jsxIsGreat'),
+      GettingStarted = require('./docs/gettingStarted'),
+      AppendingToTheDOM = require('./docs/appendingToTheDOM'),
+      FunctionalElements = require('./docs/functionalElements'),
+      EasyUIElements = require('./docs/easyUIElements'),
+      TheRenderMethod = require('./docs/theRenderMethod'),
+      ExtendingAnEasyUIClass = require('./docs/extendingAnEasyUIClass'),
+      AGoodExampleThisDocumentation = require('./docs/aGoodExampleThisDocumentation'),
+      TheElementClass = require('./docs/theElementClass');
 
 const introduction = <Introduction />,
       fragmentToSectionMap = {
@@ -27,7 +29,9 @@ const introduction = <Introduction />,
         functionalElements: <FunctionalElements />,
         easyUIElements: <EasyUIElements />,
         theRenderMethod: <TheRenderMethod />,
-        extendingAnEasyUIClass: <ExtendingAnEasyUIClass />
+        extendingAnEasyUIClass: <ExtendingAnEasyUIClass />,
+        aGoodExampleThisDocumentation: <AGoodExampleThisDocumentation />,
+        theElementClass: <TheElementClass />
       };
 
 const insertSections = () => {
@@ -39,12 +43,13 @@ const insertSections = () => {
   });
 };
 
-const showSection = () => {
+const revealSection = () => {
   forEachSection((section) => {
     section.hide();
   });
 
-  const section = fragmentToSectionMap[fragment] || introduction;
+  const section = fragmentToSectionMap[fragment] 
+                    || introduction;
 
   section.show();
 };
@@ -61,6 +66,6 @@ const forEachSection = (callback) => {
 
 insertSections();
 
-fragment.onChange(showSection);
+fragment.onChange(revealSection);
 
-showSection();
+revealSection();

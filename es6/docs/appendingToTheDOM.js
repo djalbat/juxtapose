@@ -1,6 +1,6 @@
 'use strict';
 
-require('../../index.js'); /// easyui-jsx
+require('../easyui-jsx');
 
 const GettingStarted = () => {
   return (
@@ -13,7 +13,7 @@ const GettingStarted = () => {
         <span className="previous">
           <a href="#jsxIsGreat">Previous: JSX is great</a>
         </span>
-        <span>
+        <span className="contents">
           <a href="#contents">Contents</a>
         </span>
       </nav>

@@ -1,6 +1,6 @@
 'use strict';
 
-require('../../index.js'); /// easyui-jsx
+require('../easyui-jsx');
 
 const TheRenderMethod = () => {
   return (
@@ -8,12 +8,12 @@ const TheRenderMethod = () => {
     <section>
       <nav>
         <span className="next">
-          Next
+          <a href="#aGoodExampleThisDocumentation">Next: A good example, this documentation</a>
         </span>
         <span className="previous">
           <a href="#theRenderMethod">Previous: The <code className="inline">render()</code> method</a>
         </span>
-        <span>
+        <span className="contents">
           <a href="#contents">Contents</a>
         </span>
       </nav>
