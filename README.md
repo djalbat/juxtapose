@@ -1,14 +1,14 @@
 # EasyUI-JSX
 
-JSX support for EasyUI elements.
+JSX support for EasyUI.
 
-EasyUI-JSX allows you to leverage [JSX](https://facebook.github.io/react/docs/jsx-in-depth.html) in order to create EasyUI elements as an alternative to [React](https://facebook.github.io/react/) or [Reaction](https://github.com/djalbat/Reaction) components. Every EasyUI element now supports JSX, and its use with them is highly recommended.
+EasyUI-JSX allows you to leverage [JSX](https://facebook.github.io/react/docs/jsx-in-depth.html) in order to create EasyUI elements as an alternative to [React](https://facebook.github.io/react/) or [Reaction](https://github.com/djalbat/Reaction) components. Every EasyUI element now supports JSX, and their use with JSX is highly recommended.
 
 For an overview of EasyUI-JSX, see here:
  
  * [Online documentation](https://djalbat.github.io/EasyUI-JSX/)
 
-## Related projects
+### Related projects
 
 - [EasyUI](https://github.com/djalbat/EasyUI) A V-framework.
 - [EasyUI-Layout](https://github.com/djalbat/EasyUI-Layout) Layout elements that work with CSS flexbox.
