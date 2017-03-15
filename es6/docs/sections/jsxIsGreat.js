@@ -1,21 +1,19 @@
 'use strict';
 
-require('../easyui-jsx');
+require('../../easyui-jsx');
+
+const Next = require('../next'),
+      Previous = require('../previous'),
+      Contents = require('../contents');
 
 const JSXIsGreat = () => {
   return (
 
     <section>
       <nav>
-        <span className="next">
-          <a href="#gettingStarted">Next: Getting started</a>
-        </span>
-        <span className="previous">
-          <a href="#introduction">Previous: Introduction</a>
-        </span>
-        <span className="contents">
-          <a href="#contents">Contents</a>
-        </span>
+        <Next href="#gettingStarted">Getting started</Next>
+        <Previous href="#introduction">Introduction</Previous>
+        <Contents />
       </nav>
       <h2>JSX is great</h2>
       <p>

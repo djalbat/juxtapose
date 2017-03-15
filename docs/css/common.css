@@ -57,7 +57,7 @@ code.block {
   padding: 1rem;
   margin-bottom: 1rem;
   font-size: 0.875rem;
-  overflow-x: scroll;
+  overflow-x: auto;
 }
 
 code.inline {

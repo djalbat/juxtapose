@@ -7,17 +7,18 @@ require('./easyui-jsx');
 const easyui = require('easyui'),
       { Element } = easyui;
 
-const Contents = require('./docs/contents'),
-      Introduction = require('./docs/introduction'),
-      JSXIsGreat = require('./docs/jsxIsGreat'),
-      GettingStarted = require('./docs/gettingStarted'),
-      AppendingToTheDOM = require('./docs/appendingToTheDOM'),
-      FunctionalElements = require('./docs/functionalElements'),
-      EasyUIElements = require('./docs/easyUIElements'),
-      TheRenderMethod = require('./docs/theRenderMethod'),
-      ExtendingAnEasyUIClass = require('./docs/extendingAnEasyUIClass'),
-      AGoodExampleThisDocumentation = require('./docs/aGoodExampleThisDocumentation'),
-      TheElementClass = require('./docs/theElementClass');
+const Contents = require('./docs/sections/contents'),
+      Introduction = require('./docs/sections/introduction'),
+      JSXIsGreat = require('./docs/sections/jsxIsGreat'),
+      GettingStarted = require('./docs/sections/gettingStarted'),
+      AppendingElementsToTheDOM = require('./docs/sections/appendingElementsToTheDOM'),
+      FunctionalElements = require('./docs/sections/functionalElements'),
+      EasyUIElements = require('./docs/sections/easyUIElements'),
+      TheRenderMethod = require('./docs/sections/theRenderMethod'),
+      ExtendingAnEasyUIClass = require('./docs/sections/extendingAnEasyUIClass'),
+      TheExampleOfThisDocumentation = require('./docs/sections/theExampleOfThisDocumentation'),
+      TheElementClass = require('./docs/sections/theElementClass'),
+      ASimpleForm = require('./docs/sections/aSimpleForm');
 
 const introduction = <Introduction />,
       fragmentToSectionMap = {
@@ -25,13 +26,14 @@ const introduction = <Introduction />,
         contents: <Contents />,
         jsxIsGreat: <JSXIsGreat />,
         gettingStarted: <GettingStarted />,
-        appendingToTheDOM: <AppendingToTheDOM />,
+        appendingElementsToTheDOM: <AppendingElementsToTheDOM />,
         functionalElements: <FunctionalElements />,
         easyUIElements: <EasyUIElements />,
         theRenderMethod: <TheRenderMethod />,
         extendingAnEasyUIClass: <ExtendingAnEasyUIClass />,
-        aGoodExampleThisDocumentation: <AGoodExampleThisDocumentation />,
-        theElementClass: <TheElementClass />
+        theExampleOfThisDocumentation: <TheExampleOfThisDocumentation />,
+        theElementClass: <TheElementClass />,
+        aSimpleForm: <ASimpleForm /> 
       };
 
 const insertSections = () => {
