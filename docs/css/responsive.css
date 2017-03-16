@@ -17,6 +17,22 @@
   span.previous {
     margin-bottom: 0.125rem;
   }
+
+  .left.sizeable {
+    max-width: 10rem;
+  }
+
+  .right.sizeable {
+    max-width: 10rem;
+  }
+
+  .bottom.sizeable {
+    max-height: 7.5rem;
+  }
+
+  .container.columns {
+    height: 15rem;
+  }
 }
 
 @media (min-width: 40rem) and (max-width: 68rem) {
@@ -37,6 +53,22 @@
   span.next,
   span.previous {
     margin-bottom: 0.125rem;
+  }
+
+  .left.sizeable {
+    max-width: 20rem;
+  }
+
+  .right.sizeable {
+    max-width: 15rem;
+  }
+
+  .bottom.sizeable {
+    max-height: 15rem;
+  }
+
+  .container.columns {
+    height: 25rem;
   }
 }
 
@@ -78,5 +110,21 @@
 
   form {
     width: 20rem;
+  }
+
+  .left.sizeable {
+    max-width: 30rem;
+  }
+
+  .right.sizeable {
+    max-width: 20rem;
+  }
+
+  .bottom.sizeable {
+    max-height: 25rem;
+  }
+
+  .container.columns {
+    height: 40rem;
   }
 }

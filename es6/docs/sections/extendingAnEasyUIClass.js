@@ -35,8 +35,6 @@ class Example extends Button {
   }
 }
 
-Example.tagName = 'button'; /// Optional.
-
 const example = () => {
   const body = new Body(),
         example =

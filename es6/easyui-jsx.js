@@ -3,6 +3,7 @@
 const easyui = require('easyui'),
       { Element } = easyui;
 
+
 class React {
   static createElement(firstArgument, properties, ...childElements) {
     let element = null;
@@ -17,9 +18,12 @@ class React {
       if (false) {
 
       } else if (typeof firstArgument === 'string') {
-        const tagName = firstArgument;  ///
+        const tagName = firstArgument,  ///
+              html = `<${tagName}></${tagName}>`;
 
-        element = Element.fromPropertiesAndTagName(Element, properties, tagName)
+        element = Element.fromHTML(html);
+
+        element.applyProperties(properties);
       } else if (isTypeOf(firstArgument, Element)) {
         const Class = firstArgument;  ///
 

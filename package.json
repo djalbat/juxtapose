@@ -1,7 +1,7 @@
 {
   "name": "easyui-jsx",
   "author": "James Smith",
-  "version": "1.0.33",
+  "version": "1.0.36",
   "license": "MIT",
   "homepage": "https://github.com/djalbat/EasyUI-JSX",
   "description": "JSX support for EasyUI.",
@@ -18,9 +18,9 @@
     "babel-preset-react": "^6.5.0",
     "browserify": "^13.0.0",
     "chokidar-cli": "^1.2.0",
-    "easyui": "^7.1.46",
+    "easyui": "^7.1.52",
     "easyui-draganddrop": "^5.0.9",
-    "easyui-layout": "^1.0.29",
+    "easyui-layout": "^1.1.1",
     "easyui-richtextarea": "^1.0.14",
     "fragmented": "^1.0.6"
   },
