@@ -68,7 +68,8 @@ p:last-child {
   margin-bottom: 0; }
 
 li {
-  margin-left: 2rem; }
+  margin-left: 2rem;
+  list-style-type: disc;}
 
 button {
   cursor: pointer; }

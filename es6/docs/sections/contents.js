@@ -4,7 +4,7 @@ require('../../easyui-jsx');
 
 const InlineCode = require('../inlineCode');
 
-const Introduction = () => {
+const Contents = () => {
   return (
 
     <section>
@@ -13,7 +13,7 @@ const Introduction = () => {
       </nav>
       <ul>
         <li>
-          <a href="#introduction">Introduction</a>
+          <a href="#introduction">Contents</a>
         </li>
         <li>
           <a href="#jsxIsGreat">JSX is great</a>
@@ -45,10 +45,24 @@ const Introduction = () => {
         <li>
           <a href="#aSimpleForm">A simple form</a>
         </li>
+        <li>
+          <a href="#moreEasyUIElements">More EasyUI elements</a>
+          <ul>
+            <li>
+              <a href="#easyUILayout">EasyUI-Layout</a>
+            </li>
+            <li>
+              <a href="#easyUIDragAndDrop">EasyUI-DragAndDrop</a>
+            </li>
+            <li>
+              <a href="easyUIRichTextarea">EasyUI-RichTextarea</a>
+            </li>
+          </ul>
+        </li>
       </ul>
     </section>
       
   );  
 };
 
-module.exports = Introduction;
+module.exports = Contents;

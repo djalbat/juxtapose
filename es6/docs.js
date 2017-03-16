@@ -18,7 +18,11 @@ const Contents = require('./docs/sections/contents'),
       ExtendingAnEasyUIClass = require('./docs/sections/extendingAnEasyUIClass'),
       TheExampleOfThisDocumentation = require('./docs/sections/theExampleOfThisDocumentation'),
       TheElementClass = require('./docs/sections/theElementClass'),
-      ASimpleForm = require('./docs/sections/aSimpleForm');
+      ASimpleForm = require('./docs/sections/aSimpleForm'),
+      MoreEasyUIElements = require('./docs/sections/moreEasyUIElements'),
+      EasyUILayout = require('./docs/sections/easyUILayout'),
+      EasyUIDragAndDrop = require('./docs/sections/easyUIDragAndDrop'),
+      EasyUIRichTextarea = require('./docs/sections/easyUIRichTextarea');
 
 const introduction = <Introduction />,
       fragmentToSectionMap = {
@@ -33,7 +37,11 @@ const introduction = <Introduction />,
         extendingAnEasyUIClass: <ExtendingAnEasyUIClass />,
         theExampleOfThisDocumentation: <TheExampleOfThisDocumentation />,
         theElementClass: <TheElementClass />,
-        aSimpleForm: <ASimpleForm /> 
+        aSimpleForm: <ASimpleForm />,
+        moreEasyUIElements: <MoreEasyUIElements />,
+        easyUILayout: <EasyUILayout />,
+        easyUIDragAndDrop: <EasyUIDragAndDrop />,
+        easyUIRichTextarea: <EasyUIRichTextarea />
       };
 
 const insertSections = () => {

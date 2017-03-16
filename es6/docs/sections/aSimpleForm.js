@@ -19,6 +19,7 @@ const ASimpleForm = () => {
 
     <section>
       <nav>
+        <Next href="#moreEasyUIElements">More EasyUI elements</Next>
         <Previous href="#theElementClass">The <code className="inline">Element</code> class</Previous>
         <Contents />
       </nav>
