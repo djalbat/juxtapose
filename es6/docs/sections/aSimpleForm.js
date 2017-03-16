@@ -42,9 +42,12 @@ const textarea = <Textarea />,
     <option value="Dick" selected>D</option>
   </Select>
   <button onClick={(event) => {
-            const value = input.getValue();
+            const value = input.getValue(),
+                  preventDefault = true;
 
             textarea.setValue(value);
+            
+            return preventDefault;
           }}
   >
   Submit
@@ -78,9 +81,12 @@ const textarea = <Textarea />,
           <option value="Dick" selected>D</option>
         </Select>
         <button onClick={(event) => {
-                          const value = input.getValue();
+                          const value = input.getValue(),
+                                preventDefault = true;
 
                           textarea.setValue(value);
+                          
+                          return preventDefault;
                         }}
         >
         Submit

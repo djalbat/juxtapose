@@ -24,7 +24,7 @@ const TheElementClass = () => {
       </p>
       <p>
         As mentioned previously, all elements are instances of the <InlineCode>Element</InlineCode> class, or a class that extends it.
-        This class has evolved over a fair amount of time and has been written with considerable care.
+        This class has evolved over time and has been written care.
         The source is here:
       </p>
       <ul>
@@ -46,8 +46,8 @@ const TheElementClass = () => {
       <p>
         For those coming from a React or similar background this may take some getting used to.
         React adheres quite closely to the MVC paradigm.
-        Manipulate the model, they say, and the view will somehow magically stay in line.
-        With EasyUI on the other hand there is no hidden magic.
+        Manipulate the model, they say, and the view will magically take care of itself.
+        With EasyUI on the other hand there is no magic.
         There is still an abstraction but it is cleaner, more honest perhaps.
       </p>
     </section>

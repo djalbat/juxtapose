@@ -8,7 +8,9 @@ const Introduction = () => {
   return (
 
     <section>
-      <h2>Contents</h2>
+      <nav>
+        <span className="contents">Contents</span>
+      </nav>
       <ul>
         <li>
           <a href="#introduction">Introduction</a>

@@ -50,8 +50,7 @@ const revealSection = () => {
     section.hide();
   });
 
-  const section = fragmentToSectionMap[fragment] 
-                    || introduction;
+  const section = fragmentToSectionMap[fragment] || introduction;
 
   section.show();
 };
