@@ -13,7 +13,7 @@ const Contents = () => {
       </nav>
       <ul>
         <li>
-          <a href="#introduction">Contents</a>
+          <a href="#introduction">Introduction</a>
         </li>
         <li>
           <a href="#jsxIsGreat">JSX is great</a>
