@@ -6,7 +6,7 @@ EasyUI-JSX allows you to leverage [JSX](https://facebook.github.io/react/docs/js
 
 For an overview of EasyUI-JSX, see here:
  
- * [Online documentation](https://djalbat.com/easyui-jsx/)
+ * [Online documentation](http://djalbat.com/easyui-jsx/)
 
 ### Related projects
 
