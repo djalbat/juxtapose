@@ -1,7 +1,7 @@
 {
   "name": "easyui-jsx",
   "author": "James Smith",
-  "version": "1.0.38",
+  "version": "1.0.39",
   "license": "MIT",
   "homepage": "https://github.com/djalbat/EasyUI-JSX",
   "description": "JSX support for EasyUI.",
@@ -18,29 +18,17 @@
     "babel-preset-react": "^6.5.0",
     "browserify": "^13.0.0",
     "chokidar-cli": "^1.2.0",
-    "easyui": "^7.1.54",
-    "easyui-draganddrop": "^5.0.9",
-    "easyui-layout": "^1.1.3",
-    "easyui-richtextarea": "^1.0.14",
-    "fragmented": "^1.0.6"
+    "easyui": "^7.2.4"
   },
   "scripts": {
     "clean": "rm -rf ./lib",
     "babel": "babel ./es6 --presets=es2015,react --plugins transform-react-jsx --out-dir=./lib",
     "babel-debug": "babel ./es6 --presets=es2015,react --plugins transform-react-jsx --source-maps inline --out-dir=./lib",
-    "browserify:docs": "browserify ./docs/index.js > ./docs/docs.js",
-    "browserify:docs-debug": "browserify ./docs/index.js --debug > ./docs/docs.js",
-    "build:docs": "npm run clean && npm run babel && npm run browserify:docs",
-    "build-debug:docs": "npm run babel-debug && npm run browserify:docs-debug",
-    "watch:docs": "npm run build:docs && chokidar './index.js' './docs/index.js' './es6/**/*.js' -c 'npm run build:docs'",
-    "watch-debug:docs": "npm run build-debug:docs && chokidar './index.js' './docs/index.js' './es6/**/*.js' -c 'npm run build-debug:docs'",
-    "browserify:example": "browserify ./example/index.js > ./example/example.js",
-    "browserify:example-debug": "browserify ./example/index.js --debug > ./example/example.js",
-    "build:example": "npm run clean && npm run babel && npm run browserify:example",
-    "build-debug:example": "npm run babel-debug && npm run browserify:example-debug",
-    "watch:example": "npm run build:example && chokidar './index.js' './example/index.js' './es6/**/*.js' -c 'npm run build:example'",
-    "watch-debug:example": "npm run build-debug:example && chokidar './index.js' './example/index.js' './es6/**/*.js' -c 'npm run build-debug:example'",
-    "watch": "npm run watch:example",
-    "watch-debug": "npm run watch-debug:example"
+    "browserify": "browserify ./lib/example.js > ./example/example.js",
+    "browserify-debug": "browserify ./lib/example.js --debug > ./example/example.js",
+    "build": "npm run clean && npm run babel && npm run browserify",
+    "build-debug": "npm run babel-debug && npm run browserify-debug",
+    "watch": "npm run build && chokidar './index.js' './lib/example.js' './es6/**/*.js' -c 'npm run build'",
+    "watch-debug": "npm run build-debug && chokidar './index.js' './lib/example.js' './es6/**/*.js' -c 'npm run build-debug'"
   }
 }
