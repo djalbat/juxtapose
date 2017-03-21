@@ -1,7 +1,7 @@
 {
   "name": "easyui-jsx",
   "author": "James Smith",
-  "version": "1.0.46",
+  "version": "1.0.47",
   "license": "MIT",
   "homepage": "https://github.com/djalbat/Juxtapose",
   "description": "JSX support for Easy elements.",
@@ -10,7 +10,7 @@
     "url": "https://github.com/djalbat/Juxtapose"
   },
   "dependencies": {
-    "easy": "^7.2.5"
+    "easy": "^7.2.16"
   },
   "devDependencies": {
     "babel": "^6.5.2",
