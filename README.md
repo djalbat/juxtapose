@@ -27,7 +27,7 @@ You can install Juxtapose with [npm](https://www.npmjs.com/):
 
     npm install easyui-jsx
 
-*** Note that the package is `easyui-jsx` for the time being. ***
+***Note that the package is `easyui-jsx` for the time being.***
 
 You can also clone the repository with [Git](https://git-scm.com/)...
 
