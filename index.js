@@ -1,3 +1,3 @@
 'use strict';
 
-require('./lib/easyui-jsx');
+require('./lib/juxtapose');
