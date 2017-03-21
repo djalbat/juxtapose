@@ -1,15 +1,17 @@
 {
   "name": "easyui-jsx",
   "author": "James Smith",
-  "version": "1.0.40",
+  "version": "1.0.41",
   "license": "MIT",
-  "homepage": "https://github.com/djalbat/EasyUI-JSX",
-  "description": "JSX support for EasyUI.",
+  "homepage": "https://github.com/djalbat/Juxtapose",
+  "description": "JSX support for Easy elements.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/djalbat/EasyUI-JSX"
+    "url": "https://github.com/djalbat/Juxtapose"
   },
-  "dependencies": {},
+  "dependencies": {
+    "easy": "^7.2.5"
+  },
   "devDependencies": {
     "babel": "^6.5.2",
     "babel-cli": "^6.7.5",
@@ -17,8 +19,7 @@
     "babel-preset-es2015": "^6.6.0",
     "babel-preset-react": "^6.5.0",
     "browserify": "^13.0.0",
-    "chokidar-cli": "^1.2.0",
-    "easyui": "^7.2.5"
+    "chokidar-cli": "^1.2.0"
   },
   "scripts": {
     "clean": "rm -rf ./lib",

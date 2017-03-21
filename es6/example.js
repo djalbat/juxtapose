@@ -1,9 +1,9 @@
 'use strict';
 
-require('./easyui-jsx');
+require('./juxtapose');
 
-const easyui = require('easyui'),
-      { Body } = easyui;
+const easy = require('easy'),
+      { Body } = easy;
 
 const body = new Body();
 
