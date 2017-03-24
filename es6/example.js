@@ -10,7 +10,7 @@ const body = new Body();
 body.append(
 
   <div className="example">
-    An easy example.
+  An easy example.
   </div>
 
 );
