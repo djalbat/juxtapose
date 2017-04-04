@@ -17,7 +17,7 @@ Juxtapose allows you to leverage [JSX](https://facebook.github.io/react/docs/jsx
 
 Actually they are, here:
 
-- [Occam Proof Assistant](http://djalbat.com/occam)
+- [Occam](http://djalbat.com/occam)
 
 ## Installation
 
