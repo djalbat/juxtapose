@@ -1,7 +1,8 @@
 'use strict';
 
-const easy = require('easy'),
-      { React } = easy;
+const easy = require('easy');
+
+const { React } = easy;
 
 Object.defineProperty(window, 'React', {
   get: function() {
