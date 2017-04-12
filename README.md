@@ -23,9 +23,7 @@ Actually they are, here:
 
 You can install Juxtapose with [npm](https://www.npmjs.com/):
 
-    npm install easyui-jsx
-
-**Note that the package name is not `juxtapose` but `easyui-jsx`, at least for the time being.**
+    npm install juxtapose
 
 You can also clone the repository with [Git](https://git-scm.com/)...
 
@@ -40,7 +38,7 @@ You can also clone the repository with [Git](https://git-scm.com/)...
 Only building with [Node.js](http://nodejs.org) is supported, the usage is as follows:
 
 ```js
-require('easyui-jsx');
+require('juxtapose');
 ```
 
 Once this is done, JSX can be used directly.
@@ -52,7 +50,7 @@ Automation is done with [npm scripts](https://docs.npmjs.com/misc/scripts), have
     npm run build-debug
     npm run watch-debug
     
-As well as building the Juxtapose library itself, this will build a simple example, specifically the first example given in the documentation. Be careful when copying example code from the documentation and attempting to build it. You must replace the `require('easyui-jxs')` directive with `require('./juxtapose')` since the npm module is not available within the project itself. Also, you should leave the `use strict` directive in place, since this is not found in the example code snippets.
+As well as building the Juxtapose library itself, this will build a simple example, specifically the first example given in the documentation. Be careful when copying example code from the documentation and attempting to build it. You must replace the `require('juxtapose')` directive with `require('./juxtapose')` since the npm module is not available within the project itself.
  
  The `example.js` file to use can be found in the `es6` directory. To view the compiled example, open the `index.html` file in the `example/` directory.
     
