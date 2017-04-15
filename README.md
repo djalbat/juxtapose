@@ -2,7 +2,7 @@
 
 JSX support for Easy elements.
 
-Juxtapose allows you to leverage [JSX](https://facebook.github.io/react/docs/jsx-in-depth.html) in order to create Easy elements as an alternative to [React](https://facebook.github.io/react/) or [Reaction](https://github.com/djalbat/Reaction) components. Every Easy element now supports JSX, and the use of all the Easy projects with Juxtapose is highly recommended.
+Juxtapose allows you to leverage [JSX](https://facebook.github.io/react/docs/jsx-in-depth.html) in order to create [Easy](https://github.com/djalbat/Easy) elements. Every Easy project now supports JSX, and its use is *highly recommended*.
  
  * [Online documentation](http://djalbat.com/juxtapose/)
 
