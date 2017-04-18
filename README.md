@@ -4,19 +4,6 @@
 
  * [Online documentation](http://djalbat.com/juxtapose/)
 
-### Related projects
-
-- [Easy](https://github.com/djalbat/Easy) A V-framework.
-- [Easy-Layout](https://github.com/djalbat/Easy-Layout) Layout elements that work with CSS flexbox.
-- [Easy-DragAndDrop](https://github.com/djalbat/Easy-DragAndDrop) Drag and drop elements including an explorer and a rubbish bin.
-- [Easy-RichTextarea](https://github.com/djalbat/Easy-RichTextarea) A textarea element that handles and hands off events well.
-
-### Are these projects actually used anywhere?
-
-Actually they are, here:
-
-- [Occam](http://djalbat.com/occam)
-
 ## Installation
 
 You can install Juxtapose with [npm](https://www.npmjs.com/):
