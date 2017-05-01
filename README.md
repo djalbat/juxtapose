@@ -35,9 +35,7 @@ Automation is done with [npm scripts](https://docs.npmjs.com/misc/scripts), have
     npm run build-debug
     npm run watch-debug
     
-As well as building the Juxtapose library itself, this will build a simple example, specifically the first example given in the online documentation. Be careful when copying example code from the documentation and attempting to build it. You must replace the `require('juxtapose')` directive with `require('./juxtapose')` since the npm module is not available within the project itself.
- 
- The `example.js` file to use can be found in the `es6` directory. To view the compiled example, open the `index.html` file in the `example/` directory.
+As well as building the Juxtapose library itself, this will build the examples. The source code for the two examples can be found in the `es6/examples` directory. To view the compiled examples, open the `examples.html` file in the root of the repository.
     
 ## Contact
 
