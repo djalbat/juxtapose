@@ -4,6 +4,12 @@
 
  * [Online documentation](http://djalbat.com/juxtapose/)
 
+## The Joy of JSX
+
+There is a series of complementary videos:
+
+**[The Joy of JSX](https://vimeo.com/album/4562013)**
+
 ## Installation
 
 You can install Juxtapose with [npm](https://www.npmjs.com/):
