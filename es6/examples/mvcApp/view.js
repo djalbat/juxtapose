@@ -8,7 +8,7 @@ const Message = require('./view/message'),
 
 const { Element } = easy;
 
-class View extends Element{
+class View extends Element {
   childElements() {
     return([
 
