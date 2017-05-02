@@ -11,9 +11,11 @@ const simpleApp = () => {
 
   body.prepend(
 
-      <div className="example">
+    <div>
+      <p>
         A simple application.
-      </div>
+      </p>
+    </div>
 
   );
 };
