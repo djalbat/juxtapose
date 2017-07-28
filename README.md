@@ -12,7 +12,7 @@ There is a series of complementary videos:
 
 #### Errata
 
-Many of these points have been picked up in the last video in the series, 'Traditional MVC', which has been re-recorded. Also bear in mind that the changes are to the source code of the Easy project, not this one. The files of interest are https://github.com/djalbat/Easy/blob/master/es6/element.js, https://github.com/djalbat/Easy/blob/master/es6/react.js and https://github.com/djalbat/Easy/blob/master/es6/mixin/jsx.js.
+Many of these points have been picked up in the last video in the series, 'Traditional MVC', which has been re-recorded. Also bear in mind that the changes are to the source code of the Easy project, not this one. The files of interest are [element.js](https://github.com/djalbat/Easy/blob/master/es6/element.js), [react.js](https://github.com/djalbat/Easy/blob/master/es6/react.js) and [jsx.js](https://github.com/djalbat/Easy/blob/master/es6/mixin/jsx.js).
 
 - The `addTo()`, `appendTo()`, `prependTo()` and `removeFrom()` methods have been taken out of the JSX mixin.
 
