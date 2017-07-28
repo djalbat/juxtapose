@@ -26,9 +26,7 @@ class PasswordInput extends InputElement {
     });
   }
 
-  static fromProperties(properties) {
-    return InputElement.fromProperties(PasswordInput, properties);
-  }
+  static fromProperties(properties) { return InputElement.fromProperties(PasswordInput, properties); }
 }
 
 Object.assign(PasswordInput, {

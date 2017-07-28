@@ -17,9 +17,7 @@ class Message extends Element {
     });
   }
 
-  static fromProperties(properties) {
-    return Element.fromProperties(Message, properties);
-  }
+  static fromProperties(properties) { return Element.fromProperties(Message, properties); }
 }
 
 Object.assign(Message, {

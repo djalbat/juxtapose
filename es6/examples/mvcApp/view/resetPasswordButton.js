@@ -7,12 +7,6 @@ const controller = require('../controller');
 const { Element } = easy;
 
 class ResetPasswordButton extends Element {
-  constructor(selector) {
-    super(selector);
-
-    this.onClick(this.clickHandler);
-  }
-
   clickHandler() {
     controller.resetPassword();
   }
@@ -21,13 +15,24 @@ class ResetPasswordButton extends Element {
     return 'Reset password';
   }
 
+  initialise() {
+    this.onClick(this.clickHandler);
+  }
+
   static fromProperties(properties) {
-    return Element.fromProperties(ResetPasswordButton, properties);
+    const resetPasswordButton = Element.fromProperties(ResetPasswordButton, properties);
+
+    resetPasswordButton.initialise();
+
+    return resetPasswordButton;
   }
 }
 
 Object.assign(ResetPasswordButton, {
-  tagName: 'button'
+  tagName: 'button',
+  defaultProperties: {
+    className: 'resetPassword'
+  }
 });
 
 module.exports = ResetPasswordButton;

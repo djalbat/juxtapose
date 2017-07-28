@@ -41,9 +41,7 @@ class ValidationError extends Element {
     });
   }
 
-  static fromProperties(properties) {
-    return Element.fromProperties(ValidationError, properties);
-  }
+  static fromProperties(properties) { return Element.fromProperties(ValidationError, properties); }
 }
 
 Object.assign(ValidationError, {

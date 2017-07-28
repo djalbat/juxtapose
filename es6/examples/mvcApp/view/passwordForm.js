@@ -34,22 +34,16 @@ class PasswordForm extends Element {
     this.clearPassword();
   }
 
-  parentContext() {
-    this.assignContext();
-  }
-
   childElements() {
     return([
 
       <PasswordInput />,
       <ValidationError/>,
       <Button className="submit"
-              onClick={() => {
-                const preventDefault = true;
-
+              onClick={(mouseButton, event, targetElement) => {
                 this.validateAndSubmitForm();
 
-                return preventDefault;
+                event.preventDefault();
               }}
       >
       Submit
@@ -58,8 +52,16 @@ class PasswordForm extends Element {
     ]);
   }
 
+  initialise() {
+    this.assignContext();
+  }
+
   static fromProperties(properties) {
-    return Element.fromProperties(PasswordForm, properties);
+    const passwordForm = Element.fromProperties(PasswordForm, properties);
+
+    passwordForm.initialise();
+
+    return passwordForm;
   }
 }
 

@@ -19,7 +19,7 @@ const mvcApp = () => {
 
   const body = new Body();
 
-  view.prependTo(body);
+  body.prepend(view);
 };
 
 module.exports = mvcApp;

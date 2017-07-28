@@ -19,12 +19,16 @@ class View extends Element {
     ]);
   }
 
-  parentContext() {
+  initialise() {
     this.assignContext();
   }
 
   static fromProperties(properties) {
-    return Element.fromProperties(View, properties);
+    const view = Element.fromProperties(View, properties);
+
+    view.initialise();
+
+    return view;
   }
 }
 
