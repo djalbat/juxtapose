@@ -14,6 +14,7 @@ There is a series of complementary videos:
 
 Many of these points have been picked up in the last video in the series, 'Traditional MVC', which has been re-recorded. Also bear in mind that the changes are to the source code of the Easy project, not this one. The files of interest are [element.js](https://github.com/djalbat/Easy/blob/master/es6/element.js), [react.js](https://github.com/djalbat/Easy/blob/master/es6/react.js) and [jsx.js](https://github.com/djalbat/Easy/blob/master/es6/mixin/jsx.js).
 
+- The `examples.html` file has moved to `examples/index.html`. 
 - The `Element` class now has a `fromString()` factory method, simplifying the `React.createElement()` method.
 - The `addTo()`, etc methods have been taken out of the JSX mixin. The `updateParentContext()` method is now called directly from the loop over the child elements in the `applyProperties()` method.
 - The ignored and default properties are now cumulative. Recursive methods called from the `fromProperties()` static factory method of the `Element` class will traverse the superclasses in order to find them.
@@ -51,7 +52,7 @@ Automation is done with [npm scripts](https://docs.npmjs.com/misc/scripts), have
     npm run build-debug
     npm run watch-debug
     
-As well as building the Juxtapose library itself, this will build the examples. The source code for the two examples can be found in the `es6/examples` directory. To view the compiled examples, open the `examples.html` file in the root of the repository.
+As well as building the Juxtapose library itself, this will build the examples. The source code for the two examples can be found in the `es6/examples` directory. To view the compiled examples, open the `examples/index.html` file.
     
 ## Contact
 
