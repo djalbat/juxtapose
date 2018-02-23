@@ -9,5 +9,3 @@ Object.defineProperty(window, 'React', {
     return React;
   }
 });
-
-module.exports = React;
