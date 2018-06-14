@@ -14,8 +14,8 @@ function createMethods(model, view) {
   }
 
   return ({
-    setPassword: setPassword,
-    resetPassword: resetPassword
+    setPassword,
+    resetPassword
   });
 }
 

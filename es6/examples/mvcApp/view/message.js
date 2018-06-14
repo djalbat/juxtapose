@@ -12,8 +12,10 @@ class Message extends Element {
   }
 
   parentContext() {
+	  const showMessage = this.showMessage.bind(this);
+
     return ({
-      showMessage: this.showMessage.bind(this)
+      showMessage
     });
   }
 

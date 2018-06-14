@@ -20,9 +20,12 @@ class PasswordInput extends InputElement {
   }
 
   parentContext() {
+	  const getPassword = this.getPassword.bind(this),
+				  clearPassword = this.clearPassword.bind(this);
+
     return ({
-      getPassword: this.getPassword.bind(this),
-      clearPassword: this.clearPassword.bind(this)
+      getPassword,
+      clearPassword
     });
   }
 
