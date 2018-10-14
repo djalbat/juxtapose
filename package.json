@@ -1,7 +1,7 @@
 {
   "name": "juxtapose",
   "author": "James Smith",
-  "version": "1.0.89",
+  "version": "1.0.90",
   "license": "MIT",
   "homepage": "https://github.com/djalbat/juxtapose",
   "description": "JSX support for Easy elements.",
