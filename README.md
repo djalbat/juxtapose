@@ -19,7 +19,8 @@ Many of these points have been picked up in the last video in the series, 'Tradi
 - The `addTo()`, etc methods have been taken out of the JSX mixin. The `updateParentContext()` method is now called directly from the loop over the child elements in the `applyProperties()` method.
 - The ignored and default properties are now cumulative. Recursive methods called from the `fromProperties()` static factory method of the `Element` class will traverse the superclasses in order to find them.
 - It is best to call the `assignContext()` method from an `initialise()` method called from within your own `fromProperties()` static factory method rather than from within `parentContext()` methods. Initialise methods are introduced in the re-recorded video.
-- The `assignContext()` method has been improved. It no longer returns the names of the context properties that have been assigned, there didn't seem much point. The default for the `thenDelete` argument is `true`. 
+- The `assignContext()` method has been improved. It no longer returns the names of the context properties that have been assigned, there didn't seem much point. The default for the `thenDelete` argument is `true`.
+- The Schooner Cecilie site has undergone a significant revision so the videos were made. Please have a look at the source in your browser's developer tools.
 
 ## Installation
 
@@ -34,6 +35,12 @@ You can also clone the repository with [Git](https://git-scm.com/)...
 ...and then install the necessary modules with npm from within the project's root directory:
 
     npm install
+
+You will need to do this if you want to look at the examples.
+
+## Examples
+
+The source code for the two examples can be found in the `es6/examples` directory. To view the compiled examples, open the `examples/index.html` file.
 
 ## Usage
 
@@ -51,8 +58,6 @@ Automation is done with [npm scripts](https://docs.npmjs.com/misc/scripts), have
 
     npm run build-debug
     npm run watch-debug
-    
-As well as building the Juxtapose library itself, this will build the examples. The source code for the two examples can be found in the `es6/examples` directory. To view the compiled examples, open the `examples/index.html` file.
     
 ## Contact
 
