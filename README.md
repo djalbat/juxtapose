@@ -38,10 +38,6 @@ You can also clone the repository with [Git](https://git-scm.com/)...
 
 You will need to do this if you want to look at the examples.
 
-## Examples
-
-The source code for the two examples can be found in the `es6/examples` directory. To view the compiled examples, open the `examples/index.html` file.
-
 ## Usage
 
 Only building with [Node.js](http://nodejs.org) is supported, the usage is as follows:
@@ -51,6 +47,10 @@ require('juxtapose');
 ```
 
 Once this is done, JSX can be used directly.
+
+## Examples
+
+The source code for the two examples can be found in the `es6/examples` directory. To view the compiled examples, open the `examples/index.html` file.
 
 ## Compiling from source
 
