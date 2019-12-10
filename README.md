@@ -2,7 +2,7 @@
 
 [JSX](https://facebook.github.io/react/docs/jsx-in-depth.html) support for [Easy](https://github.com/djalbat/Easy) elements.
 
- * [Online documentation](http://djalbat.com/juxtapose/)
+ * [Online documentation](http://juxtapose.info)
 
 ## The Joy of JSX
 
