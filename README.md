@@ -10,7 +10,7 @@ There is a series of complementary videos:
 
 **[The Joy of JSX](https://vimeo.com/album/4562013)**
 
-#### Errata
+#### Corrigenda
 
 Many of these points have been picked up in the last video in the series, 'Traditional MVC', which has been re-recorded. Also bear in mind that the changes are to the source code of the Easy project, not this one. The files of interest are the [element.js](https://github.com/djalbat/Easy/blob/master/es6/element.js), [react.js](https://github.com/djalbat/Easy/blob/master/es6/react.js) and [jsx.js](https://github.com/djalbat/Easy/blob/master/es6/mixins/jsx.js) files.
 
