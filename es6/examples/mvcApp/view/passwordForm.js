@@ -46,7 +46,7 @@ class PasswordForm extends Element {
                 event.preventDefault();
               }}
       >
-      Submit
+        Submit
       </Button>
 
     ]);

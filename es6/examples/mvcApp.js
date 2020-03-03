@@ -13,7 +13,11 @@ const { Body } = easy;
 
 const mvcApp = () => {
   const model = new Model(),
-        view = <View />;
+        view =
+
+          <View />
+
+        ;
 
   controller.assignMethods(createMethods, model, view);
 
