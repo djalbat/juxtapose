@@ -1,7 +1,7 @@
 {
   "name": "juxtapose",
   "author": "James Smith",
-  "version": "1.0.107",
+  "version": "1.0.108",
   "license": "MIT, Anti-996",
   "homepage": "https://github.com/djalbat/juxtapose",
   "description": "JSX support for Easy elements.",
@@ -26,8 +26,8 @@
     "batch-debug": "npm run watchful batch -- --debug",
     "incremental": "npm run watchful incremental --",
     "incremental-debug": "npm run watchful incremental -- --debug",
-    "build": "npm run clean && npm run batch && npm run clean",
-    "build-debug": "npm run clean && npm run batch-debug && npm run clean",
+    "build": "npm run clean && npm run batch",
+    "build-debug": "npm run clean && npm run batch-debug",
     "watch": "npm run clean && npm run batch npm run incremental",
     "watch-debug": "npm run clean && npm run batch-debug npm run incremental-debug"
   }
