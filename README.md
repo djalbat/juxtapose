@@ -39,8 +39,6 @@ You will need to do this if you want to look at the examples.
 
 ## Usage
 
-Only building with [Node.js](http://nodejs.org) is supported, the usage is as follows:
-
 ```js
 require('juxtapose');
 ```
