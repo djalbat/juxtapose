@@ -12,7 +12,7 @@ There is a series of complementary videos:
 
 #### Corrigenda
 
-Many of these points have been picked up in the last video in the series, 'Traditional MVC', which has been re-recorded. Also bear in mind that the changes are to the source code of the Easy project, not this one. The files of interest are the [element.js](https://github.com/djalbat/Easy/blob/master/es6/element.js), [react.js](https://github.com/djalbat/Easy/blob/master/es6/react.js) and [jsx.js](https://github.com/djalbat/Easy/blob/master/es6/mixins/jsx.js) files.
+Many of these points have been picked up in the last video in the series, 'Traditional MVC', which has been re-recorded. Also bear in mind that nearly all of the changes are to the source code of the Easy project, not this one. The files of interest are the [element.js](https://github.com/djalbat/Easy/blob/master/es6/element.js), [react.js](https://github.com/djalbat/Easy/blob/master/es6/react.js) and [jsx.js](https://github.com/djalbat/Easy/blob/master/es6/mixins/jsx.js) files.
 
 - The `examples.html` file has moved to `examples/index.html`. 
 - The `Element` class now has a `fromString()` factory method, simplifying the `React.createElement()` method.
@@ -20,6 +20,8 @@ Many of these points have been picked up in the last video in the series, 'Tradi
 - The ignored and default properties are now cumulative. Recursive methods called from the `fromProperties()` static factory method of the `Element` class will traverse the superclasses in order to find them.
 - It is best to call the `assignContext()` method from an `initialise()` method called from within your own `fromProperties()` static factory method rather than from within `parentContext()` methods. Initialise methods are introduced in the re-recorded video.
 - The `assignContext()` method has been improved. It no longer returns the names of the context properties that have been assigned, there didn't seem much point. The default for the `thenDelete` argument is `true`.
+- ES6 syntax has been more widely adopted, in particular ES6 imports and exports are now used.
+- Experimental class fields have been utilised, and are recommended.
 
 ## Installation
 
