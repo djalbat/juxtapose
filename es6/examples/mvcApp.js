@@ -1,13 +1,13 @@
-'use strict';
+"use strict";
 
-require('../juxtapose');
+require("../juxtapose");
 
-const easy = require('easy');
+const easy = require("easy");
 
-const Model = require('./mvcApp/model'),
-      View = require('./mvcApp/view'),
-      controller = require('./mvcApp/controller'),
-      createMethods = require('./mvcApp/controller/createMethods');
+const Model = require("./mvcApp/model"),
+      View = require("./mvcApp/view"),
+      controller = require("./mvcApp/controller"),
+      createMethods = require("./mvcApp/controller/createMethods");
 
 const { Body } = easy;
 

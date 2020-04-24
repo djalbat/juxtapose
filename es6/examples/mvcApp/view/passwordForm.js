@@ -1,10 +1,10 @@
-'use strict';
+"use strict";
 
-const easy = require('easy');
+const easy = require("easy");
 
-const controller = require('../controller'),
-      PasswordInput = require('./passwordInput'),
-      ValidationError = require('./validationError');
+const controller = require("../controller"),
+      PasswordInput = require("./passwordInput"),
+      ValidationError = require("./validationError");
 
 const { Element, Button } = easy;
 
@@ -13,7 +13,7 @@ class PasswordForm extends Element {
     const passwordValid = this.validateForm();
 
     if (!passwordValid) {
-      this.showValidationError('The password is invalid');
+      this.showValidationError("The password is invalid");
     } else {
       this.submitForm();
     }
@@ -56,6 +56,12 @@ class PasswordForm extends Element {
     this.assignContext();
   }
 
+  static tagName = "form";
+
+  static defaultProperties = {
+    className: "password"
+  };
+
   static fromProperties(properties) {
     const passwordForm = Element.fromProperties(PasswordForm, properties);
 
@@ -65,17 +71,10 @@ class PasswordForm extends Element {
   }
 }
 
-Object.assign(PasswordForm, {
-  tagName: 'form',
-  defaultProperties: {
-    className: 'password'
-  }
-});
-
 module.exports = PasswordForm;
 
 function isPasswordValid(password) {
-  const passwordValid = (password !== '');  ///
+  const passwordValid = (password !== "");  ///
 
   return passwordValid;
 }

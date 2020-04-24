@@ -1,6 +1,6 @@
-'use strict';
+"use strict";
 
-const easy = require('easy');
+const easy = require("easy");
 
 const { Element } = easy;
 
@@ -14,7 +14,7 @@ class ValidationError extends Element {
   }
 
   clearValidationError() {
-    const html = '';
+    const html = "";
 
     this.html(html);
   }
@@ -28,11 +28,11 @@ class ValidationError extends Element {
       clearTimeout(this.timeout);
     }
 
-    this.timeout = setTimeout(function() {
+    this.timeout = setTimeout(() => {
       this.timemout = null;
 
       this.clearValidationError();
-    }.bind(this), TIMEOUT_DELAY);
+    }, TIMEOUT_DELAY);
   }
 
   parentContext() {
@@ -41,14 +41,13 @@ class ValidationError extends Element {
     });
   }
 
+  static tagName = "p";
+
+  static defaultProperties = {
+    className: "validation error"
+  };
+
   static fromProperties(properties) { return Element.fromProperties(ValidationError, properties); }
 }
-
-Object.assign(ValidationError, {
-  tagName: 'p',
-  defaultProperties: {
-    className: 'validation error'
-  }
-});
 
 module.exports = ValidationError;

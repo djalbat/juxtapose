@@ -1,8 +1,8 @@
-'use strict';
+"use strict";
 
-require('../juxtapose');
+require("../juxtapose");
 
-const easy = require('easy');
+const easy = require("easy");
 
 const { Body } = easy;
 

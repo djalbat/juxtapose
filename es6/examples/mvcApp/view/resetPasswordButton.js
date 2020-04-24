@@ -1,8 +1,8 @@
-'use strict';
+"use strict";
 
-const easy = require('easy');
+const easy = require("easy");
 
-const controller = require('../controller');
+const controller = require("../controller");
 
 const { Element } = easy;
 
@@ -12,12 +12,18 @@ class ResetPasswordButton extends Element {
   }
 
   childElements() {
-    return 'Reset password';
+    return "Reset password";
   }
 
   initialise() {
     this.onClick(this.clickHandler);
   }
+
+  static tagName = "button";
+
+  static defaultProperties = {
+    className: "resetPassword"
+  };
 
   static fromProperties(properties) {
     const resetPasswordButton = Element.fromProperties(ResetPasswordButton, properties);
@@ -27,12 +33,5 @@ class ResetPasswordButton extends Element {
     return resetPasswordButton;
   }
 }
-
-Object.assign(ResetPasswordButton, {
-  tagName: 'button',
-  defaultProperties: {
-    className: 'resetPassword'
-  }
-});
 
 module.exports = ResetPasswordButton;

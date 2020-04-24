@@ -1,10 +1,10 @@
-'use strict';
+"use strict";
 
-const easy = require('easy');
+const easy = require("easy");
 
 const { React } = easy;
 
-Object.defineProperty(window, 'React', {
+Object.defineProperty(window, "React", {
   get: function() {
     return React;
   }

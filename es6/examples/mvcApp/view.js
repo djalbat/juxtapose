@@ -1,10 +1,10 @@
-'use strict';
+"use strict";
 
-const easy = require('easy');
+const easy = require("easy");
 
-const Message = require('./view/message'),
-      PasswordForm = require('./view/passwordForm'),
-      ResetPasswordButton = require('./view/resetPasswordButton');
+const Message = require("./view/message"),
+      PasswordForm = require("./view/passwordForm"),
+      ResetPasswordButton = require("./view/resetPasswordButton");
 
 const { Element } = easy;
 
@@ -23,6 +23,12 @@ class View extends Element {
     this.assignContext();
   }
 
+  static tagName = "div";
+
+  static defaultProperties = {
+    className: "view"
+  };
+
   static fromProperties(properties) {
     const view = Element.fromProperties(View, properties);
 
@@ -31,12 +37,5 @@ class View extends Element {
     return view;
   }
 }
-
-Object.assign(View, {
-  tagName: 'div',
-  defaultProperties: {
-    className: 'view'
-  }
-});
 
 module.exports = View;

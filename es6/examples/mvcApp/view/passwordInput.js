@@ -1,6 +1,6 @@
-'use strict';
+"use strict";
 
-const easy = require('easy');
+const easy = require("easy");
 
 const { InputElement } = easy;
 
@@ -13,7 +13,7 @@ class PasswordInput extends InputElement {
   }
 
   clearPassword() {
-    const password = '',
+    const password = "",
           value = password; ///
 
     this.setValue(value);
@@ -29,14 +29,13 @@ class PasswordInput extends InputElement {
     });
   }
 
+  static tagName = "input";
+
+  static defaultProperties = {
+    type: "password"
+  };
+
   static fromProperties(properties) { return InputElement.fromProperties(PasswordInput, properties); }
 }
-
-Object.assign(PasswordInput, {
-  tagName: 'input',
-  defaultProperties: {
-    type: 'password'
-  }
-});
 
 module.exports = PasswordInput;

@@ -1,6 +1,6 @@
-'use strict';
+"use strict";
 
-const easy = require('easy');
+const easy = require("easy");
 
 const { Element } = easy;
 
@@ -23,9 +23,9 @@ class Message extends Element {
 }
 
 Object.assign(Message, {
-  tagName: 'p',
+  tagName: "p",
   defaultProperties: {
-    className: 'message'
+    className: "message"
   }
 });
 
