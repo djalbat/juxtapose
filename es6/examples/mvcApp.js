@@ -1,17 +1,15 @@
 "use strict";
 
-require("../juxtapose");
+import "../juxtapose";
 
-const easy = require("easy");
+import { Body } from "easy";
 
-const Model = require("./mvcApp/model"),
-      View = require("./mvcApp/view"),
-      controller = require("./mvcApp/controller"),
-      createMethods = require("./mvcApp/controller/createMethods");
+import View from "./mvcApp/view";
+import Model from "./mvcApp/model";
+import controller from "./mvcApp/controller";
+import createMethods from "./mvcApp/controller/createMethods";
 
-const { Body } = easy;
-
-const mvcApp = () => {
+export default function mvcApp() {
   const model = new Model(),
         view =
 
@@ -24,6 +22,4 @@ const mvcApp = () => {
   const body = new Body();
 
   body.prepend(view);
-};
-
-module.exports = mvcApp;
+}

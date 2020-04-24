@@ -1,12 +1,10 @@
 "use strict";
 
-require("../juxtapose");
+import "../juxtapose";
 
-const easy = require("easy");
+import { Body } from "easy";
 
-const { Body } = easy;
-
-const simpleApp = () => {
+export default function simpleApp() {
   const body = new Body();
 
   body.prepend(
@@ -18,6 +16,4 @@ const simpleApp = () => {
     </div>
 
   );
-};
-
-module.exports = simpleApp;
+}

@@ -1,8 +1,9 @@
 "use strict";
 
-const examples = {
-  simpleApp: require("./examples/simpleApp"),
-  mvcApp: require("./examples/mvcApp")
-};
+import { default as mvcApp } from "./examples/mvcApp";
+import { default as simpleApp } from "./examples/simpleApp";
 
-Object.assign(window, examples);
+Object.assign(window, {
+  mvcApp,
+  simpleApp
+});

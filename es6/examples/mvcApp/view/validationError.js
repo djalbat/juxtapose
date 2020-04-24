@@ -1,12 +1,10 @@
 "use strict";
 
-const easy = require("easy");
+import { Element } from "easy";
 
-const { Element } = easy;
+import { TIMEOUT_DELAY } from "../../../constants";
 
-const TIMEOUT_DELAY = 1000;
-
-class ValidationError extends Element {
+export default class ValidationError extends Element {
   constructor(selector) {
     super(selector);
 
@@ -49,5 +47,3 @@ class ValidationError extends Element {
 
   static fromProperties(properties) { return Element.fromProperties(ValidationError, properties); }
 }
-
-module.exports = ValidationError;

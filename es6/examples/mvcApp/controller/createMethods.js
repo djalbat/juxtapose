@@ -1,6 +1,6 @@
 "use strict";
 
-function createMethods(model, view) {
+export default function createMethods(model, view) {
   function setPassword(password) {
     model.setPassword(password);
 
@@ -18,5 +18,3 @@ function createMethods(model, view) {
     resetPassword
   });
 }
-
-module.exports = createMethods;

@@ -10,4 +10,4 @@ class Controller {
 
 const controller = new Controller();
 
-module.exports = controller;
+export default controller;

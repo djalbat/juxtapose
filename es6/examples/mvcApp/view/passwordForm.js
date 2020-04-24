@@ -1,14 +1,12 @@
 "use strict";
 
-const easy = require("easy");
+import { Element, Button } from "easy";
 
-const controller = require("../controller"),
-      PasswordInput = require("./passwordInput"),
-      ValidationError = require("./validationError");
+import controller from "../controller";
+import PasswordInput from "./passwordInput";
+import ValidationError from "./validationError";
 
-const { Element, Button } = easy;
-
-class PasswordForm extends Element {
+export default class PasswordForm extends Element {
   validateAndSubmitForm() {
     const passwordValid = this.validateForm();
 
@@ -41,9 +39,11 @@ class PasswordForm extends Element {
       <ValidationError/>,
       <Button className="submit"
               onClick={(mouseButton, event, targetElement) => {
-                this.validateAndSubmitForm();
 
                 event.preventDefault();
+
+                this.validateAndSubmitForm();
+
               }}
       >
         Submit
@@ -70,8 +70,6 @@ class PasswordForm extends Element {
     return passwordForm;
   }
 }
-
-module.exports = PasswordForm;
 
 function isPasswordValid(password) {
   const passwordValid = (password !== "");  ///

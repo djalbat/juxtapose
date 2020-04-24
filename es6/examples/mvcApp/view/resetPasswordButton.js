@@ -1,12 +1,10 @@
 "use strict";
 
-const easy = require("easy");
+import { Element } from "easy";
 
-const controller = require("../controller");
+import controller from "../controller";
 
-const { Element } = easy;
-
-class ResetPasswordButton extends Element {
+export default class ResetPasswordButton extends Element {
   clickHandler() {
     controller.resetPassword();
   }
@@ -33,5 +31,3 @@ class ResetPasswordButton extends Element {
     return resetPasswordButton;
   }
 }
-
-module.exports = ResetPasswordButton;

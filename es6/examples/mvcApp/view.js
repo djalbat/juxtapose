@@ -1,14 +1,12 @@
 "use strict";
 
-const easy = require("easy");
+import { Element } from "easy";
 
-const Message = require("./view/message"),
-      PasswordForm = require("./view/passwordForm"),
-      ResetPasswordButton = require("./view/resetPasswordButton");
+import Message from "./view/message";
+import PasswordForm from "./view/passwordForm";
+import ResetPasswordButton from "./view/resetPasswordButton";
 
-const { Element } = easy;
-
-class View extends Element {
+export default class View extends Element {
   childElements() {
     return([
 
@@ -37,5 +35,3 @@ class View extends Element {
     return view;
   }
 }
-
-module.exports = View;

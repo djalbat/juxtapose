@@ -1,10 +1,8 @@
 "use strict";
 
-const easy = require("easy");
+import { InputElement } from "easy";
 
-const { InputElement } = easy;
-
-class PasswordInput extends InputElement {
+export default class PasswordInput extends InputElement {
   getPassword() {
     const value = this.getValue(),
           password = value; ///
@@ -37,5 +35,3 @@ class PasswordInput extends InputElement {
 
   static fromProperties(properties) { return InputElement.fromProperties(PasswordInput, properties); }
 }
-
-module.exports = PasswordInput;

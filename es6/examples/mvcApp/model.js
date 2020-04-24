@@ -1,6 +1,6 @@
 "use strict";
 
-class Model {
+export default class Model {
   constructor() {
     this.password = null;
   }
@@ -13,5 +13,3 @@ class Model {
     this.password = null;
   }
 }
-
-module.exports = Model;
