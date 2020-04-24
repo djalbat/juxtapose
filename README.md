@@ -39,8 +39,10 @@ You will need to do this if you want to look at the examples.
 
 ## Usage
 
-```js
-require('juxtapose');
+```
+import "juxtapose";
+
+...
 ```
 
 Once this is done, JSX can be used directly.
