@@ -1,8 +1,6 @@
 "use strict";
 
-const easy = require("easy");
-
-const { React } = easy;
+import { React } from "easy";
 
 Object.defineProperty(window, "React", {
   get: function() {
