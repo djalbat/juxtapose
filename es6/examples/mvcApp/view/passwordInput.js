@@ -32,6 +32,4 @@ export default class PasswordInput extends InputElement {
   static defaultProperties = {
     type: "password"
   };
-
-  static fromProperties(properties) { return InputElement.fromProperties(PasswordInput, properties); }
 }

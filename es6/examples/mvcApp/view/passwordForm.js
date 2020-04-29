@@ -38,7 +38,7 @@ export default class PasswordForm extends Element {
       <PasswordInput />,
       <ValidationError/>,
       <Button className="submit"
-              onClick={(mouseButton, event, targetElement) => {
+              onClick={(event, element) => {
 
                 event.preventDefault();
 
@@ -52,7 +52,7 @@ export default class PasswordForm extends Element {
     ]);
   }
 
-  initialise() {
+  initialise(properties) {
     this.assignContext();
   }
 
@@ -62,10 +62,10 @@ export default class PasswordForm extends Element {
     className: "password"
   };
 
-  static fromProperties(properties) {
-    const passwordForm = Element.fromProperties(PasswordForm, properties);
+  static fromClass(Class, properties) {
+    const passwordForm = Element.fromClass(Class, properties);
 
-    passwordForm.initialise();
+    passwordForm.initialise(properties);
 
     return passwordForm;
   }

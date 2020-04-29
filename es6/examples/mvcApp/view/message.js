@@ -22,6 +22,4 @@ export default class Message extends Element {
   static defaultProperties = {
     className: "message"
   };
-
-  static fromProperties(properties) { return Element.fromProperties(Message, properties); }
 }

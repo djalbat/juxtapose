@@ -44,6 +44,4 @@ export default class ValidationError extends Element {
   static defaultProperties = {
     className: "validation error"
   };
-
-  static fromProperties(properties) { return Element.fromProperties(ValidationError, properties); }
 }
