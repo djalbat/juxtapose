@@ -1,9 +1,7 @@
 "use strict";
 
-import { React } from "easy";
+import { React, window } from "easy";
 
-Object.defineProperty(window, "React", {
-  get: function() {
-    return React;
-  }
+window.assign({
+  React
 });
