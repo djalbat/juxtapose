@@ -10,7 +10,7 @@
     "url": "https://github.com/djalbat/juxtapose"
   },
   "dependencies": {
-    "easy": "^10.0.1"
+    "easy": "^10.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.8.6",
