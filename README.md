@@ -22,6 +22,7 @@ Many of these points have been picked up in the last video in the series, 'Tradi
 - The `assignContext()` method has been improved. It no longer returns the names of the context properties that have been assigned, there didn't seem much point. The default for the `thenDelete` argument is `true`.
 - More ES6 and some experimental syntax has been adopted, for example ES6 imports and exports.
 - The static `fromProperties()` factory method has been replaced with a static `fromClass()` factory method. In most cases there is now no need to create your own such methods. You only need to do so if you want to make use of the `properties` object.
+- The controller has been simplified in the MVC example.
 
 ## Installation
 
