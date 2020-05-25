@@ -2,7 +2,7 @@
 
 [JSX](https://facebook.github.io/react/docs/jsx-in-depth.html) support for [Easy](https://github.com/djalbat/Easy) elements.
 
- * [Online documentation](http://juxtapose.info)
+**[Online documentation](http://juxtapose.info)**
 
 ## The Joy of JSX
 
@@ -41,6 +41,8 @@ You can also clone the repository with [Git](https://git-scm.com/)...
 You will need to do this if you want to look at the examples.
 
 ## Usage
+
+There is nothing more to be done than to simply import the package:
 
 ```
 import "juxtapose";
