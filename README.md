@@ -42,7 +42,7 @@ You will need to do this if you want to look at the examples.
 
 ## Usage
 
-There is nothing more to be done than to simply import the package:
+There is nothing more to do other than import the package:
 
 ```
 import "juxtapose";
