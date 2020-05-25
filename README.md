@@ -52,7 +52,7 @@ Once this is done, JSX can be used directly.
 
 ## Examples
 
-The source code for the two examples can be found in the `es6/examples` directory. To view the compiled examples, open the `examples/index.html` file.
+The source code for the two examples can be found in the `es6/examples` directory. To view the compiled examples, open the `examples.html` file.
 
 ## Compiling from source
 
