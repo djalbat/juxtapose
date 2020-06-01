@@ -54,7 +54,7 @@ Once this is done, JSX can be used directly.
 
 The source code for the two examples can be found in the `es6/examples` directory. To view the compiled examples, open the `examples.html` file.
 
-## Compiling from source
+## Building
 
 Automation is done with [npm scripts](https://docs.npmjs.com/misc/scripts), have a look at the `package.json` file. The pertinent commands are:
 
