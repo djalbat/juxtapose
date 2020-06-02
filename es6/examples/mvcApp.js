@@ -21,5 +21,5 @@ export default function mvcApp() {
 
   const body = new Body();
 
-  body.prepend(view);
+  body.mount(view);
 }

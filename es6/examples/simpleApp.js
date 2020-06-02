@@ -7,7 +7,7 @@ import { Body } from "easy";
 export default function simpleApp() {
   const body = new Body();
 
-  body.prepend(
+  body.mount(
 
     <div>
       <p>
