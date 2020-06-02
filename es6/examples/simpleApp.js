@@ -1,6 +1,6 @@
 "use strict";
 
-import "../juxtapose";
+import "../index";  ///
 
 import { Body } from "easy";
 
