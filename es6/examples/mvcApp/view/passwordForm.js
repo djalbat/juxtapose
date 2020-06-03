@@ -52,7 +52,7 @@ export default class PasswordForm extends Element {
     ]);
   }
 
-  initialise(properties) {
+  initialise() {
     this.assignContext();
   }
 
@@ -65,7 +65,7 @@ export default class PasswordForm extends Element {
   static fromClass(Class, properties) {
     const passwordForm = Element.fromClass(Class, properties);
 
-    passwordForm.initialise(properties);
+    passwordForm.initialise();
 
     return passwordForm;
   }

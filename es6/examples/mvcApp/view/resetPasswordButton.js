@@ -13,7 +13,7 @@ export default class ResetPasswordButton extends Element {
     return "Reset password";
   }
 
-  initialise(properties) {
+  initialise() {
     this.onClick(this.clickHandler);
   }
 
@@ -26,7 +26,7 @@ export default class ResetPasswordButton extends Element {
   static fromClass(Class, properties) {
     const resetPasswordButton = Element.fromClass(Class, properties);
 
-    resetPasswordButton.initialise(properties);
+    resetPasswordButton.initialise();
 
     return resetPasswordButton;
   }
