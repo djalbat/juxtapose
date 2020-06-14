@@ -21,14 +21,32 @@
     </style>
   </head>
   <body>
-    <div>
-      <a href="../examples.html">...back</a>
-    </div>
+
     <script src="../examples.js"> </script>
+
     <script>
 
       mvcApp();
 
     </script>
+
+    <script>
+
+      var xmlHttpRequest = new XMLHttpRequest();
+
+      xmlHttpRequest.onreadystatechange = function() {
+        if (xmlHttpRequest.readyState == 4) {
+          if (xmlHttpRequest.status == 200) {
+            location.reload();
+          }
+        }
+      };
+
+      xmlHttpRequest.open("GET", "http://localhost:3333");
+
+      xmlHttpRequest.send();
+
+    </script>
+
   </body>
 </html>

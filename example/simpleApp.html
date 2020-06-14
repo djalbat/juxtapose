@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Juxtapose Examples - Simple Application</title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+
+    <script src="../examples.js"> </script>
+
+    <script>
+
+      simpleApp();
+
+    </script>
+
+    <script>
+
+      var xmlHttpRequest = new XMLHttpRequest();
+
+      xmlHttpRequest.onreadystatechange = function() {
+        if (xmlHttpRequest.readyState == 4) {
+          if (xmlHttpRequest.status == 200) {
+            location.reload();
+          }
+        }
+      };
+
+      xmlHttpRequest.open("GET", "http://localhost:3333");
+
+      xmlHttpRequest.send();
+
+    </script>
+
+  </body>
+</html>

@@ -14,7 +14,8 @@ There is a series of complementary videos:
 
 Many of these points have been picked up in the last video in the series, 'Traditional MVC', which has been re-recorded. Also bear in mind that nearly all of the changes are to the source code of the Easy project, not this one. The files of interest are the [element.js](https://github.com/djalbat/Easy/blob/master/es6/element.js), [react.js](https://github.com/djalbat/Easy/blob/master/es6/react.js) and [jsx.js](https://github.com/djalbat/Easy/blob/master/es6/mixins/jsx.js) files.
 
-- The `examples.html` file has moved to `examples/index.html`. 
+- The `examples.html` file has moved to `index.html`.
+- The `examples` directory in the `es6` directory has been renamed to `example`;
 - The `Element` class now has a `fromString(...)` factory method, simplifying the `React.createElement(...)` method.
 - The `addTo(...)`, etc methods have been taken out of the JSX mixin. The `updateParentContext(...)` method is now called directly from the loop over the child elements in the `applyProperties(...)` method.
 - The ignored and default properties are now cumulative. Recursive methods called from the `fromProperties(...)` static factory method of the `Element` class will traverse the superclasses in order to find them.
@@ -61,6 +62,12 @@ Automation is done with [npm scripts](https://docs.npmjs.com/misc/scripts), have
     npm run build-debug
     npm run watch-debug
     
+You can also start a small development server:
+
+    npm start
+
+The example will then be available at http://localhost:8888/ and will reload automatically when changes are made.
+
 ## Contact
 
 - james.smith@djalbat.com
