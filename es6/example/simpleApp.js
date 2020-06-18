@@ -9,11 +9,9 @@ export default function simpleApp() {
 
   body.mount(
 
-    <div>
-      <p>
-        A simple application.
-      </p>
-    </div>
+    <p>
+      A simple application.
+    </p>
 
   );
 }
