@@ -2,7 +2,7 @@
 
 import { Element } from "easy";
 
-import { TIMEOUT_DELAY } from "../../../../constants";
+import { TIMEOUT_DELAY } from "../../constants";
 
 export default class ValidationErrorParagraph extends Element {
   constructor(selectorOrDomElement) {
