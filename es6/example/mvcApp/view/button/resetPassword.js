@@ -2,10 +2,10 @@
 
 import { Element } from "easy";
 
-import controller from "../controller";
+import controller from "../../controller";
 
 export default class ResetPasswordButton extends Element {
-  clickHandler() {
+  clickHandler(event, element) {
     controller.resetPassword();
   }
 
@@ -20,7 +20,7 @@ export default class ResetPasswordButton extends Element {
   static tagName = "button";
 
   static defaultProperties = {
-    className: "resetPassword"
+    className: "reset-password"
   };
 
   static fromClass(Class, properties) {

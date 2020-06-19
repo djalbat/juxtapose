@@ -2,9 +2,9 @@
 
 import { Element } from "easy";
 
-import { TIMEOUT_DELAY } from "../../../constants";
+import { TIMEOUT_DELAY } from "../../../../constants";
 
-export default class ValidationError extends Element {
+export default class ValidationErrorParagraph extends Element {
   constructor(selectorOrDomElement) {
     super(selectorOrDomElement);
 
@@ -42,6 +42,6 @@ export default class ValidationError extends Element {
   static tagName = "p";
 
   static defaultProperties = {
-    className: "validation error"
+    className: "validation-error"
   };
 }

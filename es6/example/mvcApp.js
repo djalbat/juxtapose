@@ -7,7 +7,6 @@ import { Body } from "easy";
 import View from "./mvcApp/view";
 import Model from "./mvcApp/model";
 import controller from "./mvcApp/controller";
-import createMethods from "./mvcApp/controller/createMethods";
 
 export default function mvcApp() {
   const model = new Model(),
@@ -17,9 +16,24 @@ export default function mvcApp() {
 
         ;
 
-  controller.assignMethods(createMethods, model, view);
+  Object.assign(controller, {
+    setPassword,
+    resetPassword
+  });
 
   const body = new Body();
 
   body.mount(view);
+
+  function setPassword(password) {
+    model.setPassword(password);
+
+    view.showMessage("The password has been set.");
+  }
+
+  function resetPassword() {
+    model.resetPassword();
+
+    view.showMessage("The password has been reset.");
+  }
 }

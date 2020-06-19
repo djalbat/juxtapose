@@ -2,7 +2,7 @@
 
 import { Element } from "easy";
 
-export default class Message extends Element {
+export default class MessageParagraph extends Element {
   showMessage(message) {
     const html = message; ///
 

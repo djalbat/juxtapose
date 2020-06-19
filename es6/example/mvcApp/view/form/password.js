@@ -2,9 +2,9 @@
 
 import { Element, Button } from "easy";
 
-import controller from "../controller";
-import PasswordInput from "./passwordInput";
-import ValidationError from "./validationError";
+import controller from "../../controller";
+import PasswordInput from "../input/password";
+import ValidationErrorParagraph from "../paragraph/validationError";
 
 export default class PasswordForm extends Element {
   validateAndSubmitForm() {
@@ -36,7 +36,7 @@ export default class PasswordForm extends Element {
     return([
 
       <PasswordInput />,
-      <ValidationError/>,
+      <ValidationErrorParagraph />,
       <Button className="submit"
               onClick={(event, element) => {
 

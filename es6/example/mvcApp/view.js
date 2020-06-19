@@ -2,9 +2,9 @@
 
 import { Element } from "easy";
 
-import Message from "./view/message";
-import PasswordForm from "./view/passwordForm";
-import ResetPasswordButton from "./view/resetPasswordButton";
+import PasswordForm from "./view/form/password";
+import MessageParagraph from "./view/paragraph/message";
+import ResetPasswordButton from "./view/button/resetPassword";
 
 export default class View extends Element {
   childElements() {
@@ -12,12 +12,12 @@ export default class View extends Element {
 
       <PasswordForm />,
       <ResetPasswordButton />,
-      <Message />
+      <MessageParagraph />
 
     ]);
   }
 
-  initialise(properties) {
+  initialise() {
     this.assignContext();
   }
 
@@ -30,7 +30,7 @@ export default class View extends Element {
   static fromClass(Class, properties) {
     const view = Element.fromClass(Class, properties);
 
-    view.initialise(properties);
+    view.initialise();
 
     return view;
   }
