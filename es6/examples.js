@@ -1,9 +1,9 @@
 "use strict";
 
-import { default as mvcApp } from "./example/mvcApp";
-import { default as simpleApp } from "./example/simpleApp";
+import { default as mvcApplication } from "./example/mvcApplication";
+import { default as simpleApplication } from "./example/simpleApplication";
 
 Object.assign(window, {
-  mvcApp,
-  simpleApp
+  mvcApplication,
+  simpleApplication
 });

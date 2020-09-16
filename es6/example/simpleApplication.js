@@ -4,7 +4,7 @@ import "../index";  ///
 
 import { Body } from "easy";
 
-export default function simpleApp() {
+export default function simpleApplication() {
   const body = new Body();
 
   body.mount(

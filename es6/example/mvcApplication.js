@@ -4,11 +4,11 @@ import "../index";  ///
 
 import { Body } from "easy";
 
-import View from "./mvcApp/view";
-import Model from "./mvcApp/model";
-import controller from "./mvcApp/controller";
+import View from "./mvcApplication/view";
+import Model from "./mvcApplication/model";
+import controller from "./mvcApplication/controller";
 
-export default function mvcApp() {
+export default function mvcApplication() {
   const model = new Model(),
         view =
 
