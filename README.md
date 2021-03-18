@@ -71,4 +71,3 @@ The examples will then be available at http://localhost:8888/ and will reload au
 ## Contact
 
 - james.smith@djalbat.com
-- http://djalbat.com
