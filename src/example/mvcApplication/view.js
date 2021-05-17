@@ -26,12 +26,4 @@ export default class View extends Element {
   static defaultProperties = {
     className: "view"
   };
-
-  static fromClass(Class, properties) {
-    const view = Element.fromClass(Class, properties);
-
-    view.initialise();
-
-    return view;
-  }
 }

@@ -9,12 +9,16 @@ export default class ResetPasswordButton extends Element {
     controller.resetPassword();
   }
 
-  childElements() {
-    return "Reset password";
+  didMount() {
+    this.onClick(this.clickHandler, this);
   }
 
-  initialise() {
-    this.onClick(this.clickHandler);
+  willMount() {
+    this.offClick(this.clickHandler, this);
+  }
+
+  childElements() {
+    return "Reset password";
   }
 
   static tagName = "button";
@@ -22,12 +26,4 @@ export default class ResetPasswordButton extends Element {
   static defaultProperties = {
     className: "reset-password"
   };
-
-  static fromClass(Class, properties) {
-    const resetPasswordButton = Element.fromClass(Class, properties);
-
-    resetPasswordButton.initialise();
-
-    return resetPasswordButton;
-  }
 }

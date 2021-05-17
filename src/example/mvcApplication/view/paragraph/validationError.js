@@ -5,10 +5,10 @@ import { Element } from "easy";
 import { TIMEOUT_DELAY } from "../../constants";
 
 export default class ValidationErrorParagraph extends Element {
-  constructor(selectorOrDomElement) {
+  constructor(selectorOrDomElement, timeout) {
     super(selectorOrDomElement);
 
-    this.timeout = null;
+    this.timeout = timeout;
   }
 
   clearValidationError() {
@@ -42,6 +42,13 @@ export default class ValidationErrorParagraph extends Element {
   static tagName = "p";
 
   static defaultProperties = {
-    className: "validation-error"
+    className: "validation error"
   };
+
+  static fromClass(Class, properties) {
+    const timeout = null,
+          validationErrorParagraph = Element.fromClass(Class, properties, timeout);
+
+    return validationErrorParagraph;
+  }
 }

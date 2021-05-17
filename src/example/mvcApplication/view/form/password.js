@@ -61,14 +61,6 @@ export default class PasswordForm extends Element {
   static defaultProperties = {
     className: "password"
   };
-
-  static fromClass(Class, properties) {
-    const passwordForm = Element.fromClass(Class, properties);
-
-    passwordForm.initialise();
-
-    return passwordForm;
-  }
 }
 
 function isPasswordValid(password) {

@@ -36,7 +36,7 @@
         _defineProperties(Constructor, staticProps);
       return Constructor;
     }
-    var Offset = function() {
+    var Offset = /* @__PURE__ */ function() {
       function Offset2(top, left) {
         _classCallCheck(this, Offset2);
         this.top = top;
@@ -90,7 +90,7 @@
         _defineProperties(Constructor, staticProps);
       return Constructor;
     }
-    var Bounds = function() {
+    var Bounds = /* @__PURE__ */ function() {
       function Bounds2(top, left, bottom, right) {
         _classCallCheck(this, Bounds2);
         this.top = top;
@@ -860,7 +860,7 @@
     function descendantDOMNodesFromDOMNode(domNode, param) {
       var descendantDOMNodes = param === void 0 ? [] : param;
       var childDOMNodes = domNode.childNodes;
-      _array.push(descendantDOMNodes, childDOMNodes);
+      (0, _array).push(descendantDOMNodes, childDOMNodes);
       childDOMNodes.forEach(function(childDOMNode) {
         return descendantDOMNodesFromDOMNode(childDOMNode, descendantDOMNodes);
       });
@@ -910,12 +910,12 @@
     var _dom = require_dom();
     function getDescendantElements(param) {
       var selector = param === void 0 ? "*" : param;
-      var domNode = this.domElement, descendantDOMNodes = _dom.descendantDOMNodesFromDOMNode(domNode), descendantDOMElements = _dom.filterDOMNodesBySelector(descendantDOMNodes, selector), descendantElements = _dom.elementsFromDOMElements(descendantDOMElements);
+      var domNode = this.domElement, descendantDOMNodes = (0, _dom).descendantDOMNodesFromDOMNode(domNode), descendantDOMElements = (0, _dom).filterDOMNodesBySelector(descendantDOMNodes, selector), descendantElements = (0, _dom).elementsFromDOMElements(descendantDOMElements);
       return descendantElements;
     }
     function getChildElements(param) {
       var selector = param === void 0 ? "*" : param;
-      var childDOMNodes = this.domElement.childNodes, childDOMElements = _dom.filterDOMNodesBySelector(childDOMNodes, selector), childElements = _dom.elementsFromDOMElements(childDOMElements);
+      var childDOMNodes = this.domElement.childNodes, childDOMElements = (0, _dom).filterDOMNodesBySelector(childDOMNodes, selector), childElements = (0, _dom).elementsFromDOMElements(childDOMElements);
       return childElements;
     }
     function getParentElement(param) {
@@ -926,7 +926,7 @@
         if (parentDOMElement.matches(selector)) {
           var parentDOMElements = [
             parentDOMElement
-          ], parentElements = _dom.elementsFromDOMElements(parentDOMElements), firstParentElement = _array.first(parentElements);
+          ], parentElements = (0, _dom).elementsFromDOMElements(parentDOMElements), firstParentElement = (0, _array).first(parentElements);
           parentElement = firstParentElement || null;
         }
       }
@@ -934,14 +934,14 @@
     }
     function getAscendantElements(param) {
       var selector = param === void 0 ? "*" : param;
-      var domNode = this.domElement, ascendantDOMNodes = _dom.ascendantDOMNodesFromDOMNode(domNode), ascendantDOMElements = _dom.filterDOMNodesBySelector(ascendantDOMNodes, selector), ascendantElements = _dom.elementsFromDOMElements(ascendantDOMElements);
+      var domNode = this.domElement, ascendantDOMNodes = (0, _dom).ascendantDOMNodesFromDOMNode(domNode), ascendantDOMElements = (0, _dom).filterDOMNodesBySelector(ascendantDOMNodes, selector), ascendantElements = (0, _dom).elementsFromDOMElements(ascendantDOMElements);
       return ascendantElements;
     }
     function getPreviousSiblingElement(param) {
       var selector = param === void 0 ? "*" : param;
       var previousSiblingElement = null;
       var previousSiblingDOMNode = this.domElement.previousSibling;
-      if (previousSiblingDOMNode !== null && _dom.domNodeMatchesSelector(previousSiblingDOMNode, selector)) {
+      if (previousSiblingDOMNode !== null && (0, _dom).domNodeMatchesSelector(previousSiblingDOMNode, selector)) {
         previousSiblingElement = previousSiblingDOMNode.__element__ || null;
       }
       return previousSiblingElement;
@@ -950,7 +950,7 @@
       var selector = param === void 0 ? "*" : param;
       var nextSiblingElement = null;
       var nextSiblingDOMNode = this.domElement.nextSibling;
-      if (nextSiblingDOMNode !== null && _dom.domNodeMatchesSelector(nextSiblingDOMNode, selector)) {
+      if (nextSiblingDOMNode !== null && (0, _dom).domNodeMatchesSelector(nextSiblingDOMNode, selector)) {
         nextSiblingElement = nextSiblingDOMNode.__element__ || null;
       }
       return nextSiblingElement;
@@ -1005,7 +1005,7 @@
         default: obj
       };
     }
-    var TextElement = function() {
+    var TextElement = /* @__PURE__ */ function() {
       function TextElement2(text) {
         _classCallCheck(this, TextElement2);
         this.domElement = document.createTextNode(text);
@@ -1156,9 +1156,9 @@
     function applyProperties(properties, defaultProperties, ignoredProperties) {
       this.properties = properties;
       properties = Object.assign({}, properties);
-      _object.combine(properties, defaultProperties);
+      (0, _object).combine(properties, defaultProperties);
       var childElements = childElementsFromElement(this) || properties.childElements;
-      _object.prune(properties, ignoredProperties);
+      (0, _object).prune(properties, ignoredProperties);
       var _domElement = this.domElement, namespaceURI = _domElement.namespaceURI, svg = namespaceURI === _constants.SVG_NAMESPACE_URI, names = Object.keys(properties);
       names.forEach(function(name) {
         var value = properties[name];
@@ -1186,7 +1186,7 @@
     function assignContext(names, thenDelete) {
       var argumentsLength = arguments.length;
       if (argumentsLength === 1) {
-        var firstArgument = _array.first(arguments);
+        var firstArgument = (0, _array).first(arguments);
         if (typeof firstArgument === "boolean") {
           names = Object.keys(this.context);
           thenDelete = firstArgument;
@@ -1220,9 +1220,9 @@
       var childElements = null;
       if (typeof element.childElements === "function") {
         childElements = element.childElements.call(element);
-        childElements = _array.guarantee(childElements);
-        childElements = _elements.removeFalseyElements(childElements);
-        childElements = _elements.replaceStringsWithTextElements(childElements);
+        childElements = (0, _array).guarantee(childElements);
+        childElements = (0, _elements).removeFalseyElements(childElements);
+        childElements = (0, _elements).replaceStringsWithTextElements(childElements);
       }
       return childElements;
     }
@@ -1259,7 +1259,7 @@
       return name.match(/^on/);
     }
     function isAttributeName(name, svg) {
-      return svg ? _name.isSVGAttributeName(name) : _name.isHTMLAttributeName(name);
+      return svg ? (0, _name).isSVGAttributeName(name) : (0, _name).isHTMLAttributeName(name);
     }
   });
 
@@ -1415,7 +1415,7 @@
         if (eventType === "resize") {
           var resizeEventListeners = this.findEventListeners("resize"), resizeEventListenersLength = resizeEventListeners.length;
           if (resizeEventListenersLength === 0) {
-            _resize.removeResizeObject(this);
+            (0, _resize).removeResizeObject(this);
           }
         }
       }.bind(this));
@@ -1641,7 +1641,7 @@
       return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread();
     }
     var _bind;
-    var Element1 = function() {
+    var Element1 = /* @__PURE__ */ function() {
       function Element12(selector) {
         _classCallCheck(this, Element12);
         if (selector) {
@@ -2011,6 +2011,7 @@
               tagName
             ].concat(_toConsumableArray(remainingArguments))), defaultProperties = {}, ignoredProperties = [];
             element.applyProperties(properties, defaultProperties, ignoredProperties);
+            element.initialise && element.initialise();
             return element;
           }
         },
@@ -2025,6 +2026,7 @@
               tagName
             ].concat(_toConsumableArray(remainingArguments))), defaultProperties = defaultPropertiesFromClass(Class), ignoredProperties = ignoredPropertiesFromClass(Class);
             element.applyProperties(properties, defaultProperties, ignoredProperties);
+            element.initialise && element.initialise();
             return element;
           }
         }
@@ -2051,14 +2053,14 @@
         null,
         selector
       ].concat(_toConsumableArray(remainingArguments))))();
-      element.domElement = _name.isSVGTagName(tagName) ? document.createElementNS(_constants.SVG_NAMESPACE_URI, tagName) : document.createElement(tagName);
+      element.domElement = (0, _name).isSVGTagName(tagName) ? document.createElementNS(_constants.SVG_NAMESPACE_URI, tagName) : document.createElement(tagName);
       element.domElement.__element__ = element;
       return element;
     }
     function defaultPropertiesFromClass(Class, param) {
       var defaultProperties = param === void 0 ? {} : param;
       if (Class.hasOwnProperty("defaultProperties")) {
-        _object.combine(defaultProperties, Class.defaultProperties);
+        (0, _object).combine(defaultProperties, Class.defaultProperties);
       }
       var superClass = Object.getPrototypeOf(Class);
       if (superClass !== null) {
@@ -2069,7 +2071,7 @@
     function ignoredPropertiesFromClass(Class, param) {
       var ignoredProperties = param === void 0 ? [] : param;
       if (Class.hasOwnProperty("ignoredProperties")) {
-        _array.augment(ignoredProperties, Class.ignoredProperties, function(ignoredProperty) {
+        (0, _array).augment(ignoredProperties, Class.ignoredProperties, function(ignoredProperty) {
           return !ignoredProperties.includes(ignoredProperty);
         });
       }
@@ -2218,8 +2220,8 @@
       };
       return _wrapNativeSuper(Class);
     }
-    var Body = function(Element1) {
-      _inherits(Body2, _element.default);
+    var Body = /* @__PURE__ */ function(Element1) {
+      _inherits(Body2, Element1);
       function Body2(param) {
         var selector = param === void 0 ? "body" : param;
         _classCallCheck(this, Body2);
@@ -2368,8 +2370,8 @@
       };
       return _wrapNativeSuper(Class);
     }
-    var Button = function(Element1) {
-      _inherits(Button2, _element.default);
+    var Button = /* @__PURE__ */ function(Element1) {
+      _inherits(Button2, Element1);
       function Button2() {
         _classCallCheck(this, Button2);
         return _possibleConstructorReturn(this, _getPrototypeOf(Button2).apply(this, arguments));
@@ -2556,8 +2558,8 @@
       };
       return _wrapNativeSuper(Class);
     }
-    var Checkbox = function(Element1) {
-      _inherits(Checkbox2, _element.default);
+    var Checkbox = /* @__PURE__ */ function(Element1) {
+      _inherits(Checkbox2, Element1);
       function Checkbox2() {
         _classCallCheck(this, Checkbox2);
         return _possibleConstructorReturn(this, _getPrototypeOf(Checkbox2).apply(this, arguments));
@@ -2742,8 +2744,8 @@
       };
       return _wrapNativeSuper(Class);
     }
-    var Link = function(Element1) {
-      _inherits(Link2, _element.default);
+    var Link = /* @__PURE__ */ function(Element1) {
+      _inherits(Link2, Element1);
       function Link2() {
         _classCallCheck(this, Link2);
         return _possibleConstructorReturn(this, _getPrototypeOf(Link2).apply(this, arguments));
@@ -2923,8 +2925,8 @@
       };
       return _wrapNativeSuper(Class);
     }
-    var Select = function(Element1) {
-      _inherits(Select2, _element.default);
+    var Select = /* @__PURE__ */ function(Element1) {
+      _inherits(Select2, Element1);
       function Select2() {
         _classCallCheck(this, Select2);
         return _possibleConstructorReturn(this, _getPrototypeOf(Select2).apply(this, arguments));
@@ -3103,8 +3105,8 @@
       };
       return _wrapNativeSuper(Class);
     }
-    var InputElement = function(Element1) {
-      _inherits(InputElement2, _element.default);
+    var InputElement = /* @__PURE__ */ function(Element1) {
+      _inherits(InputElement2, Element1);
       function InputElement2() {
         _classCallCheck(this, InputElement2);
         return _possibleConstructorReturn(this, _getPrototypeOf(InputElement2).apply(this, arguments));
@@ -3267,8 +3269,8 @@
     var _typeof = function(obj) {
       return obj && typeof Symbol !== "undefined" && obj.constructor === Symbol ? "symbol" : typeof obj;
     };
-    var Input = function(InputElement) {
-      _inherits(Input2, _inputElement.default);
+    var Input = /* @__PURE__ */ function(InputElement) {
+      _inherits(Input2, InputElement);
       function Input2() {
         _classCallCheck(this, Input2);
         return _possibleConstructorReturn(this, _getPrototypeOf(Input2).apply(this, arguments));
@@ -3352,8 +3354,8 @@
     var _typeof = function(obj) {
       return obj && typeof Symbol !== "undefined" && obj.constructor === Symbol ? "symbol" : typeof obj;
     };
-    var Textarea = function(InputElement) {
-      _inherits(Textarea2, _inputElement.default);
+    var Textarea = /* @__PURE__ */ function(InputElement) {
+      _inherits(Textarea2, InputElement);
       function Textarea2() {
         _classCallCheck(this, Textarea2);
         return _possibleConstructorReturn(this, _getPrototypeOf(Textarea2).apply(this, arguments));
@@ -3424,7 +3426,7 @@
     var _Object;
     var onResize = _resize.default.onResize;
     var offResize = _resize.default.offResize;
-    var Window1 = function() {
+    var Window1 = /* @__PURE__ */ function() {
       function Window12() {
         _classCallCheck(this, Window12);
         this.domElement = window;
@@ -3569,10 +3571,10 @@
     var _default = React2;
     exports.default = _default;
     function childElementsFromRemainingArguments(remainingArguments) {
-      remainingArguments = _array.flatten(remainingArguments);
+      remainingArguments = (0, _array).flatten(remainingArguments);
       var childElements = remainingArguments;
-      childElements = _elements.removeFalseyElements(childElements);
-      childElements = _elements.replaceStringsWithTextElements(childElements);
+      childElements = (0, _elements).removeFalseyElements(childElements);
+      childElements = (0, _elements).replaceStringsWithTextElements(childElements);
       return childElements;
     }
     function isSubclassOf(argument, Class) {
@@ -3826,8 +3828,8 @@
     var _typeof = function(obj) {
       return obj && typeof Symbol !== "undefined" && obj.constructor === Symbol ? "symbol" : typeof obj;
     };
-    var PasswordInput = function(InputElement) {
-      _inherits(PasswordInput2, _easy.InputElement);
+    var PasswordInput = /* @__PURE__ */ function(InputElement) {
+      _inherits(PasswordInput2, InputElement);
       function PasswordInput2() {
         _classCallCheck(this, PasswordInput2);
         return _possibleConstructorReturn(this, _getPrototypeOf(PasswordInput2).apply(this, arguments));
@@ -4028,13 +4030,13 @@
       };
       return _wrapNativeSuper(Class);
     }
-    var ValidationErrorParagraph = function(Element1) {
-      _inherits(ValidationErrorParagraph2, _easy.Element);
-      function ValidationErrorParagraph2(selectorOrDomElement) {
+    var ValidationErrorParagraph = /* @__PURE__ */ function(Element1) {
+      _inherits(ValidationErrorParagraph2, Element1);
+      function ValidationErrorParagraph2(selectorOrDomElement, timeout) {
         _classCallCheck(this, ValidationErrorParagraph2);
         var _this;
         _this = _possibleConstructorReturn(this, _getPrototypeOf(ValidationErrorParagraph2).call(this, selectorOrDomElement));
-        _this.timeout = null;
+        _this.timeout = timeout;
         return _this;
       }
       _createClass(ValidationErrorParagraph2, [
@@ -4067,12 +4069,20 @@
             };
           }
         }
+      ], [
+        {
+          key: "fromClass",
+          value: function fromClass(Class, properties) {
+            var timeout = null, validationErrorParagraph = _easy.Element.fromClass(Class, properties, timeout);
+            return validationErrorParagraph;
+          }
+        }
       ]);
       return ValidationErrorParagraph2;
     }(_wrapNativeSuper(_easy.Element));
     _defineProperty(ValidationErrorParagraph, "tagName", "p");
     _defineProperty(ValidationErrorParagraph, "defaultProperties", {
-      className: "validation-error"
+      className: "validation error"
     });
     exports.default = ValidationErrorParagraph;
   });
@@ -4234,8 +4244,8 @@
       };
       return _wrapNativeSuper(Class);
     }
-    var PasswordForm = function(Element1) {
-      _inherits(PasswordForm2, _easy.Element);
+    var PasswordForm = /* @__PURE__ */ function(Element1) {
+      _inherits(PasswordForm2, Element1);
       function PasswordForm2() {
         _classCallCheck(this, PasswordForm2);
         return _possibleConstructorReturn(this, _getPrototypeOf(PasswordForm2).apply(this, arguments));
@@ -4271,9 +4281,9 @@
           key: "childElements",
           value: function childElements() {
             return [
-              React.createElement(_password.default, null),
-              React.createElement(_validationError.default, null),
-              React.createElement(_easy.Button, {
+              /* @__PURE__ */ React.createElement(_password.default, null),
+              /* @__PURE__ */ React.createElement(_validationError.default, null),
+              /* @__PURE__ */ React.createElement(_easy.Button, {
                 className: "submit",
                 onClick: function(event, element) {
                   event.preventDefault();
@@ -4287,15 +4297,6 @@
           key: "initialise",
           value: function initialise() {
             this.assignContext();
-          }
-        }
-      ], [
-        {
-          key: "fromClass",
-          value: function fromClass(Class, properties) {
-            var passwordForm = _easy.Element.fromClass(Class, properties);
-            passwordForm.initialise();
-            return passwordForm;
           }
         }
       ]);
@@ -4461,8 +4462,8 @@
       };
       return _wrapNativeSuper(Class);
     }
-    var MessageParagraph = function(Element1) {
-      _inherits(MessageParagraph2, _easy.Element);
+    var MessageParagraph = /* @__PURE__ */ function(Element1) {
+      _inherits(MessageParagraph2, Element1);
       function MessageParagraph2() {
         _classCallCheck(this, MessageParagraph2);
         return _possibleConstructorReturn(this, _getPrototypeOf(MessageParagraph2).apply(this, arguments));
@@ -4649,8 +4650,8 @@
       };
       return _wrapNativeSuper(Class);
     }
-    var ResetPasswordButton = function(Element1) {
-      _inherits(ResetPasswordButton2, _easy.Element);
+    var ResetPasswordButton = /* @__PURE__ */ function(Element1) {
+      _inherits(ResetPasswordButton2, Element1);
       function ResetPasswordButton2() {
         _classCallCheck(this, ResetPasswordButton2);
         return _possibleConstructorReturn(this, _getPrototypeOf(ResetPasswordButton2).apply(this, arguments));
@@ -4663,24 +4664,21 @@
           }
         },
         {
-          key: "childElements",
-          value: function childElements() {
-            return "Reset password";
+          key: "didMount",
+          value: function didMount() {
+            this.onClick(this.clickHandler, this);
           }
         },
         {
-          key: "initialise",
-          value: function initialise() {
-            this.onClick(this.clickHandler);
+          key: "willMount",
+          value: function willMount() {
+            this.offClick(this.clickHandler, this);
           }
-        }
-      ], [
+        },
         {
-          key: "fromClass",
-          value: function fromClass(Class, properties) {
-            var resetPasswordButton = _easy.Element.fromClass(Class, properties);
-            resetPasswordButton.initialise();
-            return resetPasswordButton;
+          key: "childElements",
+          value: function childElements() {
+            return "Reset password";
           }
         }
       ]);
@@ -4850,8 +4848,8 @@
       };
       return _wrapNativeSuper(Class);
     }
-    var View = function(Element1) {
-      _inherits(View2, _easy.Element);
+    var View = /* @__PURE__ */ function(Element1) {
+      _inherits(View2, Element1);
       function View2() {
         _classCallCheck(this, View2);
         return _possibleConstructorReturn(this, _getPrototypeOf(View2).apply(this, arguments));
@@ -4861,9 +4859,9 @@
           key: "childElements",
           value: function childElements() {
             return [
-              React.createElement(_password.default, null),
-              React.createElement(_resetPassword.default, null),
-              React.createElement(_message.default, null)
+              /* @__PURE__ */ React.createElement(_password.default, null),
+              /* @__PURE__ */ React.createElement(_resetPassword.default, null),
+              /* @__PURE__ */ React.createElement(_message.default, null)
             ];
           }
         },
@@ -4871,15 +4869,6 @@
           key: "initialise",
           value: function initialise() {
             this.assignContext();
-          }
-        }
-      ], [
-        {
-          key: "fromClass",
-          value: function fromClass(Class, properties) {
-            var view = _easy.Element.fromClass(Class, properties);
-            view.initialise();
-            return view;
           }
         }
       ]);
@@ -4921,7 +4910,7 @@
         _defineProperties(Constructor, staticProps);
       return Constructor;
     }
-    var Model = function() {
+    var Model = /* @__PURE__ */ function() {
       function Model2() {
         _classCallCheck(this, Model2);
         this.password = null;
@@ -4951,6 +4940,7 @@
     Object.defineProperty(exports, "__esModule", {
       value: true
     });
+    exports.default = mvcApplication;
     require_lib2();
     var _easy = require_lib();
     var _view = _interopRequireDefault2(require_view());
@@ -4970,7 +4960,7 @@
         model.resetPassword();
         view.showMessage("The password has been reset.");
       };
-      var model = new _model.default(), view = React.createElement(_view.default, null);
+      var model = new _model.default(), view = /* @__PURE__ */ React.createElement(_view.default, null);
       Object.assign(_controller.default, {
         setPassword,
         resetPassword
@@ -4978,7 +4968,6 @@
       var body = new _easy.Body();
       body.mount(view);
     }
-    exports.default = mvcApplication;
   });
 
   // lib/example/simpleApplication.js
@@ -4987,13 +4976,13 @@
     Object.defineProperty(exports, "__esModule", {
       value: true
     });
+    exports.default = simpleApplication;
     require_lib2();
     var _easy = require_lib();
     function simpleApplication() {
       var body = new _easy.Body();
-      body.mount(React.createElement("p", null, "A simple application."));
+      body.mount(/* @__PURE__ */ React.createElement("p", null, "A simple application."));
     }
-    exports.default = simpleApplication;
   });
 
   // lib/examples.js
