@@ -2,7 +2,7 @@
 
 import { Element } from "easy";
 
-import { TIMEOUT_DELAY } from "../../constants";
+import { EMPTY_STRING, TIMEOUT_DELAY } from "../../constants";
 
 export default class ValidationErrorParagraph extends Element {
   constructor(selectorOrDomElement, timeout) {
@@ -12,7 +12,7 @@ export default class ValidationErrorParagraph extends Element {
   }
 
   clearValidationError() {
-    const html = "";
+    const html = EMPTY_STRING;
 
     this.html(html);
   }

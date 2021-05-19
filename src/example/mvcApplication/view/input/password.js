@@ -2,6 +2,8 @@
 
 import { InputElement } from "easy";
 
+import { EMPTY_STRING } from "../../constants";
+
 export default class PasswordInput extends InputElement {
   getPassword() {
     const value = this.getValue(),
@@ -11,7 +13,7 @@ export default class PasswordInput extends InputElement {
   }
 
   clearPassword() {
-    const password = "",
+    const password = EMPTY_STRING,
           value = password; ///
 
     this.setValue(value);

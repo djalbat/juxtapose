@@ -10,9 +10,9 @@ export default class View extends Element {
   childElements() {
     return([
 
-      <PasswordForm />,
-      <ResetPasswordButton />,
-      <MessageParagraph />
+      <PasswordForm/>,
+      <ResetPasswordButton/>,
+      <MessageParagraph/>
 
     ]);
   }

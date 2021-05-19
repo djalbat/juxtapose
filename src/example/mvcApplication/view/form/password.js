@@ -6,6 +6,8 @@ import controller from "../../controller";
 import PasswordInput from "../input/password";
 import ValidationErrorParagraph from "../paragraph/validationError";
 
+import { EMPTY_STRING } from "../../constants";
+
 export default class PasswordForm extends Element {
   validateAndSubmitForm() {
     const passwordValid = this.validateForm();
@@ -64,7 +66,7 @@ export default class PasswordForm extends Element {
 }
 
 function isPasswordValid(password) {
-  const passwordValid = (password !== "");  ///
+  const passwordValid = (password !== EMPTY_STRING);
 
   return passwordValid;
 }

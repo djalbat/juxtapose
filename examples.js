@@ -274,29 +274,6 @@
     }
   });
 
-  // node_modules/easy/lib/constants.js
-  var require_constants = __commonJS((exports) => {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", {
-      value: true
-    });
-    exports.default = exports.MIDDLE_MOUSE_BUTTON = exports.SVG_NAMESPACE_URI = exports.RIGHT_MOUSE_BUTTON = exports.LEFT_MOUSE_BUTTON = void 0;
-    var SVG_NAMESPACE_URI = "http://www.w3.org/2000/svg";
-    exports.SVG_NAMESPACE_URI = SVG_NAMESPACE_URI;
-    var LEFT_MOUSE_BUTTON = 0;
-    exports.LEFT_MOUSE_BUTTON = LEFT_MOUSE_BUTTON;
-    var RIGHT_MOUSE_BUTTON = 2;
-    exports.RIGHT_MOUSE_BUTTON = RIGHT_MOUSE_BUTTON;
-    var MIDDLE_MOUSE_BUTTON = 1;
-    exports.MIDDLE_MOUSE_BUTTON = MIDDLE_MOUSE_BUTTON;
-    var _default = {
-      LEFT_MOUSE_BUTTON,
-      RIGHT_MOUSE_BUTTON,
-      MIDDLE_MOUSE_BUTTON
-    };
-    exports.default = _default;
-  });
-
   // node_modules/easy/lib/utilities/name.js
   var require_name = __commonJS((exports) => {
     "use strict";
@@ -826,6 +803,95 @@
     ];
   });
 
+  // node_modules/easy/lib/constants.js
+  var require_constants = __commonJS((exports) => {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", {
+      value: true
+    });
+    exports.DEFAULT_PROPERTIES = exports.BLOCK = exports.CLICK = exports.EMPTY_STRING = exports.BODY = exports.MOUSEOUT = exports.UNDEFINED = exports.DISPLAY = exports.OBJECT = exports.LEFT_MOUSE_BUTTON = exports.CLASS_NAME = exports.RIGHT_MOUSE_BUTTON = exports.TEXT_HTML = exports.CLASS = exports.WIDTH = exports.MIDDLE_MOUSE_BUTTON = exports.WILDCARD = exports.DISABLED = exports.HTML_FOR = exports.ABOUT_BLANK = exports.FUNCTION = exports.HEIGHT = exports.SVG_NAMESPACE_URI = exports.CHANGE = exports.KEYDOWN = exports.default = exports.KEYUP = exports.NONE = exports.MOUSEMOVE = exports.MOUSEDOWN = exports.MOUSEUP = exports.RESIZE = exports.STRING = exports.SCROLL = exports.FOR = exports.MOUSEOVER = exports.BOOLEAN = exports.IGNORED_PROPERTIES = void 0;
+    var FOR = "for";
+    exports.FOR = FOR;
+    var BODY = "body";
+    exports.BODY = BODY;
+    var NONE = "none";
+    exports.NONE = NONE;
+    var CLASS = "class";
+    exports.CLASS = CLASS;
+    var CLICK = "click";
+    exports.CLICK = CLICK;
+    var KEYUP = "keyup";
+    exports.KEYUP = KEYUP;
+    var WIDTH = "width";
+    exports.WIDTH = WIDTH;
+    var BLOCK = "block";
+    exports.BLOCK = BLOCK;
+    var HEIGHT = "height";
+    exports.HEIGHT = HEIGHT;
+    var OBJECT = "object";
+    exports.OBJECT = OBJECT;
+    var CHANGE = "change";
+    exports.CHANGE = CHANGE;
+    var RESIZE = "resize";
+    exports.RESIZE = RESIZE;
+    var SCROLL = "scroll";
+    exports.SCROLL = SCROLL;
+    var STRING = "string";
+    exports.STRING = STRING;
+    var DISPLAY = "display";
+    exports.DISPLAY = DISPLAY;
+    var KEYDOWN = "keydown";
+    exports.KEYDOWN = KEYDOWN;
+    var BOOLEAN = "boolean";
+    exports.BOOLEAN = BOOLEAN;
+    var MOUSEUP = "mouseup";
+    exports.MOUSEUP = MOUSEUP;
+    var DISABLED = "disabled";
+    exports.DISABLED = DISABLED;
+    var FUNCTION = "function";
+    exports.FUNCTION = FUNCTION;
+    var WILDCARD = "*";
+    exports.WILDCARD = WILDCARD;
+    var MOUSEOUT = "mouseout";
+    exports.MOUSEOUT = MOUSEOUT;
+    var HTML_FOR = "htmlFor";
+    exports.HTML_FOR = HTML_FOR;
+    var UNDEFINED = "undefined";
+    exports.UNDEFINED = UNDEFINED;
+    var MOUSEOVER = "mouseover";
+    exports.MOUSEOVER = MOUSEOVER;
+    var MOUSEDOWN = "mousedown";
+    exports.MOUSEDOWN = MOUSEDOWN;
+    var MOUSEMOVE = "mousemove";
+    exports.MOUSEMOVE = MOUSEMOVE;
+    var TEXT_HTML = "text/html";
+    exports.TEXT_HTML = TEXT_HTML;
+    var CLASS_NAME = "className";
+    exports.CLASS_NAME = CLASS_NAME;
+    var ABOUT_BLANK = "about:blank";
+    exports.ABOUT_BLANK = ABOUT_BLANK;
+    var EMPTY_STRING = "";
+    exports.EMPTY_STRING = EMPTY_STRING;
+    var SVG_NAMESPACE_URI = "http://www.w3.org/2000/svg";
+    exports.SVG_NAMESPACE_URI = SVG_NAMESPACE_URI;
+    var DEFAULT_PROPERTIES = "defaultProperties";
+    exports.DEFAULT_PROPERTIES = DEFAULT_PROPERTIES;
+    var IGNORED_PROPERTIES = "ignoredProperties";
+    exports.IGNORED_PROPERTIES = IGNORED_PROPERTIES;
+    var LEFT_MOUSE_BUTTON = 0;
+    exports.LEFT_MOUSE_BUTTON = LEFT_MOUSE_BUTTON;
+    var RIGHT_MOUSE_BUTTON = 2;
+    exports.RIGHT_MOUSE_BUTTON = RIGHT_MOUSE_BUTTON;
+    var MIDDLE_MOUSE_BUTTON = 1;
+    exports.MIDDLE_MOUSE_BUTTON = MIDDLE_MOUSE_BUTTON;
+    var _default = {
+      LEFT_MOUSE_BUTTON,
+      RIGHT_MOUSE_BUTTON,
+      MIDDLE_MOUSE_BUTTON
+    };
+    exports.default = _default;
+  });
+
   // node_modules/easy/lib/utilities/dom.js
   var require_dom = __commonJS((exports) => {
     "use strict";
@@ -839,6 +905,7 @@
     exports.domNodeMatchesSelector = domNodeMatchesSelector;
     exports.filterDOMNodes = filterDOMNodes;
     var _array = require_array();
+    var _constants = require_constants();
     function elementsFromDOMElements(domElements) {
       var domElementsWithElements = filterDOMNodes(domElements, function(domElement) {
         return domElement.__element__ !== void 0;
@@ -849,9 +916,8 @@
     }
     function ascendantDOMNodesFromDOMNode(domNode, param) {
       var ascendantDOMNodes = param === void 0 ? [] : param;
-      var parentElement = domNode.parentElement;
-      if (parentElement !== null) {
-        var parentDOMNode = parentElement;
+      var parentDOMNode = domNode.parentElement;
+      if (parentDOMNode !== null) {
         ascendantDOMNodes.push(parentDOMNode);
         ascendantDOMNodesFromDOMNode(parentDOMNode, ascendantDOMNodes);
       }
@@ -880,7 +946,7 @@
           return domElement.matches(selector);
         }
         case Node.TEXT_NODE: {
-          if (selector === "*") {
+          if (selector === _constants.WILDCARD) {
             return true;
           }
         }
@@ -907,19 +973,20 @@
     });
     exports.default = void 0;
     var _array = require_array();
+    var _constants = require_constants();
     var _dom = require_dom();
     function getDescendantElements(param) {
-      var selector = param === void 0 ? "*" : param;
+      var selector = param === void 0 ? _constants.WILDCARD : param;
       var domNode = this.domElement, descendantDOMNodes = (0, _dom).descendantDOMNodesFromDOMNode(domNode), descendantDOMElements = (0, _dom).filterDOMNodesBySelector(descendantDOMNodes, selector), descendantElements = (0, _dom).elementsFromDOMElements(descendantDOMElements);
       return descendantElements;
     }
     function getChildElements(param) {
-      var selector = param === void 0 ? "*" : param;
+      var selector = param === void 0 ? _constants.WILDCARD : param;
       var childDOMNodes = this.domElement.childNodes, childDOMElements = (0, _dom).filterDOMNodesBySelector(childDOMNodes, selector), childElements = (0, _dom).elementsFromDOMElements(childDOMElements);
       return childElements;
     }
     function getParentElement(param) {
-      var selector = param === void 0 ? "*" : param;
+      var selector = param === void 0 ? _constants.WILDCARD : param;
       var parentElement = null;
       var parentDOMElement = this.domElement.parentElement;
       if (parentDOMElement !== null) {
@@ -933,12 +1000,12 @@
       return parentElement;
     }
     function getAscendantElements(param) {
-      var selector = param === void 0 ? "*" : param;
+      var selector = param === void 0 ? _constants.WILDCARD : param;
       var domNode = this.domElement, ascendantDOMNodes = (0, _dom).ascendantDOMNodesFromDOMNode(domNode), ascendantDOMElements = (0, _dom).filterDOMNodesBySelector(ascendantDOMNodes, selector), ascendantElements = (0, _dom).elementsFromDOMElements(ascendantDOMElements);
       return ascendantElements;
     }
     function getPreviousSiblingElement(param) {
-      var selector = param === void 0 ? "*" : param;
+      var selector = param === void 0 ? _constants.WILDCARD : param;
       var previousSiblingElement = null;
       var previousSiblingDOMNode = this.domElement.previousSibling;
       if (previousSiblingDOMNode !== null && (0, _dom).domNodeMatchesSelector(previousSiblingDOMNode, selector)) {
@@ -947,7 +1014,7 @@
       return previousSiblingElement;
     }
     function getNextSiblingElement(param) {
-      var selector = param === void 0 ? "*" : param;
+      var selector = param === void 0 ? _constants.WILDCARD : param;
       var nextSiblingElement = null;
       var nextSiblingDOMNode = this.domElement.nextSibling;
       if (nextSiblingDOMNode !== null && (0, _dom).domNodeMatchesSelector(nextSiblingDOMNode, selector)) {
@@ -977,7 +1044,6 @@
     var _offset = _interopRequireDefault2(require_offset());
     var _bounds = _interopRequireDefault2(require_bounds());
     var _element = _interopRequireDefault2(require_element());
-    var _element1 = _interopRequireDefault2(require_element2());
     function _classCallCheck(instance, Constructor) {
       if (!(instance instanceof Constructor)) {
         throw new TypeError("Cannot call a class as a function");
@@ -1115,11 +1181,15 @@
     exports.removeFalseyElements = removeFalseyElements;
     exports.replaceStringsWithTextElements = replaceStringsWithTextElements;
     var _textElement = _interopRequireDefault2(require_textElement());
+    var _constants = require_constants();
     function _interopRequireDefault2(obj) {
       return obj && obj.__esModule ? obj : {
         default: obj
       };
     }
+    var _typeof = function(obj) {
+      return obj && typeof Symbol !== "undefined" && obj.constructor === Symbol ? "symbol" : typeof obj;
+    };
     function removeFalseyElements(elements) {
       elements = elements.reduce(function(elements1, element) {
         if (element) {
@@ -1131,7 +1201,7 @@
     }
     function replaceStringsWithTextElements(elements) {
       elements = elements.map(function(element) {
-        if (typeof element === "string") {
+        if (_typeof(element) === _constants.STRING) {
           var text = element, textElement = new _textElement.default(text);
           element = textElement;
         }
@@ -1150,9 +1220,12 @@
     exports.default = void 0;
     var _object = require_object();
     var _array = require_array();
-    var _constants = require_constants();
     var _name = require_name();
     var _elements = require_elements();
+    var _constants = require_constants();
+    var _typeof = function(obj) {
+      return obj && typeof Symbol !== "undefined" && obj.constructor === Symbol ? "symbol" : typeof obj;
+    };
     function applyProperties(properties, defaultProperties, ignoredProperties) {
       this.properties = properties;
       properties = Object.assign({}, properties);
@@ -1187,7 +1260,7 @@
       var argumentsLength = arguments.length;
       if (argumentsLength === 1) {
         var firstArgument = (0, _array).first(arguments);
-        if (typeof firstArgument === "boolean") {
+        if (_typeof(firstArgument) === _constants.BOOLEAN) {
           names = Object.keys(this.context);
           thenDelete = firstArgument;
         } else {
@@ -1218,7 +1291,7 @@
     exports.default = _default;
     function childElementsFromElement(element) {
       var childElements = null;
-      if (typeof element.childElements === "function") {
+      if (_typeof(element.childElements) === _constants.FUNCTION) {
         childElements = element.childElements.call(element);
         childElements = (0, _array).guarantee(childElements);
         childElements = (0, _elements).removeFalseyElements(childElements);
@@ -1227,7 +1300,7 @@
       return childElements;
     }
     function updateContext(childElement, context) {
-      var parentContext = typeof childElement.parentContext === "function" ? childElement.parentContext() : childElement.context;
+      var parentContext = _typeof(childElement.parentContext) === _constants.FUNCTION ? childElement.parentContext() : childElement.context;
       Object.assign(context, parentContext);
     }
     function addHandler(element, name, value) {
@@ -1235,18 +1308,18 @@
       element.on(eventType, handler);
     }
     function addAttribute(element, name, value) {
-      if (name === "className") {
-        name = "class";
+      if (name === _constants.CLASS_NAME) {
+        name = _constants.CLASS;
       }
-      if (name === "htmlFor") {
-        name = "for";
+      if (name === _constants.HTML_FOR) {
+        name = _constants.FOR;
       }
-      if (typeof value === "object") {
+      if (_typeof(value) === _constants.OBJECT) {
         var keys = Object.keys(value);
         keys.forEach(function(key) {
           element.domElement[name][key] = value[key];
         });
-      } else if (typeof value === "boolean") {
+      } else if (_typeof(value) === _constants.BOOLEAN) {
         if (value) {
           value = name;
           element.addAttribute(name, value);
@@ -1270,17 +1343,18 @@
       value: true
     });
     exports.default = void 0;
+    var _constants = require_constants();
     function onKeyUp(keyUpHandler, element) {
-      this.on("keyup", keyUpHandler, element);
+      this.on(_constants.KEYUP, keyUpHandler, element);
     }
     function offKeyUp(keyUpHandler, element) {
-      this.off("keyup", keyUpHandler, element);
+      this.off(_constants.KEYUP, keyUpHandler, element);
     }
     function onKeyDown(keyDownHandler, element) {
-      this.on("keydown", keyDownHandler, element);
+      this.on(_constants.KEYDOWN, keyDownHandler, element);
     }
     function offKeyDown(keyDownHandler, element) {
-      this.off("keydown", keyDownHandler, element);
+      this.off(_constants.KEYDOWN, keyDownHandler, element);
     }
     var keyMixins = {
       onKeyUp,
@@ -1299,11 +1373,12 @@
       value: true
     });
     exports.default = void 0;
+    var _constants = require_constants();
     function onClick(clickHandler, element) {
-      this.on("click", clickHandler, element);
+      this.on(_constants.CLICK, clickHandler, element);
     }
     function offClick(clickHandler, element) {
-      this.off("click", clickHandler, element);
+      this.off(_constants.CLICK, clickHandler, element);
     }
     var clickMixins = {
       onClick,
@@ -1345,14 +1420,15 @@
       value: true
     });
     exports.default = void 0;
+    var _constants = require_constants();
     function onResize(resizeHandler, element) {
-      this.on("resize", resizeHandler, element);
+      this.on(_constants.RESIZE, resizeHandler, element);
     }
     function offResize(resizeHandler, element) {
-      this.off("resize", resizeHandler, element);
+      this.off(_constants.RESIZE, resizeHandler, element);
     }
     function addResizeObject() {
-      var resizeObject = document.createElement("object"), style = "display: block; \n                 position: absolute; \n                 top: 0; \n                 left: 0; \n                 height: 100%; \n                 width: 100%; \n                 overflow: hidden; \n                 pointer-events: none; \n                 z-index: -1;", data = "about:blank", type = "text/html";
+      var resizeObject = document.createElement(_constants.OBJECT), style = "display: block; \n                 position: absolute; \n                 top: 0; \n                 left: 0; \n                 height: 100%; \n                 width: 100%; \n                 overflow: hidden; \n                 pointer-events: none; \n                 z-index: -1;", data = _constants.ABOUT_BLANK, type = _constants.TEXT_HTML;
       resizeObject.setAttribute("style", style);
       resizeObject.data = data;
       resizeObject.type = type;
@@ -1364,8 +1440,9 @@
     }
     function removeResizeObject() {
       var resizeObject = this.__resizeObject__, objectWindow = resizeObject.contentDocument.defaultView;
-      objectWindow.removeEventListener("resize", resizeEventListener);
+      objectWindow.removeEventListener(_constants.RESIZE, resizeEventListener);
       this.domElement.removeChild(resizeObject);
+      delete this.__resizeObject__;
     }
     var resizeMixins = {
       onResize,
@@ -1377,8 +1454,8 @@
     exports.default = _default;
     function resizeObjectLoadHandler(element) {
       var resizeObject = element.__resizeObject__, resizeObjectWindow = resizeObject.contentDocument.defaultView;
-      resizeObjectWindow.addEventListener("resize", function(event) {
-        var resizeEventListeners = element.findEventListeners("resize");
+      resizeObjectWindow.addEventListener(_constants.RESIZE, function(event) {
+        var resizeEventListeners = element.findEventListeners(_constants.RESIZE);
         resizeEventListeners.forEach(function(resizeEventListener2) {
           return resizeEventListener2(event);
         });
@@ -1393,12 +1470,13 @@
       value: true
     });
     exports.default = void 0;
+    var _constants = require_constants();
     var _resize = require_resize();
     function on(eventTypes, handler, element) {
       eventTypes = eventTypes.split(" ");
       eventTypes.forEach(function(eventType) {
-        if (eventType === "resize") {
-          var resizeEventListeners = this.findEventListeners("resize"), resizeEventListenersLength = resizeEventListeners.length;
+        if (eventType === _constants.RESIZE) {
+          var resizeEventListeners = this.findEventListeners(_constants.RESIZE), resizeEventListenersLength = resizeEventListeners.length;
           if (resizeEventListenersLength === 0) {
             this.addResizeObject();
           }
@@ -1412,8 +1490,8 @@
       eventTypes.forEach(function(eventType) {
         var eventListener = this.removeEventListener(eventType, handler, element);
         this.domElement.removeEventListener(eventType, eventListener);
-        if (eventType === "resize") {
-          var resizeEventListeners = this.findEventListeners("resize"), resizeEventListenersLength = resizeEventListeners.length;
+        if (eventType === _constants.RESIZE) {
+          var resizeEventListeners = this.findEventListeners(_constants.RESIZE), resizeEventListenersLength = resizeEventListeners.length;
           if (resizeEventListenersLength === 0) {
             (0, _resize).removeResizeObject(this);
           }
@@ -1422,7 +1500,7 @@
     }
     function addEventListener(eventType, handler, param) {
       var element = param === void 0 ? this : param;
-      if (!this.hasOwnProperty("eventListeners")) {
+      if (this.eventListeners === void 0) {
         this.eventListeners = [];
       }
       var eventListener = createEventListener(eventType, handler, element);
@@ -1449,7 +1527,7 @@
     }
     function findEventListeners(eventType) {
       var eventListeners = [];
-      if (this.hasOwnProperty("eventListeners")) {
+      if (this.eventListeners !== void 0) {
         this.eventListeners.forEach(function(eventListener) {
           var found = eventListener.eventType === eventType;
           if (found) {
@@ -1490,35 +1568,36 @@
       value: true
     });
     exports.default = void 0;
+    var _constants = require_constants();
     function onMouseUp(mouseUpHandler, element) {
-      this.on("mouseup", mouseUpHandler, element);
+      this.on(_constants.MOUSEUP, mouseUpHandler, element);
     }
     function offMouseUp(mouseUpHandler, element) {
-      this.off("mouseup", mouseUpHandler, element);
+      this.off(_constants.MOUSEUP, mouseUpHandler, element);
     }
     function onMouseOut(mouseOutHandler, element) {
-      this.on("mouseout", mouseOutHandler, element);
+      this.on(_constants.MOUSEOUT, mouseOutHandler, element);
     }
     function offMouseOut(mouseOutHandler, element) {
-      this.off("mouseout", mouseOutHandler, element);
+      this.off(_constants.MOUSEOUT, mouseOutHandler, element);
     }
     function onMouseDown(mouseDownHandler, element) {
-      this.on("mousedown", mouseDownHandler, element);
+      this.on(_constants.MOUSEDOWN, mouseDownHandler, element);
     }
     function offMouseDown(mouseDownHandler, element) {
-      this.off("mousedown", mouseDownHandler, element);
+      this.off(_constants.MOUSEDOWN, mouseDownHandler, element);
     }
     function onMouseOver(mouseOverHandler, element) {
-      this.on("mouseover", mouseOverHandler, element);
+      this.on(_constants.MOUSEOVER, mouseOverHandler, element);
     }
     function offMouseOver(mouseOverHandler, element) {
-      this.off("mouseover", mouseOverHandler, element);
+      this.off(_constants.MOUSEOVER, mouseOverHandler, element);
     }
     function onMouseMove(mouseMoveHandler, element) {
-      this.on("mousemove", mouseMoveHandler, element);
+      this.on(_constants.MOUSEMOVE, mouseMoveHandler, element);
     }
     function offMouseMove(mouseMoveHandler, element) {
-      this.off("mousemove", mouseMoveHandler, element);
+      this.off(_constants.MOUSEMOVE, mouseMoveHandler, element);
     }
     var mouseMixins = {
       onMouseUp,
@@ -1543,11 +1622,12 @@
       value: true
     });
     exports.default = void 0;
+    var _constants = require_constants();
     function onScroll(scrollHandler, element) {
-      this.on("scroll", scrollHandler, element);
+      this.on(_constants.SCROLL, scrollHandler, element);
     }
     function offScroll(scrollHandler, element) {
-      this.off("scroll", scrollHandler, element);
+      this.off(_constants.SCROLL, scrollHandler, element);
     }
     function getScrollTop() {
       return this.domElement.scrollTop;
@@ -1591,9 +1671,9 @@
     var _resize = _interopRequireDefault2(require_resize());
     var _scroll = _interopRequireDefault2(require_scroll());
     var _element = _interopRequireDefault2(require_element());
-    var _array = require_array();
     var _object = require_object();
     var _name = require_name();
+    var _array = require_array();
     var _constants = require_constants();
     function _arrayWithoutHoles(arr) {
       if (Array.isArray(arr)) {
@@ -1640,6 +1720,9 @@
     function _toConsumableArray(arr) {
       return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread();
     }
+    var _typeof = function(obj) {
+      return obj && typeof Symbol !== "undefined" && obj.constructor === Symbol ? "symbol" : typeof obj;
+    };
     var _bind;
     var Element1 = /* @__PURE__ */ function() {
       function Element12(selector) {
@@ -1682,7 +1765,7 @@
           key: "setWidth",
           value: function setWidth(width) {
             width = "".concat(width, "px");
-            this.style("width", width);
+            this.style(_constants.WIDTH, width);
           }
         },
         {
@@ -1697,7 +1780,7 @@
           key: "setHeight",
           value: function setHeight(height) {
             height = "".concat(height, "px");
-            this.style("height", height);
+            this.style(_constants.HEIGHT, height);
           }
         },
         {
@@ -1769,7 +1852,7 @@
         {
           key: "clearClasses",
           value: function clearClasses() {
-            this.domElement.className = "";
+            this.domElement.className = _constants.EMPTY_STRING;
           }
         },
         {
@@ -1869,32 +1952,32 @@
         {
           key: "show",
           value: function show(param) {
-            var displayStyle = param === void 0 ? "block" : param;
+            var displayStyle = param === void 0 ? _constants.BLOCK : param;
             this.display(displayStyle);
           }
         },
         {
           key: "hide",
           value: function hide() {
-            this.style("display", "none");
+            this.style(_constants.DISPLAY, _constants.NONE);
           }
         },
         {
           key: "display",
           value: function display(display1) {
-            this.style("display", display1);
+            this.style(_constants.DISPLAY, display1);
           }
         },
         {
           key: "enable",
           value: function enable() {
-            this.clearAttribute("disabled");
+            this.clearAttribute(_constants.DISABLED);
           }
         },
         {
           key: "disable",
           value: function disable() {
-            this.setAttribute("disabled", "disabled");
+            this.setAttribute(_constants.DISABLED, _constants.DISABLED);
           }
         },
         {
@@ -1907,14 +1990,14 @@
         {
           key: "isDisabled",
           value: function isDisabled() {
-            var disabled = this.hasAttribute("disabled");
+            var disabled = this.hasAttribute(_constants.DISABLED);
             return disabled;
           }
         },
         {
           key: "isDisplayed",
           value: function isDisplayed() {
-            var display = this.css("display"), displayed = display !== "none";
+            var display = this.css(_constants.DISPLAY), displayed = display !== _constants.NONE;
             return displayed;
           }
         },
@@ -1962,11 +2045,11 @@
             if (css1 === void 0) {
               var computedStyle = getComputedStyle(this.domElement), css2 = {};
               for (var index = 0; index < computedStyle.length; index++) {
-                var name = computedStyle[0], value = computedStyle.getPropertyValue(name);
+                var firstComputedStyle = _array.first[computedStyle], name = firstComputedStyle, value = computedStyle.getPropertyValue(name);
                 css2[name] = value;
               }
               return css2;
-            } else if (typeof css1 === "string") {
+            } else if (_typeof(css1) === _constants.STRING) {
               var name = css1;
               var computedStyle = getComputedStyle(this.domElement), value = computedStyle.getPropertyValue(name);
               css1 = value;
@@ -2001,21 +2084,6 @@
         }
       ], [
         {
-          key: "fromTagName",
-          value: function fromTagName(tagName, properties) {
-            for (var _len = arguments.length, remainingArguments = new Array(_len > 2 ? _len - 2 : 0), _key1 = 2; _key1 < _len; _key1++) {
-              remainingArguments[_key1 - 2] = arguments[_key1];
-            }
-            var Class = Element12, element = elementFromTagName.apply(void 0, [
-              Class,
-              tagName
-            ].concat(_toConsumableArray(remainingArguments))), defaultProperties = {}, ignoredProperties = [];
-            element.applyProperties(properties, defaultProperties, ignoredProperties);
-            element.initialise && element.initialise();
-            return element;
-          }
-        },
-        {
           key: "fromClass",
           value: function fromClass(Class, properties) {
             for (var _len = arguments.length, remainingArguments = new Array(_len > 2 ? _len - 2 : 0), _key1 = 2; _key1 < _len; _key1++) {
@@ -2025,6 +2093,21 @@
               Class,
               tagName
             ].concat(_toConsumableArray(remainingArguments))), defaultProperties = defaultPropertiesFromClass(Class), ignoredProperties = ignoredPropertiesFromClass(Class);
+            element.applyProperties(properties, defaultProperties, ignoredProperties);
+            element.initialise && element.initialise();
+            return element;
+          }
+        },
+        {
+          key: "fromTagName",
+          value: function fromTagName(tagName, properties) {
+            for (var _len = arguments.length, remainingArguments = new Array(_len > 2 ? _len - 2 : 0), _key1 = 2; _key1 < _len; _key1++) {
+              remainingArguments[_key1 - 2] = arguments[_key1];
+            }
+            var Class = Element12, element = elementFromTagName.apply(void 0, [
+              Class,
+              tagName
+            ].concat(_toConsumableArray(remainingArguments))), defaultProperties = {}, ignoredProperties = [];
             element.applyProperties(properties, defaultProperties, ignoredProperties);
             element.initialise && element.initialise();
             return element;
@@ -2059,8 +2142,8 @@
     }
     function defaultPropertiesFromClass(Class, param) {
       var defaultProperties = param === void 0 ? {} : param;
-      if (Class.hasOwnProperty("defaultProperties")) {
-        (0, _object).combine(defaultProperties, Class.defaultProperties);
+      if (Class.hasOwnProperty(_constants.DEFAULT_PROPERTIES)) {
+        (0, _object).combine(defaultProperties, Class[_constants.DEFAULT_PROPERTIES]);
       }
       var superClass = Object.getPrototypeOf(Class);
       if (superClass !== null) {
@@ -2070,8 +2153,8 @@
     }
     function ignoredPropertiesFromClass(Class, param) {
       var ignoredProperties = param === void 0 ? [] : param;
-      if (Class.hasOwnProperty("ignoredProperties")) {
-        (0, _array).augment(ignoredProperties, Class.ignoredProperties, function(ignoredProperty) {
+      if (Class.hasOwnProperty(_constants.IGNORED_PROPERTIES)) {
+        (0, _array).augment(ignoredProperties, Class[_constants.IGNORED_PROPERTIES], function(ignoredProperty) {
           return !ignoredProperties.includes(ignoredProperty);
         });
       }
@@ -2091,6 +2174,7 @@
     });
     exports.default = void 0;
     var _element = _interopRequireDefault2(require_element2());
+    var _constants = require_constants();
     function _assertThisInitialized(self) {
       if (self === void 0) {
         throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
@@ -2223,7 +2307,7 @@
     var Body = /* @__PURE__ */ function(Element1) {
       _inherits(Body2, Element1);
       function Body2(param) {
-        var selector = param === void 0 ? "body" : param;
+        var selector = param === void 0 ? _constants.BODY : param;
         _classCallCheck(this, Body2);
         return _possibleConstructorReturn(this, _getPrototypeOf(Body2).call(this, selector));
       }
@@ -2389,11 +2473,12 @@
       value: true
     });
     exports.default = void 0;
+    var _constants = require_constants();
     function onChange(changeHandler, element) {
-      this.on("change", changeHandler, element);
+      this.on(_constants.CHANGE, changeHandler, element);
     }
     function offChange(changeHandler, element) {
-      this.off("change", changeHandler, element);
+      this.off(_constants.CHANGE, changeHandler, element);
     }
     var changeMixins = {
       onChange,
@@ -2972,6 +3057,7 @@
     exports.default = void 0;
     var _element = _interopRequireDefault2(require_element2());
     var _change = _interopRequireDefault2(require_change());
+    var _constants = require_constants();
     function _assertThisInitialized(self) {
       if (self === void 0) {
         throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
@@ -3115,13 +3201,13 @@
         {
           key: "onChange",
           value: function onChange(changeHandler, element) {
-            this.on("change", changeHandler, element);
+            this.on(_constants.CHANGE, changeHandler, element);
           }
         },
         {
           key: "offChange",
           value: function offChange(changeHandler, element) {
-            this.off("change", changeHandler, element);
+            this.off(_constants.CHANGE, changeHandler, element);
           }
         },
         {
@@ -3378,6 +3464,7 @@
     var _mouse = _interopRequireDefault2(require_mouse());
     var _click = _interopRequireDefault2(require_click());
     var _resize = _interopRequireDefault2(require_resize());
+    var _constants = require_constants();
     function _arrayWithoutHoles(arr) {
       if (Array.isArray(arr)) {
         for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) {
@@ -3423,6 +3510,9 @@
     function _toConsumableArray(arr) {
       return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread();
     }
+    var _typeof = function(obj) {
+      return obj && typeof Symbol !== "undefined" && obj.constructor === Symbol ? "symbol" : typeof obj;
+    };
     var _Object;
     var onResize = _resize.default.onResize;
     var offResize = _resize.default.offResize;
@@ -3489,7 +3579,7 @@
       onResize,
       offResize
     });
-    var _default = typeof window === "undefined" ? void 0 : new Window1();
+    var _default = _typeof(window) === _constants.UNDEFINED ? void 0 : new Window1();
     exports.default = _default;
   });
 
@@ -3504,6 +3594,7 @@
     var _click = _interopRequireDefault2(require_click());
     var _event = _interopRequireDefault2(require_event());
     var _mouse = _interopRequireDefault2(require_mouse());
+    var _constants = require_constants();
     function _classCallCheck(instance, Constructor) {
       if (!(instance instanceof Constructor)) {
         throw new TypeError("Cannot call a class as a function");
@@ -3514,11 +3605,14 @@
         default: obj
       };
     }
+    var _typeof = function(obj) {
+      return obj && typeof Symbol !== "undefined" && obj.constructor === Symbol ? "symbol" : typeof obj;
+    };
     var Document1 = function Document12() {
       _classCallCheck(this, Document12);
       this.domElement = document;
     };
-    var _default = typeof document === "undefined" ? void 0 : new Document1();
+    var _default = _typeof(document) === _constants.UNDEFINED ? void 0 : new Document1();
     exports.default = _default;
     Object.assign(Document1.prototype, _key.default);
     Object.assign(Document1.prototype, _click.default);
@@ -3535,12 +3629,16 @@
     exports.default = void 0;
     var _element = _interopRequireDefault2(require_element2());
     var _array = require_array();
+    var _constants = require_constants();
     var _elements = require_elements();
     function _interopRequireDefault2(obj) {
       return obj && obj.__esModule ? obj : {
         default: obj
       };
     }
+    var _typeof = function(obj) {
+      return obj && typeof Symbol !== "undefined" && obj.constructor === Symbol ? "symbol" : typeof obj;
+    };
     function createElement(firstArgument, properties) {
       for (var _len = arguments.length, remainingArguments = new Array(_len > 2 ? _len - 2 : 0), _key = 2; _key < _len; _key++) {
         remainingArguments[_key - 2] = arguments[_key];
@@ -3555,10 +3653,10 @@
         } else if (isSubclassOf(firstArgument, _element.default)) {
           var Class = firstArgument;
           element = Class.fromClass(Class, properties);
-        } else if (typeof firstArgument === "string") {
+        } else if (_typeof(firstArgument) === _constants.STRING) {
           var tagName = firstArgument;
           element = _element.default.fromTagName(tagName, properties);
-        } else if (typeof firstArgument === "function") {
+        } else if (_typeof(firstArgument) === _constants.FUNCTION) {
           var elementFunction = firstArgument;
           element = elementFunction(properties);
         }
@@ -3743,6 +3841,19 @@
     exports.default = _default;
   });
 
+  // lib/example/mvcApplication/constants.js
+  var require_constants2 = __commonJS((exports) => {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", {
+      value: true
+    });
+    exports.TIMEOUT_DELAY = exports.EMPTY_STRING = void 0;
+    var EMPTY_STRING = "";
+    exports.EMPTY_STRING = EMPTY_STRING;
+    var TIMEOUT_DELAY = 1e3;
+    exports.TIMEOUT_DELAY = TIMEOUT_DELAY;
+  });
+
   // lib/example/mvcApplication/view/input/password.js
   var require_password = __commonJS((exports) => {
     "use strict";
@@ -3751,6 +3862,7 @@
     });
     exports.default = void 0;
     var _easy = require_lib();
+    var _constants = require_constants2();
     function _assertThisInitialized(self) {
       if (self === void 0) {
         throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
@@ -3845,7 +3957,7 @@
         {
           key: "clearPassword",
           value: function clearPassword() {
-            var password = "", value = password;
+            var password = _constants.EMPTY_STRING, value = password;
             this.setValue(value);
           }
         },
@@ -3867,17 +3979,6 @@
       type: "password"
     });
     exports.default = PasswordInput;
-  });
-
-  // lib/example/mvcApplication/constants.js
-  var require_constants2 = __commonJS((exports) => {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", {
-      value: true
-    });
-    exports.TIMEOUT_DELAY = void 0;
-    var TIMEOUT_DELAY = 1e3;
-    exports.TIMEOUT_DELAY = TIMEOUT_DELAY;
   });
 
   // lib/example/mvcApplication/view/paragraph/validationError.js
@@ -4043,7 +4144,7 @@
         {
           key: "clearValidationError",
           value: function clearValidationError() {
-            var html = "";
+            var html = _constants.EMPTY_STRING;
             this.html(html);
           }
         },
@@ -4098,6 +4199,7 @@
     var _controller = _interopRequireDefault2(require_controller());
     var _password = _interopRequireDefault2(require_password());
     var _validationError = _interopRequireDefault2(require_validationError());
+    var _constants = require_constants2();
     function _assertThisInitialized(self) {
       if (self === void 0) {
         throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
@@ -4308,7 +4410,7 @@
     });
     exports.default = PasswordForm;
     function isPasswordValid(password) {
-      var passwordValid = password !== "";
+      var passwordValid = password !== _constants.EMPTY_STRING;
       return passwordValid;
     }
   });
