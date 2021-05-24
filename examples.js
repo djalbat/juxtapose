@@ -7,7 +7,7 @@
     return module.exports;
   };
 
-  // node_modules/easy/lib/miscellaneous/offset.js
+  // node_modules/easy/lib/offset.js
   var require_offset = __commonJS((exports) => {
     "use strict";
     Object.defineProperty(exports, "__esModule", {
@@ -61,7 +61,7 @@
     exports.default = Offset;
   });
 
-  // node_modules/easy/lib/miscellaneous/bounds.js
+  // node_modules/easy/lib/bounds.js
   var require_bounds = __commonJS((exports) => {
     "use strict";
     Object.defineProperty(exports, "__esModule", {
@@ -173,13 +173,13 @@
         {
           key: "isOverlappingMouse",
           value: function isOverlappingMouse(mouseTop, mouseLeft) {
-            return this.top < mouseTop && this.left < mouseLeft && this.bottom > mouseTop && this.right > mouseLeft;
+            return this.top <= mouseTop && this.left <= mouseLeft && this.right > mouseLeft && this.bottom > mouseTop;
           }
         },
         {
           key: "areOverlapping",
           value: function areOverlapping(bounds) {
-            return this.top < bounds.bottom && this.left < bounds.right && this.bottom > bounds.top && this.right > bounds.left;
+            return this.top < bounds.bottom && this.left < bounds.right && this.right > bounds.left && this.bottom > bounds.top;
           }
         }
       ], [
@@ -809,13 +809,15 @@
     Object.defineProperty(exports, "__esModule", {
       value: true
     });
-    exports.DEFAULT_PROPERTIES = exports.BLOCK = exports.CLICK = exports.EMPTY_STRING = exports.BODY = exports.MOUSEOUT = exports.UNDEFINED = exports.DISPLAY = exports.OBJECT = exports.LEFT_MOUSE_BUTTON = exports.CLASS_NAME = exports.RIGHT_MOUSE_BUTTON = exports.TEXT_HTML = exports.CLASS = exports.WIDTH = exports.MIDDLE_MOUSE_BUTTON = exports.WILDCARD = exports.DISABLED = exports.HTML_FOR = exports.ABOUT_BLANK = exports.FUNCTION = exports.HEIGHT = exports.SVG_NAMESPACE_URI = exports.CHANGE = exports.KEYDOWN = exports.default = exports.KEYUP = exports.NONE = exports.MOUSEMOVE = exports.MOUSEDOWN = exports.MOUSEUP = exports.RESIZE = exports.STRING = exports.SCROLL = exports.FOR = exports.MOUSEOVER = exports.BOOLEAN = exports.IGNORED_PROPERTIES = void 0;
+    exports.DEFAULT_PROPERTIES = exports.BLOCK = exports.CLICK = exports.SPACE = exports.EMPTY_STRING = exports.BODY = exports.UNDEFINED = exports.MOUSEOUT = exports.DISPLAY = exports.OBJECT = exports.LEFT_MOUSE_BUTTON = exports.CLASS_NAME = exports.RIGHT_MOUSE_BUTTON = exports.TEXT_HTML = exports.CLASS = exports.WIDTH = exports.MIDDLE_MOUSE_BUTTON = exports.WILDCARD = exports.DISABLED = exports.HTML_FOR = exports.ABOUT_BLANK = exports.FUNCTION = exports.HEIGHT = exports.SVG_NAMESPACE_URI = exports.CHANGE = exports.KEYDOWN = exports.default = exports.KEYUP = exports.NONE = exports.MOUSEMOVE = exports.MOUSEDOWN = exports.MOUSEUP = exports.STRING = exports.RESIZE = exports.SCROLL = exports.FOR = exports.MOUSEOVER = exports.BOOLEAN = exports.IGNORED_PROPERTIES = void 0;
     var FOR = "for";
     exports.FOR = FOR;
     var BODY = "body";
     exports.BODY = BODY;
     var NONE = "none";
     exports.NONE = NONE;
+    var SPACE = " ";
+    exports.SPACE = SPACE;
     var CLASS = "class";
     exports.CLASS = CLASS;
     var CLICK = "click";
@@ -1419,6 +1421,8 @@
     Object.defineProperty(exports, "__esModule", {
       value: true
     });
+    exports.onResize = onResize;
+    exports.offResize = offResize;
     exports.default = void 0;
     var _constants = require_constants();
     function onResize(resizeHandler, element) {
@@ -1473,7 +1477,7 @@
     var _constants = require_constants();
     var _resize = require_resize();
     function on(eventTypes, handler, element) {
-      eventTypes = eventTypes.split(" ");
+      eventTypes = eventTypes.split(_constants.SPACE);
       eventTypes.forEach(function(eventType) {
         if (eventType === _constants.RESIZE) {
           var resizeEventListeners = this.findEventListeners(_constants.RESIZE), resizeEventListenersLength = resizeEventListeners.length;
@@ -1486,7 +1490,7 @@
       }.bind(this));
     }
     function off(eventTypes, handler, element) {
-      eventTypes = eventTypes.split(" ");
+      eventTypes = eventTypes.split(_constants.SPACE);
       eventTypes.forEach(function(eventType) {
         var eventListener = this.removeEventListener(eventType, handler, element);
         this.domElement.removeEventListener(eventType, eventListener);
@@ -3452,8 +3456,23 @@
     exports.default = Textarea;
   });
 
-  // node_modules/easy/lib/window.js
+  // node_modules/easy/lib/mixins/window.js
   var require_window = __commonJS((exports) => {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", {
+      value: true
+    });
+    exports.default = void 0;
+    var _resize = require_resize();
+    var _default = {
+      onResize: _resize.onResize,
+      offResize: _resize.offResize
+    };
+    exports.default = _default;
+  });
+
+  // node_modules/easy/lib/window.js
+  var require_window2 = __commonJS((exports) => {
     "use strict";
     Object.defineProperty(exports, "__esModule", {
       value: true
@@ -3463,7 +3482,7 @@
     var _event = _interopRequireDefault2(require_event());
     var _mouse = _interopRequireDefault2(require_mouse());
     var _click = _interopRequireDefault2(require_click());
-    var _resize = _interopRequireDefault2(require_resize());
+    var _window = _interopRequireDefault2(require_window());
     var _constants = require_constants();
     function _arrayWithoutHoles(arr) {
       if (Array.isArray(arr)) {
@@ -3514,8 +3533,6 @@
       return obj && typeof Symbol !== "undefined" && obj.constructor === Symbol ? "symbol" : typeof obj;
     };
     var _Object;
-    var onResize = _resize.default.onResize;
-    var offResize = _resize.default.offResize;
     var Window1 = /* @__PURE__ */ function() {
       function Window12() {
         _classCallCheck(this, Window12);
@@ -3575,10 +3592,7 @@
     Object.assign(Window1.prototype, _event.default);
     Object.assign(Window1.prototype, _mouse.default);
     Object.assign(Window1.prototype, _click.default);
-    Object.assign(Window1.prototype, {
-      onResize,
-      offResize
-    });
+    Object.assign(Window1.prototype, _window.default);
     var _default = _typeof(window) === _constants.UNDEFINED ? void 0 : new Window1();
     exports.default = _default;
   });
@@ -3705,7 +3719,7 @@
     var _element = _interopRequireDefault2(require_element2());
     var _textElement = _interopRequireDefault2(require_textElement());
     var _inputElement = _interopRequireDefault2(require_inputElement());
-    var _window = _interopRequireDefault2(require_window());
+    var _window = _interopRequireDefault2(require_window2());
     var _document = _interopRequireDefault2(require_document());
     var _constants = _interopRequireDefault2(require_constants());
     var _bounds = _interopRequireDefault2(require_bounds());
