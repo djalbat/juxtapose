@@ -916,22 +916,28 @@
       });
       return elements;
     }
-    function ascendantDOMNodesFromDOMNode(domNode, param) {
+    function ascendantDOMNodesFromDOMNode(domNode, height, param) {
       var ascendantDOMNodes = param === void 0 ? [] : param;
-      var parentDOMNode = domNode.parentElement;
-      if (parentDOMNode !== null) {
-        ascendantDOMNodes.push(parentDOMNode);
-        ascendantDOMNodesFromDOMNode(parentDOMNode, ascendantDOMNodes);
+      if (height > 0) {
+        var parentDOMNode = domNode.parentElement;
+        if (parentDOMNode !== null) {
+          ascendantDOMNodes.push(parentDOMNode);
+          height--;
+          ascendantDOMNodesFromDOMNode(parentDOMNode, height, ascendantDOMNodes);
+        }
       }
       return ascendantDOMNodes;
     }
-    function descendantDOMNodesFromDOMNode(domNode, param) {
+    function descendantDOMNodesFromDOMNode(domNode, depth, param) {
       var descendantDOMNodes = param === void 0 ? [] : param;
-      var childDOMNodes = domNode.childNodes;
-      (0, _array).push(descendantDOMNodes, childDOMNodes);
-      childDOMNodes.forEach(function(childDOMNode) {
-        return descendantDOMNodesFromDOMNode(childDOMNode, descendantDOMNodes);
-      });
+      if (depth > 0) {
+        var childDOMNodes = domNode.childNodes;
+        (0, _array).push(descendantDOMNodes, childDOMNodes);
+        depth--;
+        childDOMNodes.forEach(function(childDOMNode) {
+          return descendantDOMNodesFromDOMNode(childDOMNode, depth, descendantDOMNodes);
+        });
+      }
       return descendantDOMNodes;
     }
     function filterDOMNodesBySelector(domNodes, selector) {
@@ -977,16 +983,6 @@
     var _array = require_array();
     var _constants = require_constants();
     var _dom = require_dom();
-    function getDescendantElements(param) {
-      var selector = param === void 0 ? _constants.WILDCARD : param;
-      var domNode = this.domElement, descendantDOMNodes = (0, _dom).descendantDOMNodesFromDOMNode(domNode), descendantDOMElements = (0, _dom).filterDOMNodesBySelector(descendantDOMNodes, selector), descendantElements = (0, _dom).elementsFromDOMElements(descendantDOMElements);
-      return descendantElements;
-    }
-    function getChildElements(param) {
-      var selector = param === void 0 ? _constants.WILDCARD : param;
-      var childDOMNodes = this.domElement.childNodes, childDOMElements = (0, _dom).filterDOMNodesBySelector(childDOMNodes, selector), childElements = (0, _dom).elementsFromDOMElements(childDOMElements);
-      return childElements;
-    }
     function getParentElement(param) {
       var selector = param === void 0 ? _constants.WILDCARD : param;
       var parentElement = null;
@@ -1001,19 +997,20 @@
       }
       return parentElement;
     }
-    function getAscendantElements(param) {
+    function getChildElements(param) {
       var selector = param === void 0 ? _constants.WILDCARD : param;
-      var domNode = this.domElement, ascendantDOMNodes = (0, _dom).ascendantDOMNodesFromDOMNode(domNode), ascendantDOMElements = (0, _dom).filterDOMNodesBySelector(ascendantDOMNodes, selector), ascendantElements = (0, _dom).elementsFromDOMElements(ascendantDOMElements);
+      var childDOMNodes = this.domElement.childNodes, childDOMElements = (0, _dom).filterDOMNodesBySelector(childDOMNodes, selector), childElements = (0, _dom).elementsFromDOMElements(childDOMElements);
+      return childElements;
+    }
+    function getAscendantElements(param, param1) {
+      var selector = param === void 0 ? _constants.WILDCARD : param, height = param1 === void 0 ? Infinity : param1;
+      var domNode = this.domElement, ascendantDOMNodes = (0, _dom).ascendantDOMNodesFromDOMNode(domNode, height), ascendantDOMElements = (0, _dom).filterDOMNodesBySelector(ascendantDOMNodes, selector), ascendantElements = (0, _dom).elementsFromDOMElements(ascendantDOMElements);
       return ascendantElements;
     }
-    function getPreviousSiblingElement(param) {
-      var selector = param === void 0 ? _constants.WILDCARD : param;
-      var previousSiblingElement = null;
-      var previousSiblingDOMNode = this.domElement.previousSibling;
-      if (previousSiblingDOMNode !== null && (0, _dom).domNodeMatchesSelector(previousSiblingDOMNode, selector)) {
-        previousSiblingElement = previousSiblingDOMNode.__element__ || null;
-      }
-      return previousSiblingElement;
+    function getDescendantElements(param, param1) {
+      var selector = param === void 0 ? _constants.WILDCARD : param, depth = param1 === void 0 ? Infinity : param1;
+      var domNode = this.domElement, descendantDOMNodes = (0, _dom).descendantDOMNodesFromDOMNode(domNode, depth), descendantDOMElements = (0, _dom).filterDOMNodesBySelector(descendantDOMNodes, selector), descendantElements = (0, _dom).elementsFromDOMElements(descendantDOMElements);
+      return descendantElements;
     }
     function getNextSiblingElement(param) {
       var selector = param === void 0 ? _constants.WILDCARD : param;
@@ -1024,13 +1021,22 @@
       }
       return nextSiblingElement;
     }
+    function getPreviousSiblingElement(param) {
+      var selector = param === void 0 ? _constants.WILDCARD : param;
+      var previousSiblingElement = null;
+      var previousSiblingDOMNode = this.domElement.previousSibling;
+      if (previousSiblingDOMNode !== null && (0, _dom).domNodeMatchesSelector(previousSiblingDOMNode, selector)) {
+        previousSiblingElement = previousSiblingDOMNode.__element__ || null;
+      }
+      return previousSiblingElement;
+    }
     var elementMixins = {
-      getDescendantElements,
-      getChildElements,
       getParentElement,
+      getChildElements,
       getAscendantElements,
-      getPreviousSiblingElement,
-      getNextSiblingElement
+      getDescendantElements,
+      getNextSiblingElement,
+      getPreviousSiblingElement
     };
     var _default = elementMixins;
     exports.default = _default;
@@ -5115,4 +5121,3 @@
     simpleApplication: _simpleApplication.default
   });
 })();
-//# sourceMappingURL=examples.js.map
