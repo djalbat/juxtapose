@@ -1,7 +1,7 @@
 {
   "name": "juxtapose",
   "author": "James Smith",
-  "version": "4.0.26",
+  "version": "4.0.27",
   "license": "MIT, Anti-996",
   "homepage": "https://github.com/djalbat/juxtapose",
   "description": "JSX support for Easy elements.",
@@ -10,7 +10,7 @@
     "url": "https://github.com/djalbat/juxtapose"
   },
   "dependencies": {
-    "easy": "^13.0.8"
+    "easy": "^13.0.10"
   },
   "devDependencies": {
     "@swc/core": "^1.2.50",
