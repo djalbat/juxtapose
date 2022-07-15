@@ -5,7 +5,7 @@ import { Element } from "easy";
 import controller from "../../controller";
 
 export default class ResetPasswordButton extends Element {
-  clickHandler(event, element) {
+  clickHandler = (event, element) => {
     controller.resetPassword();
   }
 
