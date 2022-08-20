@@ -12,7 +12,7 @@ export default function mvcApplication() {
   const model = new Model(),
         view =
 
-          <View />
+          <View/>
 
         ;
 
