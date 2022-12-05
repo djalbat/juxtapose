@@ -5,8 +5,8 @@ import { Element } from "easy";
 import { EMPTY_STRING, TIMEOUT_DELAY } from "../../constants";
 
 export default class ValidationErrorParagraph extends Element {
-  constructor(selectorOrDomElement, timeout) {
-    super(selectorOrDomElement);
+  constructor(selector, timeout) {
+    super(selector);
 
     this.timeout = timeout;
   }
