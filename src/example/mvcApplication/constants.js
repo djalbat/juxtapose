@@ -1,4 +1,4 @@
 "use strict";
 
+export const ERROR_DELAY = 1000;
 export const EMPTY_STRING = "";
-export const TIMEOUT_DELAY = 1000;

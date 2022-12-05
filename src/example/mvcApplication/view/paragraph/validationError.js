@@ -2,7 +2,7 @@
 
 import { Element } from "easy";
 
-import { EMPTY_STRING, TIMEOUT_DELAY } from "../../constants";
+import { EMPTY_STRING, ERROR_DELAY } from "../../constants";
 
 export default class ValidationErrorParagraph extends Element {
   constructor(selector, timeout) {
@@ -30,7 +30,7 @@ export default class ValidationErrorParagraph extends Element {
       this.timemout = null;
 
       this.clearValidationError();
-    }, TIMEOUT_DELAY);
+    }, ERROR_DELAY);
   }
 
   parentContext() {
