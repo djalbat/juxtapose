@@ -20,16 +20,6 @@ You can also clone the repository with [Git](https://git-scm.com/)...
 
 You can also run a development server, see the section on building later on.
 
-## Usage
-
-There is nothing more to do other than import the package:
-
-```
-import "juxtapose";
-```
-
-Once this is done, JSX can be used directly.
-
 ## Examples
 
 There is a small development server that can be run from within the project's directory with the following command:
@@ -47,6 +37,16 @@ The source for the examples can be found in the `src/examples.js` file and corre
 The development server will reload the page whenever you make changes.
 
 One last thing to bear in mind is that this package is included by way of a relative rather than a package import. If you are importing it into your own application, however, you should use the standard package import.
+
+## Usage
+
+There is nothing more to do other than import the package:
+
+```
+import "juxtapose";
+```
+
+Once this is done, JSX can be used directly.
 
 ## Building
 
