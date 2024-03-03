@@ -45,9 +45,9 @@ export default class ValidationErrorParagraph extends Element {
     className: "validation error"
   };
 
-  static fromClass(Class, properties) {
+  static fromClass(Class, properties, ...remainingArguments) {
     const timeout = null,
-          validationErrorParagraph = Element.fromClass(Class, properties, timeout);
+          validationErrorParagraph = Element.fromClass(Class, properties, timeout, ...remainingArguments);
 
     return validationErrorParagraph;
   }
