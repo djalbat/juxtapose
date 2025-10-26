@@ -1,7 +1,7 @@
 {
   "name": "juxtapose",
   "author": "James Smith",
-  "version": "4.0.122",
+  "version": "4.0.123",
   "license": "MIT, Anti-996",
   "homepage": "https://github.com/djalbat/juxtapose",
   "description": "JSX support for Easy elements.",
@@ -17,7 +17,7 @@
     "esbuild": "0.11.14",
     "express": "^4.17.1",
     "lively-cli": "^2.0.77",
-    "watchful-cli": "^1.7.56"
+    "watchful-cli": "^1.7.61"
   },
   "scripts": {
     "start": "node ./bin/main.js",
