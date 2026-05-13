@@ -27,7 +27,7 @@ export default class ValidationErrorParagraph extends Element {
     }
 
     this.timeout = setTimeout(() => {
-      this.timemout = null;
+      this.timeout = null;
 
       this.clearValidationError();
     }, ERROR_DELAY);
